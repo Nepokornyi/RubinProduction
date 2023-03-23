@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import {BrowserRouter as Router } from 'react-router-dom';
+import {HashRouter as Router } from 'react-router-dom';
 import Landing from './pages/Landing/Landing';
 import './App.css'
 

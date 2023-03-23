@@ -8,7 +8,7 @@ import Atelier2 from '../../assets/img/atelier2.png'
 const useStyle = createUseStyles({
 	slider:{
 		color: 'white',
-		border: '1px solid red',
+		// border: '1px solid red',
 		width: '90%',
 		position: 'relative'
 	},

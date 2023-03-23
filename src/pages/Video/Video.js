@@ -2,21 +2,20 @@ import React from 'react'
 
 import Content from '../../components/Content/Content'
 import Header from '../../components/Header/Header'
-
+import Frame from '../../components/Frame/Frame'
 import { createUseStyles } from 'react-jss'
-import { useMediaQuery } from 'react-responsive'
 
-import {ReactComponent as MobileFramePicture } from '../../assets/img/mobileFramePicture.svg'
-import {ReactComponent as TabletFramePicture } from '../../assets/img/tabletFramePicture.svg'
-import {ReactComponent as WideFramePicture } from '../../assets/img/wideFramePicture.svg'
-import bgImg from '../../assets/img/bgImg.png'
-import wideBgImg from '../../assets/img/wideBgImg.png'
+import VideoWide from '../../assets/video/motion.mp4'
+// import VideoVertical from '../../assets/video/instagram.mp4'
 
 
 const useStyle = createUseStyles({
   videoContainer:{
     position: 'relative',
-    width: '100%'
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'flex-end',
   },
   header: {
     textAlign: 'center',
@@ -44,19 +43,15 @@ const useStyle = createUseStyles({
   },
   background: {
     width: '100%',
-    height: '100vh',
-    objectFit: 'cover'
+    height: '92vh',
+    objectFit: 'cover',
+    objectPosition: 'center',
   }
 })
 
 function Video() {
 
   const style = useStyle()
-
-  const isMobile = useMediaQuery({query: '(max-width:500px)'});
-  const isTablet = useMediaQuery({query: '(min-width:501px) and (max-width:900px)'});
-  const isLaptop = useMediaQuery({query: '(min-width:901px)'});
-
 
   return (
     <>
@@ -68,12 +63,12 @@ function Video() {
             <h1 style={{margin:'0px', fontSize: '42px'}}>Content Creator</h1>
           </div>
 
-          {isMobile === true ? <img src={bgImg} className={style.background} alt="" /> : <img src={wideBgImg} className={style.background} alt="" />}
-          <div className={style.frameContainer}>
-            {isMobile && <MobileFramePicture className={style.frame} />}
-            {isTablet && <TabletFramePicture className={style.frame} />}
-            {isLaptop && <WideFramePicture className={style.frame} />}
-          </div>
+          <video autoPlay loop muted className={style.background}>
+            <source src={VideoWide} type="video/mp4" />
+            {/* <source src={VideoVertical} type="video/mp4" /> */}
+          </video>
+          {/* {isMobile === true ? <img src={BgImg} className={style.background} alt="" /> : <img src={WideBgImg} className={style.background} alt="" />} */}
+          <Frame />
         </div>
       </Content>
     </>
