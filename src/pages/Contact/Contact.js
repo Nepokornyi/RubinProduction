@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
+import { useEffect } from 'react'
 import { createUseStyles } from 'react-jss'
 
 import Content from '../../components/Content/Content'
 import DialogSuccess from '../../components/Dialog/DialogSuccess'
+import { emailValidator } from '../../libs/validators'
 
 const useStyle = createUseStyles({
 	header:{
@@ -22,6 +24,9 @@ const useStyle = createUseStyles({
 		minWidth: '300px',
 		height: '40px',
 		width: '60vw'
+	},
+	error:{
+		color: 'var(--secondary-text-color)'
 	},
 	submit:{
 		width: '200px',
@@ -44,16 +49,26 @@ const useStyle = createUseStyles({
 })
 
 function Contact() {
+	const [email, setEmail] = useState('');
+    const [error, setError] = useState('');
+	const [successDialog, setSuccessDialog] = useState(false);
 
 	const style = useStyle()
 
-	const [email, setEmail] = useState('');
-	const [successDialog, setSuccessDialog] = useState(false);
-
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		setSuccessDialog(true)
+
+		console.log(email)
+
+		if((email.trim() !== '' && !emailValidator(email)) || email === ''){
+            setError('Invalid email address');
+        }
+        else{
+            setError('');
+			setSuccessDialog(true)
+        }
 	}
+
 
 	const handleDialogClose = () => {
 		setSuccessDialog(false)
@@ -61,16 +76,22 @@ function Contact() {
 
   return (
     <Content>
+
         <div id="Contact">
+			<h2 className={style.header}>Contact</h2>
+			<form onSubmit={handleSubmit} noValidate className={style.form}>
 
-          <h2 className={style.header}>Contact</h2>
+				<div className={style}>
+					<input type="email" name="email" value={email} onChange={(event) => {setEmail(event.target.value.trim())}} className={style.mailInput} placeholder='Email*' required />
+					{error && <p className={style.error}>{error}</p>}   
+				</div>
 
-		  <form onSubmit={handleSubmit} className={style.form}>
-			<input type="email" name="email" value={email} onChange={(event) => {setEmail(event.target.value)}} className={style.mailInput} placeholder='Email*'  />
-			<button type="submit" className={style.submit}>Send</button>
+				<button type="submit" className={style.submit}>Send</button>
 		  </form>
         </div>
+
 		<DialogSuccess open={successDialog} onClose={handleDialogClose} />
+
     </Content>
 
   )
