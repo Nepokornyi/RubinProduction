@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import Content from '../../components/Content/Content'
 import Header from '../../components/Header/Header'
@@ -23,7 +23,8 @@ const useStyle = createUseStyles({
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    zIndex: '1'
+    zIndex: 1,
+    opacity: 0.6
   },
   frameContainer: {
     width: '95vw',
@@ -51,7 +52,9 @@ const useStyle = createUseStyles({
 
 function Video() {
 
+
   const style = useStyle()
+
 
   return (
     <>
@@ -65,9 +68,7 @@ function Video() {
 
           <video autoPlay loop muted className={style.background}>
             <source src={VideoWide} type="video/mp4" />
-            {/* <source src={VideoVertical} type="video/mp4" /> */}
           </video>
-          {/* {isMobile === true ? <img src={BgImg} className={style.background} alt="" /> : <img src={WideBgImg} className={style.background} alt="" />} */}
           <Frame />
         </div>
       </Content>

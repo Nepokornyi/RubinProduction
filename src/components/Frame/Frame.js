@@ -1,11 +1,7 @@
 import React from 'react'
 
-// import { useMediaQuery } from 'react-responsive'
+import Counter from '../Counter/Counter'
 import { createUseStyles } from 'react-jss'
-
-// import {ReactComponent as MobileFramePicture } from '../../assets/img/mobileFramePicture.svg'
-// import {ReactComponent as TabletFramePicture } from '../../assets/img/tabletFramePicture.svg'
-// import {ReactComponent as WideFramePicture } from '../../assets/img/wideFramePicture.svg'
 
 const 
     borderStyle = '3px solid var(--main-bg-color-light)',
@@ -24,7 +20,7 @@ const useStyle = createUseStyles({
         width: '95vw',
         height: '85vh',
         marginBottom: '2.5vh',
-        zIndex: 100
+        opacity: 0.6,
     },
 
     overlayHelper: {
@@ -88,22 +84,6 @@ const useStyle = createUseStyles({
         bottom: borderSpace,
         right: borderSpace
     }
-    // frameContainer: {
-    //     width: '95vw',
-    //     height: '80vh',
-    //     position: 'absolute',
-    //     top: '80%',
-    //     left: '50%',
-    //     transform: 'translate(-50%, -80%)',
-    //     zIndex: '1',
-    //     display: 'flex',
-    //     alignItems: 'center',
-    //     justifyContent: 'center'
-    // },
-    // frame: {
-    //     width: '100%',
-    //     height: '100%'
-    // }
   })
 
 function Frame() {
@@ -126,12 +106,12 @@ function Frame() {
                         </div>
                         <div className={`${style.overlayElement} ${style.topRight}`}>
                         <span id="overlay-top-right-text" className={style.overlayText}>
-                            00:00
+                            <Counter />
                         </span>
                         </div>
                         <div className={`${style.overlayElement} ${style.bottomLeft}`}>
                         <span className={`${style.overlayText} ${style.bottomLeftText}`}>
-                            25 FPS
+                            60 FPS
                         </span>
                         </div>
                         <div className={`${style.overlayElement} ${style.bottomRight}`}>
