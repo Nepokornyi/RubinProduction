@@ -1,19 +1,14 @@
 {
   "files": {
     "main.css": "/Rubin_web_final/static/css/main.aaa3614b.css",
-    "main.js": "/Rubin_web_final/static/js/main.73aa6c55.js",
+    "main.js": "/Rubin_web_final/static/js/main.d39022f7.js",
     "static/media/instagram.mp4": "/Rubin_web_final/static/media/instagram.963c2c8f93af7af266d5.mp4",
     "static/media/cover.mp4": "/Rubin_web_final/static/media/cover.80ab5734e90d0fe5483d.mp4",
     "static/media/woman.mp4": "/Rubin_web_final/static/media/woman.f51af3d5116a2fa6d821.mp4",
     "static/media/sekuron.mp4": "/Rubin_web_final/static/media/sekuron.4d0b2d4063f42154b782.mp4",
     "static/media/motion.mp4": "/Rubin_web_final/static/media/motion.a3cf0fde5f7e83c714e2.mp4",
-    "static/media/wideBgImg.png": "/Rubin_web_final/static/media/wideBgImg.843ba51d44820f8d55ba.png",
-    "static/media/bgImg.png": "/Rubin_web_final/static/media/bgImg.ffa3f380952fa747e146.png",
     "static/media/atelier1.png": "/Rubin_web_final/static/media/atelier1.5e54bc4828adf2ef0aa9.png",
     "static/media/atelier2.png": "/Rubin_web_final/static/media/atelier2.db686aa49bc0c597158c.png",
-    "static/media/wideFramePicture.svg": "/Rubin_web_final/static/media/wideFramePicture.b3c45079fb0cdcdb6a4e283db812e9ae.svg",
-    "static/media/tabletFramePicture.svg": "/Rubin_web_final/static/media/tabletFramePicture.d8a80fb9531e882fe7855c37bf2e93e8.svg",
-    "static/media/mobileFramePicture.svg": "/Rubin_web_final/static/media/mobileFramePicture.7242ae6d3ca45174780f4e86d28f5558.svg",
     "static/media/icoInsta.jpeg": "/Rubin_web_final/static/media/icoInsta.bbb41f39d0399b40538d.jpeg",
     "static/media/tape.svg": "/Rubin_web_final/static/media/tape.7636c79f6f072d6e7e9fd735c8e35959.svg",
     "static/media/icoClose.svg": "/Rubin_web_final/static/media/icoClose.89d4f0f54703fb30734c4bd4fb83c248.svg",
@@ -21,10 +16,10 @@
     "static/media/Play.svg": "/Rubin_web_final/static/media/Play.0ec53e3c705438b03a61302f2f1c632f.svg",
     "static/media/icoBurger.svg": "/Rubin_web_final/static/media/icoBurger.9eb7469d3041250851d06fe18b2c6353.svg",
     "main.aaa3614b.css.map": "/Rubin_web_final/static/css/main.aaa3614b.css.map",
-    "main.73aa6c55.js.map": "/Rubin_web_final/static/js/main.73aa6c55.js.map"
+    "main.d39022f7.js.map": "/Rubin_web_final/static/js/main.d39022f7.js.map"
   },
   "entrypoints": [
     "static/css/main.aaa3614b.css",
-    "static/js/main.73aa6c55.js"
+    "static/js/main.d39022f7.js"
   ]
 }
