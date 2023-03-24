@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { createUseStyles } from 'react-jss'
 
 import Content from '../../components/Content/Content'
+import DialogSuccess from '../../components/Dialog/DialogSuccess'
 
 const useStyle = createUseStyles({
 	header:{
@@ -24,7 +25,21 @@ const useStyle = createUseStyles({
 	},
 	submit:{
 		width: '200px',
-		height: '50px'
+		height: '50px',
+		fontSize: '16px',
+		backgroundColor: 'var(--main-bg-color-light)',
+		color: 'var(--main-text-color-dark)',
+		textTransform: 'uppercase',
+		fontWeight: 'bold',
+		border: 'none',
+		transitionDuration: '350ms',
+		cursor: 'pointer',
+		'&:hover': {
+			backgroundColor: 'var(--main-bg-color-dark)',
+			border: '1px solid var(--main-bg-color-light)',
+			color: 'var(--main-text-color-light)',
+			transitionDuration: '350ms'
+		}
 	}
 })
 
@@ -33,12 +48,15 @@ function Contact() {
 	const style = useStyle()
 
 	const [email, setEmail] = useState('');
+	const [successDialog, setSuccessDialog] = useState(false);
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		setSuccessDialog(true)
 	}
-	const handleChange = (event) => {
-		setEmail(event.target.value)
+
+	const handleDialogClose = () => {
+		setSuccessDialog(false)
 	}
 
   return (
@@ -48,11 +66,11 @@ function Contact() {
           <h2 className={style.header}>Contact</h2>
 
 		  <form onSubmit={handleSubmit} className={style.form}>
-			<input type="email" name="email" value={email} onChange={handleChange} className={style.mailInput} placeholder='Email*'  />
+			<input type="email" name="email" value={email} onChange={(event) => {setEmail(event.target.value)}} className={style.mailInput} placeholder='Email*'  />
 			<button type="submit" className={style.submit}>Send</button>
 		  </form>
-
         </div>
+		<DialogSuccess open={successDialog} onClose={handleDialogClose} />
     </Content>
 
   )
