@@ -2,13 +2,23 @@ import React from 'react'
 
 import Counter from '../Counter/Counter'
 import { createUseStyles } from 'react-jss'
+import { useMediaQuery } from 'react-responsive'
 
 const 
     borderStyle = '3px solid var(--main-bg-color-light)',
     borderSpace = '20px'
 
 const useStyle = createUseStyles({
-
+    '@keyframes pop':{
+        '0%': {opacity: 0},
+        '50%': {opacity: 1},
+        '100%': {opacity: 0},
+    },
+    animation:{
+        animationDuration: '2s',
+        animationName: '$pop',
+        animationIterationCount: 'infinite'
+    },
     overlay: {
         cursor: 'default',
         pointerEvents: 'none',
@@ -33,7 +43,11 @@ const useStyle = createUseStyles({
         padding: '20px',
         width: '150px',
         height: '100px',
-        position: 'absolute'
+        position: 'absolute',
+        '@media (max-width: 500px)':{
+            width: '80px',
+            height: '60px'
+        }
     },
 
     overlayText: {
@@ -90,9 +104,9 @@ function Frame() {
 
     const style = useStyle();
 
-    // const isMobile = useMediaQuery({query: '(max-width:500px)'});
-    // const isTablet = useMediaQuery({query: '(min-width:501px) and (max-width:900px)'});
-    // const isLaptop = useMediaQuery({query: '(min-width:901px)'});
+    const isMobile = useMediaQuery({query: '(max-width:500px)'});
+    const isTablet = useMediaQuery({query: '(min-width:501px) and (max-width:900px)'});
+    const isLaptop = useMediaQuery({query: '(min-width:901px)'});
 
     return (
         <>
@@ -101,7 +115,7 @@ function Frame() {
                     <div className={style.overlayHelper}>
                         <div className={`${style.overlayElement} ${style.topLeft}`}>
                         <span id="overlay-top-left-text" className={style.overlayText}>
-                            🔴 REC
+                            <span className={style.animation}>🔴</span> REC
                         </span>
                         </div>
                         <div className={`${style.overlayElement} ${style.topRight}`}>
@@ -116,7 +130,9 @@ function Frame() {
                         </div>
                         <div className={`${style.overlayElement} ${style.bottomRight}`}>
                         <span className={`${style.overlayText} ${style.bottomRightText}`}>
-                            1280x720
+                            {isLaptop && '1920x1080'}
+                            {isTablet && '1280x720'}
+                            {isMobile && '640x360'}
                         </span>
                         </div>
                     </div>

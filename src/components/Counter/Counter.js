@@ -1,17 +1,17 @@
 import React, {useState, useEffect} from 'react'
 
 function Counter() {
-    const [timeLeft, setTimeLeft] = useState(40.98 * 1000); //milliseconds
+    const [timeLeft, setTimeLeft] = useState(41.00 * 1000); //milliseconds
     const [formattedTimeLeft, setFormattedTimeLeft] = useState('');
 
     useEffect(() => {
         if(timeLeft <= 0) {
-            setTimeLeft(40.98 * 1000)
+            setTimeLeft(41.00 * 1000)
         }
 
         const timerId = setTimeout(() => {
-            setTimeLeft(timeLeft - 20);
-        }, 16)
+            setTimeLeft(timeLeft - 1000);
+        }, 1000)
 
 
         return () => clearTimeout(timerId);
@@ -20,12 +20,12 @@ function Counter() {
 
     useEffect(() => {
         const seconds = Math.floor((timeLeft % 60000) / 1000);
-        const milliseconds = timeLeft % 1000;
+        // const milliseconds = timeLeft % 1000;
 
         const formattedSeconds = String(seconds).padStart(2, '0');
-        const formattedMilliseconds = String(milliseconds).padStart(3, '0');
+        // const formattedMilliseconds = String(milliseconds).padStart(3, '0');
 
-        setFormattedTimeLeft(`00:${formattedSeconds}:${formattedMilliseconds}`);
+        setFormattedTimeLeft(`00:${formattedSeconds}`);
 
     }, [timeLeft])
 

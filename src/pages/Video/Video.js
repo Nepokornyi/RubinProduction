@@ -44,7 +44,7 @@ const useStyle = createUseStyles({
   },
   background: {
     width: '100%',
-    height: '92vh',
+    height: '95vh',
     objectFit: 'cover',
     objectPosition: 'center',
   }
