@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 import Content from '../../components/Content/Content'
 import Header from '../../components/Header/Header'
@@ -6,7 +6,6 @@ import Frame from '../../components/Frame/Frame'
 import { createUseStyles } from 'react-jss'
 
 import VideoWide from '../../assets/video/motion.mp4'
-// import VideoVertical from '../../assets/video/instagram.mp4'
 
 
 const useStyle = createUseStyles({

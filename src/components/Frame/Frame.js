@@ -120,7 +120,7 @@ function Frame() {
                         </div>
                         <div className={`${style.overlayElement} ${style.topRight}`}>
                         <span id="overlay-top-right-text" className={style.overlayText}>
-                            <Counter />
+                            <div id="counter"></div>
                         </span>
                         </div>
                         <div className={`${style.overlayElement} ${style.bottomLeft}`}>

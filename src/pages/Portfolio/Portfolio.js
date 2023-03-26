@@ -10,7 +10,8 @@ const useStyle = createUseStyles({
     height: '100%',
     position: 'relative',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 })
 

@@ -23,3 +23,30 @@ body{
         display: flex;
     }
 }
+
+
+
+/* Counter */
+@property --num {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+}
+
+#counter{
+    animation: counter 42s infinite;
+    animation-timing-function: linear;
+    counter-reset: num var(--num);
+}
+#counter::after {
+    content: counter(num);
+}
+
+@keyframes counter {
+    0% {
+      --num: 0;
+    }
+    100% {
+        --num: 42;
+    }
+}
