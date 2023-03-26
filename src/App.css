@@ -34,7 +34,7 @@ body{
 }
 
 #counter{
-    animation: counter 42s infinite;
+    animation: counter 41s infinite;
     animation-timing-function: linear;
     counter-reset: num var(--num);
 }
@@ -44,9 +44,9 @@ body{
 
 @keyframes counter {
     0% {
-      --num: 0;
+      --num: 1;
     }
     100% {
-        --num: 42;
+        --num: 41;
     }
 }

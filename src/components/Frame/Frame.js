@@ -55,6 +55,11 @@ const useStyle = createUseStyles({
         color: 'white',
     },
 
+    counter:{
+        display: 'flex',
+        justifyContent: 'flex-end'
+    },
+
     topLeft: {
         borderLeft: borderStyle,
         borderTop: borderStyle,
@@ -119,8 +124,8 @@ function Frame() {
                         </span>
                         </div>
                         <div className={`${style.overlayElement} ${style.topRight}`}>
-                        <span id="overlay-top-right-text" className={style.overlayText}>
-                            <div id="counter"></div>
+                        <span id="overlay-top-right-text" className={`${style.overlayText} ${style.counter}`}>
+                            00:<div id="counter"></div>
                         </span>
                         </div>
                         <div className={`${style.overlayElement} ${style.bottomLeft}`}>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 import { createUseStyles } from 'react-jss'
 
 import Content from '../../components/Content/Content'
@@ -58,11 +58,15 @@ function Contact() {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		console.log(email)
 
-		if((email.trim() !== '' && !emailValidator(email)) || email === ''){
-            setError('Invalid email address');
-        }
+		if(email.length === 0){
+			setError('Please fill your email')
+		}
+
+		else if(email.trim() !== '' && !emailValidator(email)){
+			setError('Invalid email address format');
+		}
+
         else{
             setError('');
 			setSuccessDialog(true)

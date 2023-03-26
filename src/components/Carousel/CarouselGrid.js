@@ -78,7 +78,7 @@ const useStyle = createUseStyles({
     },
     overlay:{
         position: 'fixed',
-        background: 'rgba(0, 0, 0, 0.9)',
+        background: 'rgba(0, 0, 0, 1)',
         top: 0,
         right: 0,
         bottom: 0,
