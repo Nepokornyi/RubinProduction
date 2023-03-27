@@ -57,7 +57,12 @@ const useStyles = createUseStyles({
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        margin: '0px'
+        margin: '0px',
+        transitionDuration: '350ms',
+        '&:hover':{
+            color: 'var(--hover-text-color)',
+            transitionDuration: '350ms'
+        }
     },
     sideMenu: {
         position: 'absolute',

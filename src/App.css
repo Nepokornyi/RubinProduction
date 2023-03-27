@@ -44,7 +44,7 @@ body{
 
 @keyframes counter {
     0% {
-      --num: 1;
+      --num: 0;
     }
     100% {
         --num: 41;

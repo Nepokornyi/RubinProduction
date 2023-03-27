@@ -113,7 +113,7 @@ const useStyle = createUseStyles({
         width: '80vw',
         height: '95vh',
         border: 'none'
-      }
+    }
 })
 
 function CarouselGrid() {
@@ -216,7 +216,7 @@ function CarouselGrid() {
             </video>
             <p>{props.content}</p>
             <div className={style.gridOverlay}>
-            <button onClick={() => handleOpenOverlay(props.link)}>view more</button>
+                <button onClick={() => handleOpenOverlay(props.link)}>view more</button>
             </div>
         </div>
     </Carousel.Item>

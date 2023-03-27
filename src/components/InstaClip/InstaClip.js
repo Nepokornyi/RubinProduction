@@ -117,7 +117,7 @@ const useStyle = createUseStyles({
     },
     overlay:{
         position: 'fixed',
-        background: 'rgba(0, 0, 0, 0.9)',
+        background: 'rgba(0, 0, 0, 1)',
         top: 0,
         right: 0,
         bottom: 0,
@@ -132,6 +132,27 @@ const useStyle = createUseStyles({
             objectFit: 'contain'
 
         }
+    },
+    closeButton: {
+        position: 'absolute',
+        top: '20px',
+        right: '20px',
+        width: '100px',
+        height: '30px',
+        background: 'var(--main-bg-color-light)',
+        color: 'var(--main-text-color-dark)',
+        border: '0',
+        textTransform: 'uppercase',
+        letterSpacing: '2px',
+        cursor: 'pointer',
+        transitionDuration: '350ms',
+        zIndex: '6',
+        '&:hover': {
+            background: 'var(--main-bg-color-dark)',
+            color: 'var(--main-text-color-light)',
+            border: '1px solid var(--main-bg-color-light)',
+            transitionDuration: '350ms'
+        }
     }
 })
 
@@ -141,7 +162,7 @@ function InstaClip() {
 
     const [overlay, setOverlay] = useState(false)
 
-    const handleRedirectReel = () => { window.location.replace('https://www.instagram.com/reel/Cln7MtHgplA/') }
+    // const handleRedirectReel = () => { window.location.replace('https://www.instagram.com/reel/Cln7MtHgplA/') }
     const handleRedirectProfile = () => { window.location.replace('https://www.instagram.com/who1snick/') }
     const handleRedirectCategory = () => { window.location.replace('https://www.instagram.com/reels/audio/830136408199485/') }
     const openVideo = () => { setOverlay(true) }
@@ -175,7 +196,8 @@ function InstaClip() {
 
         {overlay &&
             <div className={style.overlay} onClick={closeVideo}>
-                <video autoPlay controls>
+                <button className={style.closeButton} onClick={closeVideo} >close X</button>
+                <video id="instagram-video" autoPlay controls>
                     <source src={Video} />
                 </video>
                 <RemoveScrollBar />
