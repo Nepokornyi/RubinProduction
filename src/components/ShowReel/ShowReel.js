@@ -8,6 +8,7 @@ import '@splidejs/react-splide/css'
 
 import Atelier1 from '../../assets/img/atelier1.png'
 import Atelier2 from '../../assets/img/atelier2.png'
+import Overlay from '../Overlay/Overlay'
 
 const useStyle = createUseStyles({
 	slider:{
@@ -78,27 +79,6 @@ const useStyle = createUseStyles({
 		'&:hover > button':{
 			opacity: 1
 		}
-    },
-	closeButton: {
-        position: 'absolute',
-        top: '20px',
-        right: '20px',
-        width: '100px',
-        height: '30px',
-        background: 'var(--main-bg-color-light)',
-        color: 'var(--main-text-color-dark)',
-        border: '0',
-        textTransform: 'uppercase',
-        letterSpacing: '2px',
-        cursor: 'pointer',
-        transitionDuration: '350ms',
-        zIndex: '6',
-        '&:hover': {
-            background: 'var(--main-bg-color-dark)',
-            color: 'var(--main-text-color-light)',
-            border: '1px solid var(--main-bg-color-light)',
-            transitionDuration: '350ms'
-        }
     },
     vimeo: {
         width: '80vw',
@@ -174,13 +154,9 @@ function ShowReel() {
 			</Splide>
 		</section>
         {overlay &&
-            <div className={style.overlay} onClick={handleCloseOverlay}>
-                <div>
-					<button className={style.closeButton} onClick={handleCloseOverlay} >close X</button>
+                <Overlay onClose={handleCloseOverlay}>
 					<img src={image} className={style.vimeo} alt="" />
-                </div>
-                <RemoveScrollBar />
-            </div>  
+                </Overlay>
         }
 	</>
 	)

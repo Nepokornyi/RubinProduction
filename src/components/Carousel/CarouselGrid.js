@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import Carousel from 'react-grid-carousel'
 
 import { createUseStyles } from 'react-jss'
-import { RemoveScrollBar } from 'react-remove-scroll-bar'
+
+import Overlay from '../Overlay/Overlay'
 
 import VideoCover from '../../assets/video/cover.mp4'
 import VideoMotion from '../../assets/video/motion.mp4'
@@ -75,39 +76,6 @@ const useStyle = createUseStyles({
             transform: 'scale(1.05)',
             transitionDuration: '350ms'
           }
-    },
-    overlay:{
-        position: 'fixed',
-        background: 'rgba(0, 0, 0, 1)',
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-        display: 'grid',
-        alignItems: 'center',
-        justifyItems: 'center',
-        zIndex: 6,
-    },
-    closeButton: {
-        position: 'absolute',
-        top: '20px',
-        right: '20px',
-        width: '100px',
-        height: '30px',
-        background: 'var(--main-bg-color-light)',
-        color: 'var(--main-text-color-dark)',
-        border: '0',
-        textTransform: 'uppercase',
-        letterSpacing: '2px',
-        cursor: 'pointer',
-        transitionDuration: '350ms',
-        zIndex: '6',
-        '&:hover': {
-            background: 'var(--main-bg-color-dark)',
-            color: 'var(--main-text-color-light)',
-            border: '1px solid var(--main-bg-color-light)',
-            transitionDuration: '350ms'
-        }
     },
     vimeo: {
         width: '80vw',
@@ -239,13 +207,9 @@ function CarouselGrid() {
             {carouselItems}
         </Carousel>
         {overlay &&
-            <div className={style.overlay} onClick={handleCloseOverlay}>
-                <div>
-                <button className={style.closeButton} onClick={handleCloseOverlay} >close X</button>
+            <Overlay onClose={handleCloseOverlay}>
                 <iframe title="Portfolio Clip" src={videoLink} className={style.vimeo} allow="autoplay; loop; fullscreen; picture-in-picture" allowFullScreen />
-                </div>
-                <RemoveScrollBar />
-            </div>  
+            </Overlay>
         }
     </>
   )
