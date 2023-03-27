@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 // import { useEffect } from 'react'
 import { createUseStyles } from 'react-jss'
+import emailjs from '@emailjs/browser'
 
 import Content from '../../components/Content/Content'
 import DialogSuccess from '../../components/Dialog/DialogSuccess'
@@ -53,6 +54,8 @@ function Contact() {
     const [error, setError] = useState('');
 	const [successDialog, setSuccessDialog] = useState(false);
 
+	const form = useRef();
+
 	const style = useStyle()
 
 	const handleSubmit = (event) => {
@@ -69,7 +72,19 @@ function Contact() {
 
         else{
             setError('');
-			setSuccessDialog(true)
+			setSuccessDialog(true);
+
+			emailjs.sendForm(
+				'service_oel6o25',
+				'template_13uaodo',
+				form.current,
+				'KJ0DMbdu2V3mz40mc'
+			)
+			.then((result) =>{
+				setEmail('');
+			}, (error) => {
+				alert(error);
+			});
         }
 	}
 
@@ -83,7 +98,7 @@ function Contact() {
 
         <div id="Contact">
 			<h2 className={style.header}>Contact</h2>
-			<form onSubmit={handleSubmit} noValidate className={style.form}>
+			<form ref={form} onSubmit={handleSubmit} noValidate className={style.form}>
 
 				<div className={style}>
 					<input type="email" name="email" value={email} onChange={(event) => {setEmail(event.target.value.trim())}} className={style.mailInput} placeholder='Email*' required />
