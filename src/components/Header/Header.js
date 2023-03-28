@@ -3,6 +3,8 @@ import { HashLink } from 'react-router-hash-link';
 
 import { createUseStyles } from 'react-jss';
 import { useMediaQuery } from 'react-responsive';
+import { motion } from 'framer-motion'
+import { container, item } from '../../libs/animation';
 
 import icoHamburger from '../../assets/img/icoBurger.svg'
 import icoClose from '../../assets/img/icoClose.svg'
@@ -111,31 +113,79 @@ function Header() {
   }
   return (
     <>
-        <nav className={style.header}>
+        <motion.nav 
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration:1, ease: 'easeOut'}}
+            className={style.header}
+        >
         {!isMobile &&
-            <ul className={style.list}>
-                <HashLink smooth to="/#About" scroll={el => scrollWithOffset(el)}><li className={style.listItem}>About</li></HashLink>
-                <HashLink smooth to="/#Portfolio" scroll={el => scrollWithOffset(el)}><li className={style.listItem}>Portfolio</li></HashLink>
-                <HashLink smooth to="/#Atelier" scroll={el => scrollWithOffset(el)}><li className={style.listItem}>Atelier</li></HashLink>
-            </ul>
+            <motion.ul 
+                className={style.list} 
+                variants={container}
+                initial='hidden'
+                animate='show'
+            >
+                <HashLink 
+                    smooth to="/#About" 
+                    scroll={el => scrollWithOffset(el)}
+                ><motion.li variants={item} className={style.listItem}>About</motion.li>
+                </HashLink>
+                <HashLink 
+                    smooth to="/#Portfolio" 
+                    scroll={el => scrollWithOffset(el)}
+                ><motion.li variants={item} className={style.listItem}>Portfolio</motion.li>
+                </HashLink>
+                <HashLink 
+                    smooth to="/#Atelier" 
+                    scroll={el => scrollWithOffset(el)}
+                    ><motion.li variants={item} className={style.listItem}>Atelier</motion.li>
+                </HashLink>
+            </motion.ul>
         }
-        {isTablet && <HashLink to="/#" scroll={el => scrollWithOffset(el)}><h2 className={style.menuHeader}>Nikita Rubin</h2></HashLink>}
+        {isTablet && 
+            <HashLink 
+                to="/#" 
+                scroll={el => scrollWithOffset(el)}
+            ><motion.h2 
+                initial={{opacity: 0}} 
+                animate={{opacity: 1}} 
+                transition={{duration:1.5, ease: 'backIn'}} 
+                className={style.menuHeader}
+                >Nikita Rubin</motion.h2>
+            </HashLink>
+        }
         {isMobile &&
             <div className={style.mobileHeader}>
                 {sideMenu === false ? <img src={icoHamburger} onClick={handleOpenMenu} alt="" /> : <img src={icoClose} onClick={handleCloseMenu} alt="" />}
                 {sideMenu &&
                     <div className={style.sideMenu}>
                         <ul className={style.dropDownList}>
-                        <HashLink to="/#About" scroll={el => scrollWithOffset(el)}><li className={style.listItem} onClick={handleRedirect}>About</li></HashLink>
-                        <HashLink to="/#Portfolio" scroll={el => scrollWithOffset(el)}><li className={style.listItem} onClick={handleRedirect}>Portfolio</li></HashLink>
-                        <HashLink to="/#Atelier" scroll={el => scrollWithOffset(el)}><li className={style.listItem} onClick={handleRedirect}>Atelier</li></HashLink>
+                        <HashLink 
+                            to="/#About" 
+                            scroll={el => scrollWithOffset(el)}
+                        >
+                            <li className={style.listItem} onClick={handleRedirect}>About</li>
+                        </HashLink>
+                        <HashLink 
+                            to="/#Portfolio" 
+                            scroll={el => scrollWithOffset(el)}
+                        >
+                            <li className={style.listItem} onClick={handleRedirect}>Portfolio</li>
+                        </HashLink>
+                        <HashLink 
+                            to="/#Atelier" 
+                            scroll={el => scrollWithOffset(el)}
+                        >   
+                            <li className={style.listItem} onClick={handleRedirect}>Atelier</li>
+                        </HashLink>
                         </ul>
                     </div>
                 }
             </div>
         }
-            <HashLink to="/#Contact" scroll={el => scrollWithOffset(el)}><button className={style.contact}>Contact</button></HashLink>
-        </nav>
+            <HashLink to="/#Contact" scroll={el => scrollWithOffset(el)}><motion.button initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration:2, ease: 'backIn'}} className={style.contact}>Contact</motion.button></HashLink>
+        </motion.nav>
     </>
   )
 }

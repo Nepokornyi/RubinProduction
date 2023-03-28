@@ -4,6 +4,8 @@ import Content from '../../components/Content/Content'
 import Header from '../../components/Header/Header'
 import Frame from '../../components/Frame/Frame'
 import { createUseStyles } from 'react-jss'
+import { motion } from 'framer-motion'
+import { container, item } from '../../libs/animation'
 
 import VideoWide from '../../assets/video/motion.mp4'
 
@@ -23,7 +25,26 @@ const useStyle = createUseStyles({
     left: '50%',
     transform: 'translate(-50%, -50%)',
     zIndex: 1,
-    opacity: 0.6
+  },
+  headerText:{
+    margin:'0px', 
+    fontSize: '54px',
+    '@media(max-width: 900px)':{
+      fontSize: '41px',
+    },
+    '@media(max-width: 600px)':{
+      fontSize: '26px',
+    }
+  },
+  subheaderText:{
+    margin:'0px', 
+    fontSize: '42px',
+    '@media(max-width: 900px)':{
+      fontSize: '30px',
+    },
+    '@media(max-width: 600px)':{
+      fontSize: '21px',
+    }
   },
   frameContainer: {
     width: '95vw',
@@ -43,7 +64,7 @@ const useStyle = createUseStyles({
   },
   background: {
     width: '100%',
-    height: '95vh',
+    height: '100vh',
     objectFit: 'cover',
     objectPosition: 'center',
   }
@@ -57,20 +78,26 @@ function Video() {
 
   return (
     <>
-      <Content>
+        <Content>
         <Header />
-        <div id="Video" className={style.videoContainer}>
-          <div className={style.header}>
-            <h1 style={{margin:'0px', fontSize: '54px'}}>NIKITA RUBIN</h1>
-            <h1 style={{margin:'0px', fontSize: '42px'}}>Content Creator</h1>
-          </div>
+        <motion.div 
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration:3, ease: 'easeOut'}}
+            id="Video" 
+            className={style.videoContainer}
+        >
+            <div className={style.header}>
+                <h1 className={style.headerText}>NIKITA RUBIN</h1>
+                <h1 className={style.subheaderText}>Content Creator</h1>
+            </div>
 
-          <video autoPlay loop muted className={style.background}>
-            <source src={VideoWide} type="video/mp4" />
-          </video>
-          <Frame />
-        </div>
-      </Content>
+            <video autoPlay loop muted className={style.background}>
+                <source src={VideoWide} type="video/mp4" />
+            </video>
+            <Frame />
+        </motion.div>
+        </Content>
     </>
   )
 }
