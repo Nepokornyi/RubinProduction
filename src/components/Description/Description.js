@@ -26,11 +26,11 @@ function Description({children}) {
 
     const style = useStyle()
 
-  return (
-    <div className={style.content}>
-        {children}
-    </div>
-  )
+    return (
+        <div className={style.content}>
+            {children}
+        </div>
+    )
 }
 
 export default Description

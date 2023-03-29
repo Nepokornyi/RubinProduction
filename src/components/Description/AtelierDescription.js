@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { createUseStyles } from 'react-jss'
+import { motion } from 'framer-motion'
 
 const useStyle = createUseStyles({
     description:{
@@ -36,18 +37,22 @@ function AtelierDescription() {
 
     const style = useStyle()
 
-  return (
-    <div className={style.description}>
-        <h2 className={style.caption}>ATELIER FOR RENT</h2>
-        <div>
-          <h4 className={style.subCaption}>Perfect for subject content photography</h4>
-          <p className={style.text}>Lorem ipsum dolor sit amet consectetur. 
-            Nunc in sit fermentum ullamcorper interdum dis sem vulputate libero. 
-            Ullamcorper leo id et in luctus eget. At convallis vitae felis turpis vulputate. </p>
-        </div>
+    return (
+        <motion.div 
+            className={style.description}
+            initial={{opacity: 0}}
+            whileInView={{opacity: 1}}
+            transition={{duration:1, ease: 'easeInOut'}}>
+            <h2 className={style.caption}>ATELIER FOR RENT</h2>
+            <div>
+                <h4 className={style.subCaption}>Perfect for subject content photography</h4>
+                <p className={style.text}>Lorem ipsum dolor sit amet consectetur. 
+                Nunc in sit fermentum ullamcorper interdum dis sem vulputate libero. 
+                Ullamcorper leo id et in luctus eget. At convallis vitae felis turpis vulputate. </p>
+            </div>
 
-    </div>
-  )
+        </motion.div>
+    )
 }
 
 export default AtelierDescription

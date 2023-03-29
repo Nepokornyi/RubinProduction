@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react'
-// import { useEffect } from 'react'
 import { createUseStyles } from 'react-jss'
+import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 
 import Content from '../../components/Content/Content'
@@ -96,7 +96,11 @@ function Contact() {
   return (
     <Content>
 
-        <div id="Contact">
+        <motion.div 
+			id="Contact"
+			initial={{opacity: 0}}
+            whileInView={{opacity: 1}}
+            transition={{duration:1, ease: 'easeInOut'}}>
 			<h2 className={style.header}>Contact</h2>
 			<form ref={form} onSubmit={handleSubmit} noValidate className={style.form}>
 
@@ -107,7 +111,7 @@ function Contact() {
 
 				<button type="submit" className={style.submit}>Send</button>
 		  </form>
-        </div>
+        </motion.div>
 
 		<DialogSuccess open={successDialog} onClose={handleDialogClose} />
 

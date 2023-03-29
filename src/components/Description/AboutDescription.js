@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { createUseStyles } from 'react-jss'
+import { motion } from 'framer-motion'
 
 const useStyle = createUseStyles({
     header: {
@@ -32,7 +33,11 @@ function AboutDescription() {
     const style = useStyle()
 
   return (
-    <div className={style.container}>
+    <motion.div 
+        className={style.container}
+        initial={{opacity: 0}}
+        whileInView={{opacity: 1}}
+        transition={{duration:1, ease: 'easeInOut'}}>
         <h2 className={style.header}>Hi, I'm Nick</h2>
         <p className={style.text}>
             I'm a videographer <br />
@@ -44,7 +49,7 @@ function AboutDescription() {
             <li>Languages: EN, CZ, RU</li>
             <li>Contact: xxxxxxxx</li>
         </ul>
-    </div>
+    </motion.div>
   )
 }
 
