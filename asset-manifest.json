@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Rubin_web_final/static/css/main.03fede69.css",
-    "main.js": "/Rubin_web_final/static/js/main.e7c11c62.js",
+    "main.css": "/Rubin_web_final/static/css/main.0337ba07.css",
+    "main.js": "/Rubin_web_final/static/js/main.964274b5.js",
     "static/media/instagram.mp4": "/Rubin_web_final/static/media/instagram.963c2c8f93af7af266d5.mp4",
     "static/media/cover.mp4": "/Rubin_web_final/static/media/cover.80ab5734e90d0fe5483d.mp4",
     "static/media/woman.mp4": "/Rubin_web_final/static/media/woman.f51af3d5116a2fa6d821.mp4",
@@ -15,11 +15,11 @@
     "index.html": "/Rubin_web_final/index.html",
     "static/media/Play.svg": "/Rubin_web_final/static/media/Play.0ec53e3c705438b03a61302f2f1c632f.svg",
     "static/media/icoBurger.svg": "/Rubin_web_final/static/media/icoBurger.9eb7469d3041250851d06fe18b2c6353.svg",
-    "main.03fede69.css.map": "/Rubin_web_final/static/css/main.03fede69.css.map",
-    "main.e7c11c62.js.map": "/Rubin_web_final/static/js/main.e7c11c62.js.map"
+    "main.0337ba07.css.map": "/Rubin_web_final/static/css/main.0337ba07.css.map",
+    "main.964274b5.js.map": "/Rubin_web_final/static/js/main.964274b5.js.map"
   },
   "entrypoints": [
-    "static/css/main.03fede69.css",
-    "static/js/main.e7c11c62.js"
+    "static/css/main.0337ba07.css",
+    "static/js/main.964274b5.js"
   ]
 }
