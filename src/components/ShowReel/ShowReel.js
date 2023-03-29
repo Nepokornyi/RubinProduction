@@ -166,11 +166,13 @@ function ShowReel() {
 					perPage: 2,
 					direction: 'ttb',
 					height: '80vh',
-
-					arrows: false,
+					autoplay: true,
+					interval: 2750,
+					speed: 2000,
+					arrows: true,
 					gap: '25px',
 					pagination: false,
-					speed: 1500,
+					drag: false
 				}}
 			>
 				{content}
