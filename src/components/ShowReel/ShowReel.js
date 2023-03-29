@@ -2,10 +2,9 @@ import React, {useState} from 'react'
 
 import { createUseStyles } from 'react-jss'
 import { motion } from 'framer-motion'
-import { RemoveScrollBar } from 'react-remove-scroll-bar'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 
-import '@splidejs/react-splide/css'
+import '@splidejs/splide/css/sea-green';
 
 import Atelier1 from '../../assets/img/atelier1.png'
 import Atelier2 from '../../assets/img/atelier2.png'
@@ -17,7 +16,9 @@ const useStyle = createUseStyles({
 		width: '80%',
 		height: '80%',
 		position: 'relative',
-		overflow: 'hidden'
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center'
 	},
 	slide:{
 		display: 'flex', 

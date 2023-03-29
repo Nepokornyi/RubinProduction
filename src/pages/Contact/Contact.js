@@ -8,9 +8,25 @@ import DialogSuccess from '../../components/Dialog/DialogSuccess'
 import { emailValidator } from '../../libs/validators'
 
 const useStyle = createUseStyles({
+	formContainer:{
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
 	header:{
 		fontSize: '64px',
-		textAlign: 'center'
+		textAlign: 'center',
+		position: 'relative',
+		'&:after':{
+			content: "'X'",
+			position: 'absolute',
+			top: '5px',
+			left: '70px',
+			rotate: '-15deg',
+			color: 'red',
+			fontSize: '42px',
+		},
 	},
 	form:{
 		minWidth: '80vw',
@@ -98,6 +114,7 @@ function Contact() {
 
         <motion.div 
 			id="Contact"
+			className={style.formContainer}
 			initial={{opacity: 0}}
             whileInView={{opacity: 1}}
             transition={{duration:1, ease: 'easeInOut'}}>

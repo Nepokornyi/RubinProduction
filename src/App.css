@@ -75,3 +75,17 @@ body{
         --millisecond: 100;
     }
 }
+
+/* Splide Arrows */
+
+.splide{
+    padding: 50px 0;
+}
+
+.splide__arrow svg{
+    fill: var(--main-text-color-light)
+}
+
+.splide__arrow:hover:not(:disabled) svg {
+    fill: var(--secondary-text-color);
+}
