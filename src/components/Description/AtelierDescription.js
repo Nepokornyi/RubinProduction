@@ -43,14 +43,14 @@ const useStyle = createUseStyles({
 		  },
     },
     subCaption:{
-      width: '250px',
+      width: '255px',
       fontSize: '22px',
       '@media (max-width:900px)':{
         fontSize: '18px'
       }
     },
     text: {
-        width: '250px',
+        width: '260px',
         fontSize: '22px',
         '@media (max-width:900px)': {
             fontSize: '18px'
