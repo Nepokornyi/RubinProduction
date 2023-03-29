@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
 import { createUseStyles } from 'react-jss'
+import { motion } from 'framer-motion'
 import { RemoveScrollBar } from 'react-remove-scroll-bar'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 
@@ -13,17 +14,28 @@ import Overlay from '../Overlay/Overlay'
 const useStyle = createUseStyles({
 	slider:{
 		color: 'white',
-		width: '90%',
-		height: '90%',
+		width: '80%',
+		height: '80%',
 		position: 'relative',
 		overflow: 'hidden'
 	},
+	slide:{
+		display: 'flex', 
+		justifyContent: 'center',
+		'& > p':{
+            position: 'absolute',
+            top: '20px',
+            left: '50%',
+            transform: 'translate(-50%)'
+		}
+	},
 	image:{
-		width: '90%',
-		height: '90%',
-		objectFit: 'contain',
+		width: '100%',
+		height: '100%',
+		objectFit: 'cover',
 		cursor: 'pointer',
-		overflow: 'hidden'
+		overflow: 'hidden',
+		opacity: 0.5
 	},
 	container:{
 		position: 'relative'
@@ -91,22 +103,28 @@ function ShowReel() {
 
 	const items = [
 		{   id: 1, 
-			link: Atelier1
+			link: Atelier1,
+			content: 'Hello Content'
 		},
 		{   id: 2, 
-			link: Atelier1
+			link: Atelier1,
+			content: 'Bye Content'
 		},
 		{   id: 3, 
-			link: Atelier2
+			link: Atelier2,
+			content: 'Content ?'
 		},
 		{   id: 4, 
-			link: Atelier1
+			link: Atelier1,
+			content: 'Content Hello'
 		},
 		{   id: 5, 
-			link: Atelier2
+			link: Atelier2,
+			content: 'Content Bye'
 		},
 		{   id: 6, 
-			link: Atelier2
+			link: Atelier2,
+			content: 'Content!'
 		},
 	]
 
@@ -125,8 +143,9 @@ function ShowReel() {
 
 	const content = items.map(item => {
 		return(
-			<SplideSlide key={item.id} style={{display: 'flex', justifyContent: 'center'}}>
+			<SplideSlide key={item.id} className={style.slide}>
 				<img src={item.link} alt="" className={style.image}  />
+				<p>{item.content}</p>
 				<div className={style.gridOverlay} onClick={() => handleOpenOverlay(item.link)}>
 					<button onClick={() => handleOpenOverlay(item.link)}>view more</button>
 				</div>
@@ -136,27 +155,31 @@ function ShowReel() {
 
 	return (
 	<>
-		<section className={style.slider}>
+		<motion.section 
+			className={style.slider}
+			initial={{opacity: 0}}
+            whileInView={{opacity: 1}}
+            transition={{duration:1, ease: 'easeInOut'}}>
 			<Splide
 				options={{
 					type: 'loop',
 					perPage: 2,
 					direction: 'ttb',
-					height: '100vh',
-					autoplay: true,
+					height: '80vh',
+
 					arrows: false,
+					gap: '25px',
 					pagination: false,
 					speed: 1500,
-					lazyLoad: true,
 				}}
 			>
 				{content}
 			</Splide>
-		</section>
+		</motion.section>
         {overlay &&
-                <Overlay onClose={handleCloseOverlay}>
-					<img src={image} className={style.vimeo} alt="" />
-                </Overlay>
+			<Overlay onClose={handleCloseOverlay}>
+				<img src={image} className={style.vimeo} onClick={e => e.stopPropagation()} alt="" />
+			</Overlay>
         }
 	</>
 	)

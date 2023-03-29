@@ -2,10 +2,13 @@
 import React, { useState } from 'react'
 
 import { createUseStyles } from 'react-jss'
+import { motion } from 'framer-motion'
 
 import Overlay from '../Overlay/Overlay'
+import { DefaultPlayer as Video} from 'react-html5video'
+import 'react-html5video/dist/styles.css';
 
-import Video from '../../assets/video/instagram.mp4'
+import instagramVideo from '../../assets/video/instagram.mp4'
 import IcoInsta from '../../assets/img/icoInsta.jpeg'
 import PlayButton from '../../assets/img/Play.svg'
 
@@ -117,6 +120,11 @@ const useStyle = createUseStyles({
         height: '100%',
         objectFit: 'scale-down',
     },
+    overlayVideo: {
+        width: 'auto',
+        height: '90vh',
+        objectFit: 'contain'
+    }
 })
 
 function InstaClip() {
@@ -132,7 +140,11 @@ function InstaClip() {
     const closeVideo = () => { setOverlay(false) }
 
   return (
-    <div className={style.videoContainer}>
+    <motion.div 
+        className={style.videoContainer}
+        initial={{opacity: 0}}
+        whileInView={{opacity: 1}}
+        transition={{duration:1, ease: 'easeInOut'}}>
         <div className={style.instagramContainer}>
 
             <div className={style.instagramHeader}>
@@ -149,8 +161,8 @@ function InstaClip() {
             <span className={style.hoverSpan} onClick={handleRedirectProfile} >View profile</span>
                 <div className={style.playButton} onClick={openVideo}></div>
                 <video className={style.video} loop={true} playsInline autoPlay muted onClick={openVideo}>
-                    <source src={Video} alt="Instagram Video" type="video/mp4" />
-                    <source src={Video} alt="Instagram Video" type="video/mp4" />
+                    <source src={instagramVideo} alt="Instagram Video" type="video/mp4" />
+                    <source src={instagramVideo} alt="Instagram Video" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -159,13 +171,16 @@ function InstaClip() {
 
         {overlay &&
             <Overlay onClose={closeVideo}>
-                <video id="instagram-video" autoPlay controls>
-                    <source src={Video} />
-                </video>
+                <div onClick={e => e.stopPropagation()}>
+                    <Video className={style.overlayVideo} id="instagram-video" autoPlay
+                        controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>
+                        <source src={instagramVideo} />
+                    </Video>
+                </div>
             </Overlay>
         }
 
-    </div>
+    </motion.div>
   )
 }
 

@@ -48,6 +48,7 @@
     "@emailjs/browser": "^3.10.0",
     "@splidejs/react-splide": "^0.7.12",
     "framer-motion": "^10.9.2",
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "react-html5video": "^2.5.1"
   }
 }
