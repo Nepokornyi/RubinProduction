@@ -71,9 +71,7 @@ function AtelierDescription() {
             <h2 className={style.caption}>ATELIER <br /> FOR RENT</h2>
             <div>
                 <h4 className={style.subCaption}>Perfect for subject content photography</h4>
-                <p className={style.text}>Lorem ipsum dolor sit amet consectetur. 
-                Nunc in sit fermentum ullamcorper interdum dis sem vulputate libero. 
-                Ullamcorper leo id et in luctus eget. At convallis vitae felis turpis vulputate. </p>
+                <p className={style.text}>Lorem, ipsum dolor amet consectetur adipisicing elit. Iste, earum dolores! Ullam eligendi velit at, iusto expedita libero fugit aliquam, eos tempore voluptatum ex in tempora nulla amet cum iure! </p>
             </div>
 
         </motion.div>
