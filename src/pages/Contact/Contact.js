@@ -12,7 +12,6 @@ const useStyle = createUseStyles({
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		justifyContent: 'center'
 	},
 	header:{
 		fontSize: '64px',
@@ -30,11 +29,10 @@ const useStyle = createUseStyles({
 	},
 	form:{
 		minWidth: '80vw',
-		minHeight: '40vh',
+		minHeight: '20vh',
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		justifyContent: 'center',
 		gap: '35px'
 	},
 	mailInput:{

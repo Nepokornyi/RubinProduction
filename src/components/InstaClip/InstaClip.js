@@ -5,8 +5,10 @@ import { createUseStyles } from 'react-jss'
 import { motion } from 'framer-motion'
 
 import Overlay from '../Overlay/Overlay'
+import TextMotion from '../TextMotion/TextMotion'
 import { DefaultPlayer as Video} from 'react-html5video'
 import 'react-html5video/dist/styles.css';
+import { LazyVideo, LazyImage } from 'react-lazy-media'
 
 import instagramVideo from '../../assets/video/instagram.mp4'
 import IcoInsta from '../../assets/img/icoInsta.jpeg'
@@ -124,6 +126,26 @@ const useStyle = createUseStyles({
         width: 'auto',
         height: '90vh',
         objectFit: 'contain'
+    },
+    overlayTitle: {
+        position: 'absolute',
+        fontSize: '90px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        rotate: '-50deg',
+        cursor: 'default',
+        left: '0',
+        color: 'var(--secondary-text-color)',
+        transformOrigin: 'left top'
+    },
+    overlaySubtitle: {
+        position: 'absolute',
+        bottom: '10%',
+        rotate: '0deg',
+        cursor: 'default',
+        right: 0,
+        fontSize: '60px',
+        color: 'var(--main-text-color-light)'
     }
 })
 
@@ -133,9 +155,9 @@ function InstaClip() {
 
     const [overlay, setOverlay] = useState(false)
 
-    // const handleRedirectReel = () => { window.location.replace('https://www.instagram.com/reel/Cln7MtHgplA/') }
+    const handleRedirectReel = () => { window.location.replace('https://www.instagram.com/reel/Cln7MtHgplA/') }
     const handleRedirectProfile = () => { window.location.replace('https://www.instagram.com/who1snick/') }
-    const handleRedirectCategory = () => { window.location.replace('https://www.instagram.com/reels/audio/830136408199485/') }
+
     const openVideo = () => { setOverlay(true) }
     const closeVideo = () => { setOverlay(false) }
 
@@ -149,28 +171,32 @@ function InstaClip() {
 
             <div className={style.instagramHeader}>
                 <div className={style.iconContainer}>
-                    <img className={style.icon} src={IcoInsta} onClick={handleRedirectProfile} alt="Instagram icon" />
+                    <LazyImage classes={[style.icon]} src={IcoInsta} onClick={handleRedirectProfile} alt="Instagram icon" />
                 </div>
                 <div className={style.profileDescription}>
                     <h5 className={style.nickname} onClick={handleRedirectProfile}>who1snick</h5>
-                    <h6 className={style.title} onClick={handleRedirectCategory} >Meet your Content Creator</h6>
+                    <h6 className={style.title} onClick={handleRedirectReel} >Meet your Content Creator</h6>
                 </div>
             </div>
 
             <div className={style.instagramVideo}>
             <span className={style.hoverSpan} onClick={handleRedirectProfile} >View profile</span>
                 <div className={style.playButton} onClick={openVideo}></div>
-                <video className={style.video} loop={true} playsInline autoPlay muted onClick={openVideo}>
-                    <source src={instagramVideo} alt="Instagram Video" type="video/mp4" />
-                    <source src={instagramVideo} alt="Instagram Video" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
+                <LazyVideo 
+                    src={instagramVideo} 
+                    classes={[style.video]} 
+                    loop={true} 
+                    autoplay={true} 
+                    muted={true} 
+                    controls={false}
+                    onClick={openVideo} />
             </div>
 
         </div>
 
         {overlay &&
             <Overlay onClose={closeVideo}>
+                <TextMotion />
                 <div onClick={e => e.stopPropagation()}>
                     <Video className={style.overlayVideo} id="instagram-video" autoPlay
                         controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>

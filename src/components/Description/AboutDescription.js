@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 const useStyle = createUseStyles({
     header: {
         color: 'var(--secondary-text-color)',
-        fontSize: '64px',
+        fontSize: '56px',
         margin: 0,
         '@media (max-width:900px)': {
             fontSize: '48px'

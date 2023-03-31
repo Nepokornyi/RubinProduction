@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Carousel from 'react-grid-carousel'
 
 import { createUseStyles } from 'react-jss'
+import { LazyVideo } from 'react-lazy-media'
 
 import Overlay from '../Overlay/Overlay'
 
@@ -29,19 +30,19 @@ const useStyle = createUseStyles({
             transitionDuration: '350ms',
             transitionTimingFunction: 'ease-in-out',
           },
-        '& > video': {
-            position: 'absolute',
-            opacity: '0.5',
-            objectFit: 'cover',
-            width: '100%',
-            height: '100%'
-          },
         '& > p': {
             position: 'absolute',
             top: '0',
             left: '50%',
             transform: 'translate(-50%)'
         }
+    },
+    video:{
+        position: 'absolute',
+        opacity: '0.5',
+        objectFit: 'cover',
+        width: '100%',
+        height: '100%'
     },
     gridOverlay: {
         background: 'rgba(0,0,0,0.65)',
@@ -179,9 +180,13 @@ function CarouselGrid() {
     const carouselItems = items.map((props) => 
     <Carousel.Item key={props.id}>
         <div className={style.projectVideo}>
-            <video autoPlay loop muted>
-                <source src={props.localVideo} />
-            </video>
+            <LazyVideo 
+                src={props.localVideo} 
+                classes={[style.video]} 
+                controls={false} 
+                loop={true}
+                muted={true}
+                autoplay={true} />
             <p>{props.content}</p>
             <div className={style.gridOverlay}>
                 <button onClick={() => handleOpenOverlay(props.link)}>view more</button>

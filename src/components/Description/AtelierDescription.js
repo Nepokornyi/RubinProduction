@@ -19,7 +19,7 @@ const useStyle = createUseStyles({
       }
     },
     caption: {
-      fontSize: '48px',
+      fontSize: '56px',
       textAlign: 'center',
 	  position: 'relative',
       margin: 0,
@@ -43,14 +43,14 @@ const useStyle = createUseStyles({
 		  },
     },
     subCaption:{
-      width: '255px',
+      width: '290px',
       fontSize: '22px',
       '@media (max-width:900px)':{
         fontSize: '18px'
       }
     },
     text: {
-        width: '260px',
+        width: '290px',
         fontSize: '22px',
         '@media (max-width:900px)': {
             fontSize: '18px'
