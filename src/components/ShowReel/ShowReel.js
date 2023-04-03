@@ -40,21 +40,7 @@ const useStyle = createUseStyles({
 		overflow: 'hidden',
 		opacity: 0.5
 	},
-	container:{
-		position: 'relative'
-	},
-	overlay:{
-        position: 'fixed',
-        background: 'rgba(0, 0, 0, 1)',
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-        display: 'grid',
-        alignItems: 'center',
-        justifyItems: 'center',
-        zIndex: 6,
-    },
+
 	gridOverlay: {
         background: 'none',
         height: '100%',
@@ -75,7 +61,6 @@ const useStyle = createUseStyles({
 			opacity: 0,
             background: 'none',
             outline: 'none',
-            fontWeight: '100',
             letterSpacing: '2px',
             border: '1px solid var(--main-bg-color-light)',
             color: 'white',
@@ -110,7 +95,6 @@ const useStyle = createUseStyles({
 		background: 'var(--main-bg-color-light)',
 		color: 'var(--main-text-color-dark)',
 		outline: 'none',
-		fontWeight: '100',
 		letterSpacing: '2px',
 		border: '1px solid var(--main-bg-color-light)',
 		textTransform: 'uppercase',

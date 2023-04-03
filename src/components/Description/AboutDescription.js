@@ -39,10 +39,10 @@ function AboutDescription() {
         whileInView={{opacity: 1}}
         transition={{duration:1, ease: 'easeInOut'}}>
         <h2 className={style.header}>Hi, I'm Nick</h2>
-        <p className={style.text}>
+        <h4 className={style.text}>
             I'm a videographer <br />
              and photographer
-        </p>
+        </h4>
         <ul className={style.list}>
             <li>Experience: More than 5 years</li>
             <li>Types of shots : All</li>

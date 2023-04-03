@@ -50,7 +50,6 @@ const useStyle = createUseStyles({
 		backgroundColor: 'var(--main-bg-color-light)',
 		color: 'var(--main-text-color-dark)',
 		textTransform: 'uppercase',
-		fontWeight: 'bold',
 		border: 'none',
 		transitionDuration: '350ms',
 		cursor: 'pointer',

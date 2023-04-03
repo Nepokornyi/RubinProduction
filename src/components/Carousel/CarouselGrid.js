@@ -61,7 +61,6 @@ const useStyle = createUseStyles({
         '& > button': {
             background: 'none',
             outline: 'none',
-            fontWeight: '100',
             letterSpacing: '2px',
             border: '1px solid var(--main-bg-color-light)',
             color: 'white',
@@ -188,8 +187,8 @@ function CarouselGrid() {
                 muted={true}
                 autoplay={true} />
             <p>{props.content}</p>
-            <div className={style.gridOverlay}>
-                <button onClick={() => handleOpenOverlay(props.link)}>view more</button>
+            <div className={style.gridOverlay} onClick={() => handleOpenOverlay(props.link)}>
+                <button>view more</button>
             </div>
         </div>
     </Carousel.Item>
@@ -198,10 +197,10 @@ function CarouselGrid() {
   return (
     <>
         <Carousel 
-            cols={3} 
-            rows={2} 
-            gap={15} 
-            loop={true} 
+            cols={3}
+            rows={2}
+            gap={15}
+            loop={true}
             autoplay={3500}
             hideArrow={true}
             showDots={true}

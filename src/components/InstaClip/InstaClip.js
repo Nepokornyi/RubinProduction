@@ -126,26 +126,6 @@ const useStyle = createUseStyles({
         width: 'auto',
         height: '90vh',
         objectFit: 'contain'
-    },
-    overlayTitle: {
-        position: 'absolute',
-        fontSize: '90px',
-        top: '50%',
-        transform: 'translateY(-50%)',
-        rotate: '-50deg',
-        cursor: 'default',
-        left: '0',
-        color: 'var(--secondary-text-color)',
-        transformOrigin: 'left top'
-    },
-    overlaySubtitle: {
-        position: 'absolute',
-        bottom: '10%',
-        rotate: '0deg',
-        cursor: 'default',
-        right: 0,
-        fontSize: '60px',
-        color: 'var(--main-text-color-light)'
     }
 })
 

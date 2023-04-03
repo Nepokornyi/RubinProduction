@@ -155,11 +155,6 @@ function Frame() {
                     </div>
                 </div>
             </div>
-            {/* <div className={style.frameContainer}>
-                {isMobile && <MobileFramePicture className={style.frame} />}
-                {isTablet && <TabletFramePicture className={style.frame} />}
-                {isLaptop && <WideFramePicture className={style.frame} />}
-            </div> */}
         </>
     )
 }
