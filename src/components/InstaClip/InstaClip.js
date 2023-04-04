@@ -40,7 +40,7 @@ const useStyle = createUseStyles({
         },
         instagramVideo: {
             width: '100%',
-            height: '80%',
+            height: '100%',
             display: 'flex',
             justifyContent: 'center',
             position: 'relative',
@@ -133,13 +133,23 @@ function InstaClip() {
 
     const style = useStyle()
 
-    const [overlay, setOverlay] = useState(false)
+    // const [overlay, setOverlay] = useState(true)
+    // const [controls, setContols] = useState(false)
 
-    const handleRedirectReel = () => { window.location.replace('https://www.instagram.com/reel/Cln7MtHgplA/') }
-    const handleRedirectProfile = () => { window.location.replace('https://www.instagram.com/who1snick/') }
+    // const handleRedirectReel = () => { window.location.replace('https://www.instagram.com/reel/Cln7MtHgplA/') }
+    // const handleRedirectProfile = () => { window.location.replace('https://www.instagram.com/who1snick/') }
 
-    const openVideo = () => { setOverlay(true) }
-    const closeVideo = () => { setOverlay(false) }
+    // const openVideo = () => { 
+    //     const video = document.getElementById('instagramVideo');
+    //     if(video){
+    //         video.currentTime = 0;
+    //         video.play();
+    //         video.muted = false;
+    //         setOverlay(false)
+    //         setContols(true)
+    //     }
+    // }
+    // const closeVideo = () => { setOverlay(false) }
 
   return (
     <motion.div 
@@ -149,7 +159,7 @@ function InstaClip() {
         transition={{duration:1, ease: 'easeInOut'}}>
         <div className={style.instagramContainer}>
 
-            <div className={style.instagramHeader}>
+            {/* <div className={style.instagramHeader}>
                 <div className={style.iconContainer}>
                     <LazyImage classes={[style.icon]} src={IcoInsta} onClick={handleRedirectProfile} alt="Instagram icon" />
                 </div>
@@ -157,24 +167,25 @@ function InstaClip() {
                     <h5 className={style.nickname} onClick={handleRedirectProfile}>who1snick</h5>
                     <h6 className={style.title} onClick={handleRedirectReel} >Meet your Content Creator</h6>
                 </div>
-            </div>
+            </div> */}
 
             <div className={style.instagramVideo}>
-            <span className={style.hoverSpan} onClick={handleRedirectProfile} >View profile</span>
-                <div className={style.playButton} onClick={openVideo}></div>
-                <LazyVideo 
-                    src={instagramVideo} 
-                    classes={[style.video]} 
-                    loop={true} 
-                    autoplay={true} 
-                    muted={true} 
-                    controls={false}
-                    onClick={openVideo} />
+            {/* <span className={style.hoverSpan}>View profile</span> */}
+                {/* {overlay && <div className={style.playButton} ></div>} */}
+                <Video 
+                    className={style.video}
+                    id='instagramVideo' 
+                    loop
+                    autoPlay
+                    muted
+                    controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>
+                        <source src={instagramVideo} />
+                    </Video>
             </div>
 
         </div>
 
-        {overlay &&
+        {/* {overlay &&
             <Overlay onClose={closeVideo}>
                 <TextMotion />
                 <div onClick={e => e.stopPropagation()}>
@@ -184,7 +195,7 @@ function InstaClip() {
                     </Video>
                 </div>
             </Overlay>
-        }
+        } */}
 
     </motion.div>
   )

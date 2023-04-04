@@ -1,9 +1,3 @@
-@font-face {
-    font-family: Montserrat;
-    src: url(./assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
-    font-display: swap;
-}
-
 :root{
     --main-bg-color-dark:black;
     --main-bg-color-light:white;
@@ -18,11 +12,60 @@
 }
 
 *{
-    font-family: Montserrat;
+    font-family: 'Montserrat';
 }
 body{
     scroll-behavior: smooth;
 }
+
+
+/* Portfolio Carousel */
+
+.slick-dots li.slick-active button:before{
+    opacity: 1;
+    color: var(--secondary-text-color);
+}
+
+.slick-dots li button:before{
+    color: #ccc;
+    font-size: 9.5px;
+    opacity: 1;
+}
+
+.slick-dots li{
+    margin: 0;
+    width: 15px;
+}
+
+
+/* Atelier Carousel */
+
+.splide{
+    padding: 40px 35px;
+}
+
+.splide__arrow{
+    background: none;
+}
+
+.splide__arrow svg{
+    fill: var(--main-text-color-light)
+}
+
+.splide__arrow:hover:not(:disabled) svg {
+    fill: var(--secondary-text-color);
+}
+
+.splide__pagination__page.is-active {
+    background: var(--secondary-text-color);
+    transform: scale(1);
+}
+
+.splide__pagination__page{
+    margin-left: 5px;
+    opacity: 1;
+}
+
 
 @media (min-width: 601px){
     #About, #Atelier{
@@ -41,7 +84,7 @@ h4{
 
 
 /* Counter */
-@property --num {
+/* @property --num {
     syntax: '<integer>';
     initial-value: 0;
     inherits: false;
@@ -88,18 +131,6 @@ h4{
     100% {
         --millisecond: 100;
     }
-}
+} */
 
 /* Splide Arrows */
-
-.splide{
-    padding: 50px 0;
-}
-
-.splide__arrow svg{
-    fill: var(--main-text-color-light)
-}
-
-.splide__arrow:hover:not(:disabled) svg {
-    fill: var(--secondary-text-color);
-}

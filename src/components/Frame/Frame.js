@@ -149,7 +149,7 @@ function Frame() {
                         </div>
                         <div className={`${style.overlayElement} ${style.bottomRight}`}>
                         <span className={`${style.overlayText} ${style.bottomRightText} ${style.counter}`}>
-                            <div id="counter"></div>:<div id='seconds'></div>
+                            41:98{/* <div id="counter"></div>:<div id='seconds'></div> */}
                         </span>
                         </div>
                     </div>

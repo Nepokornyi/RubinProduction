@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import Carousel from 'react-grid-carousel'
+import Slider from 'react-slick'
+
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 import { createUseStyles } from 'react-jss'
 import { LazyVideo } from 'react-lazy-media'
@@ -25,6 +28,7 @@ const useStyle = createUseStyles({
         minHeight: '250px',
         position: 'relative',
         overflow: 'hidden',
+        margin: '15px',
         '&:hover $gridOverlay': {
             transform: 'translateY(-0%)',
             transitionDuration: '350ms',
@@ -153,19 +157,34 @@ function CarouselGrid() {
     const [overlay, setOverlay] = useState(false)
     const [videoLink, setVideoLink] = useState('')
 
-    const carouselBreakpoints = [{    
-        breakpoint: 1200,
-        cols: 2,
+    const sliderSettings = {
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 750,
+        speed: 1000,
+        pauseOnFocus: true,
+        swipeToSlide: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
         rows: 2,
-        gap: 25
-    },
-    {
-        breakpoint: 800,
-        cols: 1,
-        rows:2,
-        gap: 35
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    rows: 1,
+                    slidesToShow: 1,
+                }
+            }
+        ]
     }
-]
 
     const handleOpenOverlay = (link) => {
         setVideoLink(link)
@@ -177,7 +196,7 @@ function CarouselGrid() {
     }
 
     const carouselItems = items.map((props) => 
-    <Carousel.Item key={props.id}>
+    <div key={props.id}>
         <div className={style.projectVideo}>
             <LazyVideo 
                 src={props.localVideo} 
@@ -187,34 +206,27 @@ function CarouselGrid() {
                 muted={true}
                 autoplay={true} />
             <p>{props.content}</p>
-            <div className={style.gridOverlay} onClick={() => handleOpenOverlay(props.link)}>
-                <button>view more</button>
+            <div className={style.gridOverlay}>
+                <button onClick={() => handleOpenOverlay(props.link)}>view more</button>
             </div>
         </div>
-    </Carousel.Item>
+    </div>
 );
 
   return (
     <>
-        <Carousel 
-            cols={3}
-            rows={2}
-            gap={15}
-            loop={true}
-            autoplay={3500}
-            hideArrow={true}
-            showDots={true}
-            containerClassName={style.mainContainer}
-            responsiveLayout={carouselBreakpoints}
-            mobileBreakpoint={100}
-        >
-            {carouselItems}
-        </Carousel>
+        <div style={{width: '90%'}}>
+            <Slider {...sliderSettings}>
+                {carouselItems}
+            </Slider>
+        </div>
+
         {overlay &&
             <Overlay onClose={handleCloseOverlay}>
                 <iframe title="Portfolio Clip" src={videoLink} className={style.vimeo} allow="autoplay; loop; fullscreen; picture-in-picture" allowFullScreen />
             </Overlay>
         }
+
     </>
   )
 }

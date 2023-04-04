@@ -157,7 +157,7 @@ function Header() {
         }
         {isMobile &&
             <div className={style.mobileHeader}>
-                {sideMenu === false ? <img src={icoHamburger} onClick={handleOpenMenu} alt="" /> : <img src={icoClose} onClick={handleCloseMenu} alt="" />}
+                {sideMenu === false ? <img src={icoHamburger} width="20px" height="15px" onClick={handleOpenMenu} alt="" /> : <img src={icoClose} onClick={handleCloseMenu} alt="" />}
                 {sideMenu &&
                     <div className={style.sideMenu}>
                         <ul className={style.dropDownList}>
