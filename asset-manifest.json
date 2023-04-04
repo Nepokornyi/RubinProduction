@@ -1,26 +1,29 @@
 {
   "files": {
-    "main.css": "/Rubin_web_final/static/css/main.6b507a65.css",
-    "main.js": "/Rubin_web_final/static/js/main.ebef08bb.js",
+    "main.css": "/Rubin_web_final/static/css/main.a2a73fa4.css",
+    "main.js": "/Rubin_web_final/static/js/main.143fca6b.js",
     "static/media/instagram.mp4": "/Rubin_web_final/static/media/instagram.963c2c8f93af7af266d5.mp4",
     "static/media/cover.mp4": "/Rubin_web_final/static/media/cover.ece99abb168c4bc82d18.mp4",
     "static/media/sekuron.mp4": "/Rubin_web_final/static/media/sekuron.dd261773aa1f68d67ad2.mp4",
     "static/media/woman.mp4": "/Rubin_web_final/static/media/woman.3231d226152965d096f0.mp4",
     "static/media/motion.mp4": "/Rubin_web_final/static/media/motion.3f794c87b54b90c007f4.mp4",
-    "static/media/Montserrat-VariableFont_wght.ttf": "/Rubin_web_final/static/media/Montserrat-VariableFont_wght.3faa3eef13649db02044.ttf",
     "static/media/atelier1.png": "/Rubin_web_final/static/media/atelier1.5e54bc4828adf2ef0aa9.png",
     "static/media/atelier2.png": "/Rubin_web_final/static/media/atelier2.db686aa49bc0c597158c.png",
     "static/media/icoInsta.jpeg": "/Rubin_web_final/static/media/icoInsta.bbb41f39d0399b40538d.jpeg",
     "static/media/tape.svg": "/Rubin_web_final/static/media/tape.7636c79f6f072d6e7e9fd735c8e35959.svg",
-    "static/media/icoClose.svg": "/Rubin_web_final/static/media/icoClose.89d4f0f54703fb30734c4bd4fb83c248.svg",
+    "static/media/slick.svg": "/Rubin_web_final/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Rubin_web_final/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Rubin_web_final/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "index.html": "/Rubin_web_final/index.html",
+    "static/media/icoClose.svg": "/Rubin_web_final/static/media/icoClose.89d4f0f54703fb30734c4bd4fb83c248.svg",
+    "static/media/slick.woff": "/Rubin_web_final/static/media/slick.295183786cd8a1389865.woff",
     "static/media/Play.svg": "/Rubin_web_final/static/media/Play.0ec53e3c705438b03a61302f2f1c632f.svg",
     "static/media/icoBurger.svg": "/Rubin_web_final/static/media/icoBurger.9eb7469d3041250851d06fe18b2c6353.svg",
-    "main.6b507a65.css.map": "/Rubin_web_final/static/css/main.6b507a65.css.map",
-    "main.ebef08bb.js.map": "/Rubin_web_final/static/js/main.ebef08bb.js.map"
+    "main.a2a73fa4.css.map": "/Rubin_web_final/static/css/main.a2a73fa4.css.map",
+    "main.143fca6b.js.map": "/Rubin_web_final/static/js/main.143fca6b.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b507a65.css",
-    "static/js/main.ebef08bb.js"
+    "static/css/main.a2a73fa4.css",
+    "static/js/main.143fca6b.js"
   ]
 }
