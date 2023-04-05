@@ -62,7 +62,7 @@ function Video() {
 
             {overlay &&
                 <Overlay onClose={handleCloseOverlay}>
-                    <iframe title="Intro" src='https://player.vimeo.com/video/732085536?h=5cb9947eaf&autoplay=1&loop=1&title=0&byline=0&portrait=0' className={style.vimeo} allow="autoplay; loop; fullscreen; picture-in-picture" allowFullScreen />
+                    <iframe title="Intro" src='https://player.vimeo.com/video/732085536?h=5cb9947eaf&autoplay=1&loop=1&title=0&byline=0&portrait=0&' className={style.vimeo} allow="autoplay; fullscreen; picture-in-picture" />
                 </Overlay>
             }
         </>

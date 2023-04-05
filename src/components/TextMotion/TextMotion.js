@@ -15,7 +15,7 @@ const useStyle = createUseStyles({
         flexWrap: 'nowrap',
         cursor: 'default',
         pointerEvents: 'none',
-        fontSize: '72px',
+        fontSize: '62px',
     },
     scroller: {
         fontWeight: '600',
@@ -40,9 +40,9 @@ const useStyle = createUseStyles({
         position: 'absolute',
         left: '0',
         top: '-250px',
-        rotate: '-16deg',
+        rotate: '-18deg',
         color: 'var(--main-text-color-light)',
-        fontSize: '52px'
+        fontSize: '32px'
     },
     redTransparent: {
         position: 'absolute',
@@ -51,16 +51,16 @@ const useStyle = createUseStyles({
         rotate: '-5deg',
         color: 'none',
         WebkitTextStroke: '1px white',
-        fontSize: '45px'
+        fontSize: '32px'
     },
     whiteTransparent: {
         position: 'absolute',
         left: '0',
-        bottom: '-50px',
+        bottom: '50px',
         rotate: '5deg',
         color: 'none',
         WebkitTextStroke: '1px red',
-        fontSize: '52px'
+        fontSize: '28px'
     },
 })
 

@@ -26,6 +26,7 @@ const useStyle = createUseStyles({
         height: '117vh',
         backgroundImage: `url(${Tape})`,
             transform: 'scale(0.85)',
+            zIndex: '2',
             '@media (max-width:600px)':{
                 display: 'none'
             }
@@ -39,18 +40,18 @@ function About() {
 
     const style = useStyle()
 
-  return (
-    <Content>
-      <div id="About" className={style.aboutContainer}>
-        <Description>
-          <AboutDescription />
-        </Description>
-        <Description>
-          <InstaClip />
-        </Description>
-      </div>
-    </Content>
-  )
+    return (
+        <Content>
+            <div id="About" className={style.aboutContainer}>
+            <Description>
+                <AboutDescription />
+            </Description>
+            <Description>
+                <InstaClip />
+            </Description>
+            </div>
+        </Content>
+    )
 }
 
 export default About

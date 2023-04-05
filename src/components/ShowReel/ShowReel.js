@@ -41,79 +41,6 @@ const useStyle = createUseStyles({
 		cursor: 'pointer',
 		overflow: 'hidden',
 	},
-
-	// gridOverlay: {
-    //     background: 'none',
-    //     height: '100%',
-    //     width: '100%',
-    //     position: 'absolute',
-    //     top: 0,
-    //     left: 0,
-    //     cursor: 'pointer',
-    //     display: 'flex',
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     transition: 'ease',
-    //     transitionDuration: '350ms',
-	// 	'&:hover':{
-	// 		background: 'rgba(0,0,0,0.65)',
-	// 	},
-    //     '& > button': {
-	// 		opacity: 0,
-    //         background: 'none',
-    //         outline: 'none',
-    //         letterSpacing: '2px',
-    //         border: '1px solid var(--main-bg-color-light)',
-    //         color: 'white',
-    //         textTransform: 'uppercase',
-    //         cursor: 'pointer',
-    //         padding: '10px',
-    //         transitionDuration: '350ms',
-    //     },
-    //     '& > button:hover': {
-    //         transition: 'ease',
-    //         background: 'var(--main-bg-color-light)',
-    //         color: 'var(--main-text-color-dark)',
-    //         transform: 'scale(1.05)',
-    //         transitionDuration: '350ms'
-	// 	},
-	// 	'&:hover > button':{
-	// 		opacity: 1
-	// 	}
-    // },
-    // overlayImage: {
-    //     width: '90vw',
-    //     height: '80vh',
-    //     objectFit: 'contain'
-    // },
-	// overlayControls:{
-	// 	display: 'flex',
-	// 	alignItems: 'center',
-	// 	justifyContent: 'center',
-	// 	flexDirection: 'column'
-	// },
-	// overlayButton: {
-	// 	background: 'var(--main-bg-color-light)',
-	// 	color: 'var(--main-text-color-dark)',
-	// 	outline: 'none',
-	// 	letterSpacing: '2px',
-	// 	border: '1px solid var(--main-bg-color-light)',
-	// 	textTransform: 'uppercase',
-	// 	cursor: 'pointer',
-	// 	padding: '10px',
-	// 	transitionDuration: '350ms',
-	// 	margin: '5px',
-	// 	'&:hover':{
-    //         background: 'var(--main-bg-color-dark)',
-    //         color: 'var(--main-text-color-light)',
-    //         border: '1px solid var(--main-bg-color-light)',
-    //         transitionDuration: '350ms'
-	// 	}
-	// },
-	// overlayText: {
-	// 	color: 'var(--main-text-color-light)',
-	// 	marginTop: 0
-	// }
 	
 })
 
@@ -154,47 +81,12 @@ function ShowReel() {
 	const isMobile = useMediaQuery({query: '(max-width:600px)'});
     const isLaptop = useMediaQuery({query: '(min-width:601px)'});
 
-	// const [image, setImage] = useState('');
-	// const [currentIndex, setCurrentIndex] = useState(1);
-	// const [currentDescription, setCurrentDescription] = useState('')
-    // const [overlay, setOverlay] = useState(false)
-
 	const style = useStyle()
-
-	// const handleOpenOverlay = (link, index, description) => {
-	// 	setImage(link);
-	// 	setCurrentIndex(index);
-	// 	setCurrentDescription(description);
-	// 	setOverlay(true);
-	// }
-	// const handleCloseOverlay = () => {
-	// 	setOverlay(false);
-	// }
-
-	// const handleNextSlide = (e) => {
-	// 	e.stopPropagation();
-    //     const nextIndex = (currentIndex + 1) % items.length;
-    //     setImage(items[nextIndex].link);
-	// 	setCurrentDescription(items[nextIndex].content);
-    //     setCurrentIndex(nextIndex);
-	// }
-
-	// const handlePrevSlide = (e) => {
-	// 	e.stopPropagation();
-	// 	const prevIndex = (currentIndex - 1 + items.length) % items.length;
-    //     setImage(items[prevIndex].link);
-	// 	setCurrentDescription(items[prevIndex].content);
-    //     setCurrentIndex(prevIndex);
-	// }
 
 	const content = items.map(item => {
 		return(
 			<SplideSlide key={item.id} className={style.slide}>
 				<img src={item.link} alt="" className={style.image} />
-				{/* <p>{item.content}</p>
-				<div className={style.gridOverlay} onClick={() => handleOpenOverlay(item.link, item.id, item.content)}>
-					<button onClick={() => handleOpenOverlay(item.link)}>view more</button>
-				</div> */}
 			</SplideSlide>
 		)
 	})
@@ -240,7 +132,7 @@ function ShowReel() {
 						perMove: 1,
 						direction: 'ltr',
 						height: '70vh',
-						width: '70vw',
+						width: '90vw',
 						autoplay: true,
 						pagination: true,
 						interval: 2750,
@@ -248,27 +140,16 @@ function ShowReel() {
 						focus: 'center',
 						gap: '50px',
 						arrows: false,
-						drag: true
+						drag: {
+							y: false,
+							x: true
+						}
 					}}
 				>
 					{content}
 				</Splide>
 			</motion.section>
 		}
-
-        {/* {overlay &&
-			<Overlay onClose={handleCloseOverlay}>
-				<img src={image} className={style.overlayImage} onClick={e => e.stopPropagation()} alt="" />
-				<div className={style.overlayControls}>
-					<p className={style.overlayText}>{currentDescription}</p>
-					<div>
-						<button className={style.overlayButton} onClick={(e) => handleNextSlide(e)}>Prev</button>
-						<button className={style.overlayButton} onClick={(e) => handlePrevSlide(e)}>Next</button>
-					</div>
-				</div>
-
-			</Overlay>
-        } */}
 	</>
 	)
 }
