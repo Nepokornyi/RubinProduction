@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Rubin_web_final/static/css/main.a2a73fa4.css",
-    "main.js": "/Rubin_web_final/static/js/main.143fca6b.js",
+    "main.js": "/Rubin_web_final/static/js/main.b2220f6b.js",
     "static/media/instagram.mp4": "/Rubin_web_final/static/media/instagram.963c2c8f93af7af266d5.mp4",
     "static/media/cover.mp4": "/Rubin_web_final/static/media/cover.ece99abb168c4bc82d18.mp4",
     "static/media/sekuron.mp4": "/Rubin_web_final/static/media/sekuron.dd261773aa1f68d67ad2.mp4",
@@ -20,10 +20,10 @@
     "static/media/Play.svg": "/Rubin_web_final/static/media/Play.0ec53e3c705438b03a61302f2f1c632f.svg",
     "static/media/icoBurger.svg": "/Rubin_web_final/static/media/icoBurger.9eb7469d3041250851d06fe18b2c6353.svg",
     "main.a2a73fa4.css.map": "/Rubin_web_final/static/css/main.a2a73fa4.css.map",
-    "main.143fca6b.js.map": "/Rubin_web_final/static/js/main.143fca6b.js.map"
+    "main.b2220f6b.js.map": "/Rubin_web_final/static/js/main.b2220f6b.js.map"
   },
   "entrypoints": [
     "static/css/main.a2a73fa4.css",
-    "static/js/main.143fca6b.js"
+    "static/js/main.b2220f6b.js"
   ]
 }
