@@ -190,7 +190,7 @@ function ShowReel() {
 	const content = items.map(item => {
 		return(
 			<SplideSlide key={item.id} className={style.slide}>
-				<LazyImage src={item.link} alt="" classes={[style.image]} />
+				<img src={item.link} alt="" className={style.image} />
 				{/* <p>{item.content}</p>
 				<div className={style.gridOverlay} onClick={() => handleOpenOverlay(item.link, item.id, item.content)}>
 					<button onClick={() => handleOpenOverlay(item.link)}>view more</button>
