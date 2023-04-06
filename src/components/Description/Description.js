@@ -5,7 +5,7 @@ import { createUseStyles } from 'react-jss'
 const useStyle = createUseStyles({
 
 content: {
-    '@media (max-width: 600px)': {
+    '@media (max-width: 700px)': {
         width: '100%',
         '&:nth-child(even)': {
         backgroundColor: 'var(--main-bg-color-dark)',

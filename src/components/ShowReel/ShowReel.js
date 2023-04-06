@@ -1,18 +1,16 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 import { createUseStyles } from 'react-jss'
 import { motion } from 'framer-motion'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { useMediaQuery } from 'react-responsive'
 
-// import '@splidejs/splide/css/sea-green';
 import '@splidejs/splide/css';
 
-import { LazyImage } from 'react-lazy-media'
 
-import Atelier1 from '../../assets/img/atelier1.png'
-import Atelier2 from '../../assets/img/atelier2.png'
-// import Overlay from '../Overlay/Overlay'
+import Portrait from '../../assets/img/portrait_1.webp'
+import Small from '../../assets/img/2-small.webp'
+import Content from '../../assets/img/content_5.webp'
 
 const useStyle = createUseStyles({
 	slider:{
@@ -22,7 +20,12 @@ const useStyle = createUseStyles({
 		position: 'relative',
 		display: 'flex',
 		alignItems: 'center',
-		justifyContent: 'center'
+		justifyContent: 'center',
+		'@media(max-width:600px)':{
+			'& .splide':{
+				padding: '30px 0'
+			}
+		}
 	},
 	slide:{
 		display: 'flex', 
@@ -48,38 +51,26 @@ function ShowReel() {
 
 	const items = [
 		{   id: 1, 
-			link: Atelier1,
-			content: 'Hello Content',
-			blurhash: 'L5Fr|$_400M|00xuIVD%S0D$tS?b'
+			link: Portrait,
 		},
 		{   id: 2, 
-			link: Atelier1,
-			content: 'Bye Content',
-			blurhash: 'L5Fr|$_400M|00xuIVD%S0D$tS?b'
+			link: Small,
 		},
 		{   id: 3, 
-			link: Atelier2,
-			content: 'Content ?',
-			blurhash: 'L5BWb_D$00^,~WIUD%-:IUt8ococ'
+			link: Content,
 		},
 		{   id: 4, 
-			link: Atelier1,
-			content: 'Content Hello',
-			blurhash: 'L5Fr|$_400M|00xuIVD%S0D$tS?b'
+			link: Portrait,
 		},
 		{   id: 5, 
-			link: Atelier2,
-			content: 'Content Bye',
-			blurhash: 'L5BWb_D$00^,~WIUD%-:IUt8ococ'
+			link: Content,
 		},
 		{   id: 6, 
-			link: Atelier2,
-			content: 'Content!',
-			blurhash: 'L5BWb_D$00^,~WIUD%-:IUt8ococ'
+			link: Small,
 		},
 	]
-	const isMobile = useMediaQuery({query: '(max-width:600px)'});
-    const isLaptop = useMediaQuery({query: '(min-width:601px)'});
+	const isMobile = useMediaQuery({query: '(max-width:700px)'});
+    const isLaptop = useMediaQuery({query: '(min-width:701px)'});
 
 	const style = useStyle()
 

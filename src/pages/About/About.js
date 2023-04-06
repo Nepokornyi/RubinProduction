@@ -27,7 +27,7 @@ const useStyle = createUseStyles({
         backgroundImage: `url(${Tape})`,
             transform: 'scale(0.85)',
             zIndex: '2',
-            '@media (max-width:600px)':{
+            '@media (max-width:700px)':{
                 display: 'none'
             }
         }

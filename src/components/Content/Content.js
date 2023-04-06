@@ -6,13 +6,14 @@ const useStyle = createUseStyles({
         width: '100%',
         height: '100vh',
         display: 'flex',
+        position: 'relative',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         '&:nth-child(even)': {
           backgroundColor: 'var(--main-bg-color-light)',
           color: 'var(--main-text-color-dark)',
-          '@media (max-width:600px)': {
+          '@media (max-width:700px)': {
             height: '200vh'
           }
         }

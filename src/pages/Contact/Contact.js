@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 
 import Content from '../../components/Content/Content'
+import Footer from '../../components/Footer/Footer'
 import DialogSuccess from '../../components/Dialog/DialogSuccess'
 import { emailValidator } from '../../libs/validators'
 
@@ -126,7 +127,7 @@ function Contact() {
 				<button type="submit" className={style.submit}>Send</button>
 		  </form>
         </motion.div>
-
+		<Footer />
 		<DialogSuccess open={successDialog} onClose={handleDialogClose} />
 
     </Content>
