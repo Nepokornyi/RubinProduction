@@ -9,10 +9,10 @@ import { LazyVideo } from 'react-lazy-media'
 
 import Overlay from '../Overlay/Overlay'
 
-import VideoCover from '../../assets/video/cover.mp4'
-import VideoMotion from '../../assets/video/motion.mp4'
-import VideoWoman from '../../assets/video/woman.mp4'
-import VideoSekuron from '../../assets/video/sekuron.mp4'
+import VideoCover from '../../assets/video/cover.webm'
+import VideoMotion from '../../assets/video/motion.webm'
+import VideoWoman from '../../assets/video/woman.webm'
+import VideoSekuron from '../../assets/video/sekuron.webm'
 
 
 
@@ -43,7 +43,7 @@ const useStyle = createUseStyles({
     },
     video:{
         position: 'absolute',
-        opacity: '0.5',
+        opacity: '0.65',
         objectFit: 'cover',
         width: '100%',
         height: '100%'
@@ -197,17 +197,22 @@ function CarouselGrid() {
 
     const carouselItems = items.map((props) => 
     <div key={props.id}>
-        <div className={style.projectVideo}>
-            <LazyVideo 
+        <div className={style.projectVideo} onClick={() => handleOpenOverlay(props.link)}>
+            {/* <LazyVideo 
                 src={props.localVideo} 
                 classes={[style.video]} 
                 controls={false} 
                 loop={true}
                 muted={true}
-                autoplay={true} />
+                autoplay={true} /> */}
+            
+            <video className={style.video} loop muted autoPlay>
+                    <source src={props.localVideo} type="video/webm" />
+            </video>
+
             <p>{props.content}</p>
             <div className={style.gridOverlay}>
-                <button onClick={() => handleOpenOverlay(props.link)}>view more</button>
+                <button>view more</button>
             </div>
         </div>
     </div>
@@ -215,7 +220,7 @@ function CarouselGrid() {
 
   return (
     <>
-        <div style={{width: '90%'}}>
+        <div style={{width: '95%'}}>
             <Slider {...sliderSettings}>
                 {carouselItems}
             </Slider>

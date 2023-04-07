@@ -2,10 +2,9 @@ import React from 'react'
 
 import { createUseStyles } from 'react-jss'
 import { motion } from 'framer-motion'
-import { Splide, SplideSlide } from '@splidejs/react-splide'
-import { useMediaQuery } from 'react-responsive'
-
-import '@splidejs/splide/css';
+import Slider from 'react-slick'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 
 import Portrait from '../../assets/img/portrait_1.webp'
@@ -13,6 +12,21 @@ import Small from '../../assets/img/2-small.webp'
 import Content from '../../assets/img/content_5.webp'
 
 const useStyle = createUseStyles({
+	container:{
+		width: '90%',
+		'@media(min-width:801px)':{
+			"& .slick-dots":{
+				top:0,
+				width: '15px',
+				height: '100%',
+				right: '-15px',
+				display: 'flex !important',
+				flexDirection: 'column',
+				justifyContent: 'center'
+			}
+		}
+
+	},
 	slider:{
 		color: 'white',
 		width: '100%',
@@ -21,25 +35,24 @@ const useStyle = createUseStyles({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		'@media(max-width:600px)':{
-			'& .splide':{
-				padding: '30px 0'
-			}
-		}
 	},
 	slide:{
+		minHeight: '40vh',
 		display: 'flex', 
 		justifyContent: 'center',
+		margin: '5px',
 		'& > p':{
             position: 'absolute',
             top: '20px',
             left: '50%',
             transform: 'translate(-50%)'
+		},
+		'@media(max-width:800px)':{
+			height: '75vh',
 		}
 	},
 	image:{
 		width: '100%',
-		height: '100%',
 		objectFit: 'cover',
 		cursor: 'pointer',
 		overflow: 'hidden',
@@ -69,78 +82,57 @@ function ShowReel() {
 			link: Small,
 		},
 	]
-	const isMobile = useMediaQuery({query: '(max-width:700px)'});
-    const isLaptop = useMediaQuery({query: '(min-width:701px)'});
+
+	const sliderSettings = {
+        dots: true,
+        infinite: true,
+        autoplay: false,
+        autoplaySpeed: 1000,
+        speed: 1250,
+        pauseOnFocus: true,
+        swipeToSlide: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        rows: 2,
+        arrows: false,
+		vertical: true,
+		verticalSwiping: true,
+        responsive: [
+            {
+                breakpoint: 801,
+                settings: {
+                    slidesToShow: 1,
+					rows: 1,
+					vertical: false,
+					verticalSwiping: false,
+                }
+            }
+        ]
+    }
 
 	const style = useStyle()
 
 	const content = items.map(item => {
 		return(
-			<SplideSlide key={item.id} className={style.slide}>
-				<img src={item.link} alt="" className={style.image} />
-			</SplideSlide>
+			<div key={item.id}>
+				<div className={style.slide}>
+					<img src={item.link} alt="" className={style.image} />
+				</div>
+			</div>
 		)
 	})
 
 	return (
 	<>
-		{isLaptop && 
-			<motion.section 
-				className={style.slider}
-				initial={{opacity: 0}}
-				whileInView={{opacity: 1}}
-				transition={{duration:1, ease: 'easeInOut'}}>
-				<Splide
-					options={{
-						type: 'loop',
-						perPage: 2,
-						direction: 'ttb',
-						height: '80vh',
-						width: '70vw',
-						autoplay: true,
-						pagination: true,
-						interval: 2750,
-						speed: 2000,
-						arrows: false,
-						gap: '25px',
-						drag: true
-					}}
-				>
-					{content}
-				</Splide>
-			</motion.section>
-		}
-		{isMobile &&
-			<motion.section 
-				className={style.slider}
-				initial={{opacity: 0}}
-				whileInView={{opacity: 1}}
-				transition={{duration:1, ease: 'easeInOut'}}>
-				<Splide
-					options={{
-						type: 'loop',
-						perPage: 1,
-						perMove: 1,
-						direction: 'ltr',
-						height: '70vh',
-						width: '90vw',
-						autoplay: true,
-						pagination: true,
-						interval: 2750,
-						speed: 2000,
-						focus: 'center',
-						gap: '50px',
-						arrows: false,
-						drag: {
-							y: false,
-							x: true
-						}
-					}}
-				>
-					{content}
-				</Splide>
-			</motion.section>
-		}
+		<motion.div 
+			className={style.container}
+			initial={{opacity: 0}}
+			whileInView={{opacity: 1}}
+			transition={{duration:1, ease: 'easeInOut'}}>
+			<Slider {...sliderSettings}>
+				{content}
+			</Slider>
+		</motion.div>
 	</>
 	)
 }
