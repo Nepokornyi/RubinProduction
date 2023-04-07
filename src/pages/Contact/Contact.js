@@ -18,15 +18,24 @@ const useStyle = createUseStyles({
 		fontSize: '64px',
 		textAlign: 'center',
 		position: 'relative',
+		textTransform: 'uppercase',
 		'&:after':{
 			content: "'X'",
 			position: 'absolute',
-			top: '5px',
-			left: '70px',
-			rotate: '-15deg',
+			top: '0px',
+			left: '80px',
+			rotate: '-11deg',
 			color: 'red',
-			fontSize: '42px',
+			fontSize: '48px',
+			fontWeight: '400'
 		},
+		'@media(max-width:700px)':{
+			fontSize: '52px',
+			'&:after':{
+				top: '-5px',
+				left: '65px',
+			}
+		}
 	},
 	form:{
 		minWidth: '80vw',

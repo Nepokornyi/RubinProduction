@@ -67,7 +67,7 @@ body{
 }
 
 
-@media (min-width: 701px){
+@media (min-width: 801px){
     #About, #Atelier{
         display: flex;
     }
