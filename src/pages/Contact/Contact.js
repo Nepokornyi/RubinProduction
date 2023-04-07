@@ -60,7 +60,7 @@ const useStyle = createUseStyles({
 			color: 'var(--main-text-color-light)',
 			transitionDuration: '350ms'
 		}
-	}
+	},
 })
 
 function Contact() {

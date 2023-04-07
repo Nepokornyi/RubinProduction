@@ -17,16 +17,16 @@ const useStyle = createUseStyles({
             height: '200vh'
           }
         }
-    }
+    },
 });
 
-function Content({children}) {
+function Content({children, className}) {
     const style = useStyle()
-  return (
-    <div className={style.content}>
-        {children}
-    </div>
-  )
+    return (
+        <div className={`${style.content} ${className}`}>
+            {children}
+        </div>
+    )
 }
 
 export default Content
