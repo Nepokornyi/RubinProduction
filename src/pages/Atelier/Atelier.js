@@ -11,6 +11,7 @@ import { createUseStyles } from 'react-jss'
 const useStyle = createUseStyles({
   atelierContainer:{
     width: '100%',
+    height: '100%',
     position: 'relative',
     '&>div:nth-child(2)': {
         backgroundColor: 'black',
@@ -19,16 +20,19 @@ const useStyle = createUseStyles({
         position: 'absolute',
         left: '5px',
         width: '8px',
-        height: '117vh',
+        height: '117%',
         order: '2',
         backgroundImage: `url(${Tape})`,
             transform: 'scale(0.85)',
-            '@media (max-width:700px)':{
+            '@media (max-width:800px)':{
                 display: 'none'
+                }
             }
         }
+    },
+    responsive:{
+        minHeight: '850px'
     }
-  }
 })
 
 function Atelier() {
@@ -36,7 +40,7 @@ function Atelier() {
   const style = useStyle();
 
 return (
-	<Content>
+	<Content className={style.responsive}>
 		<div id="Atelier" className={style.atelierContainer}>
 			<Description>
 				<AtelierDescription />

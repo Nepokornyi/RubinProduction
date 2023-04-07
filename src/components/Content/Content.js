@@ -4,6 +4,7 @@ import { createUseStyles } from 'react-jss'
 const useStyle = createUseStyles({
     content: {
         width: '100%',
+        minHeight: '600px',
         height: '100vh',
         display: 'flex',
         position: 'relative',
@@ -13,7 +14,7 @@ const useStyle = createUseStyles({
         '&:nth-child(even)': {
           backgroundColor: 'var(--main-bg-color-light)',
           color: 'var(--main-text-color-dark)',
-          '@media (max-width:700px)': {
+          '@media (max-width:800px)': {
             height: '200vh'
           }
         }

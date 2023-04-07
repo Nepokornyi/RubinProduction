@@ -7,7 +7,7 @@ import Overlay from '../../components/Overlay/Overlay'
 import { createUseStyles } from 'react-jss'
 import { motion } from 'framer-motion'
 
-import VideoWide from '../../assets/video/motion.mp4'
+import VideoWide from '../../assets/video/motion.webm'
 
 
 const useStyle = createUseStyles({
@@ -20,7 +20,7 @@ const useStyle = createUseStyles({
     },
     background: {
         width: '100%',
-        height: '100vh',
+        height: '100%',
         objectFit: 'cover',
         objectPosition: 'center',
     },
@@ -53,7 +53,7 @@ function Video() {
                 className={style.videoContainer}
             >
 
-                <video autoPlay loop muted className={style.background} onClick={handleOpenOverlay}>
+                <video playsInline autoPlay loop muted className={style.background} onClick={handleOpenOverlay}>
                     <source src={VideoWide} type="video/mp4" />
                 </video>
                 <Frame />

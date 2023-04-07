@@ -7,7 +7,7 @@ import TextMotion from '../TextMotion/TextMotion'
 import { DefaultPlayer as Video} from 'react-html5video'
 import 'react-html5video/dist/styles.css';
 
-import instagramVideo from '../../assets/video/instagram.mp4'
+import instagramVideo from '../../assets/video/instagram.webm'
 
 
 const useStyle = createUseStyles({
@@ -22,7 +22,7 @@ const useStyle = createUseStyles({
     },
 
         instagramContainer:{
-            width: '75%',
+            width: '80%',
             height: '75%',
             color: 'white',
         },
@@ -75,7 +75,7 @@ function InstaClip() {
             video.pause()
         }
     }
-    const click = (e) => {
+    const click = () => {
         const video = document.getElementById('instagramVideo');
         if(played && video.muted === true){
             video.muted = false;
@@ -97,10 +97,13 @@ function InstaClip() {
         <div className={style.instagramContainer}>
             <div className={style.instagramVideo} >
                 <Video 
+                    preload="metadata"
                     className={style.video}
-                    id='instagramVideo' 
+                    id='instagramVideo'
+                    autoPlay 
                     loop
                     muted
+                    playsInline
                     onPlayPauseClick={click}
                     controls={['Seek', 'Time', 'Volume', 'Fullscreen']}>
 
@@ -109,19 +112,6 @@ function InstaClip() {
             </div>
 
         </div>
-
-        {/* {overlay &&
-            <Overlay onClose={closeVideo}>
-                <TextMotion />
-                <div onClick={e => e.stopPropagation()}>
-                    <Video className={style.overlayVideo} id="instagram-video" autoPlay
-                        controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}>
-                        <source src={instagramVideo} />
-                    </Video>
-                </div>
-            </Overlay>
-        } */}
-
     </motion.div>
   )
 }

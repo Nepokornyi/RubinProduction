@@ -12,6 +12,7 @@ import Tape from '../../assets/img/tape.svg'
 const useStyle = createUseStyles({
   aboutContainer:{
     width: '100%',
+    height: '100%',
     position: 'relative',
       '&>div:nth-child(1)': {
         order: '2',
@@ -23,11 +24,11 @@ const useStyle = createUseStyles({
         position: 'absolute',
         right: '5px',
         width: '8px',
-        height: '117vh',
+        height: '117%',
         backgroundImage: `url(${Tape})`,
-            transform: 'scale(0.85)',
-            zIndex: '2',
-            '@media (max-width:700px)':{
+        transform: 'scale(0.85)',
+        zIndex: '2',
+        '@media (max-width:800px)':{
                 display: 'none'
             }
         }
