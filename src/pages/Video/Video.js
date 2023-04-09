@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import Content from '../../components/Content/Content'
 import Header from '../../components/Header/Header'
@@ -8,6 +8,8 @@ import { createUseStyles } from 'react-jss'
 import { motion } from 'framer-motion'
 
 import VideoWide from '../../assets/video/motion.webm'
+import { useAutoplay } from '../../components/Autoplay/AutoplayContext'
+import LazyVideo from '../../components/LazyHash/LazyVideo'
 
 
 const useStyle = createUseStyles({
@@ -36,14 +38,18 @@ function Video() {
     const style = useStyle()
 
     const [overlay, setOverlay] = useState(false)
+    const {autoplaySupported, loading} = useAutoplay();
+
+    if(loading){
+        return console.log('loading');
+    }
 
     const handleOpenOverlay = () => {setOverlay(true)}
     const handleCloseOverlay = () => {setOverlay(false)}
 
-
     return (
         <>
-            <Content>
+            <Content className={style.gradient}>
             <Header />
             <motion.div 
                 initial={{opacity: 0}}
@@ -52,10 +58,7 @@ function Video() {
                 id="Video" 
                 className={style.videoContainer}
             >
-
-                <video playsInline autoPlay loop muted className={style.background} onClick={handleOpenOverlay}>
-                    <source src={VideoWide} type="video/mp4" />
-                </video>
+                <LazyVideo src={VideoWide} blurHash='L02i62M,O9k6P,m@tNSu.5RCtPSJ' className={style.background} onClick={handleOpenOverlay} />
                 <Frame />
             </motion.div>
             </Content>
