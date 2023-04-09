@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Portrait from '../../assets/img/portrait_1.webp'
 import Small from '../../assets/img/2-small.webp'
 import Content from '../../assets/img/content_5.webp'
+import LazyImage from '../LazyHash/LazyImage';
 
 const useStyle = createUseStyles({
 	container:{
@@ -37,7 +38,8 @@ const useStyle = createUseStyles({
 		justifyContent: 'center',
 	},
 	slide:{
-		minHeight: '40vh',
+		position: 'relative',
+		height: '45vh',
 		display: 'flex', 
 		justifyContent: 'center',
 		margin: '5px',
@@ -65,21 +67,27 @@ function ShowReel() {
 	const items = [
 		{   id: 1, 
 			link: Portrait,
+			blurHash: 'L8MHfP003Z%#ETV??akC0fo~wGIA'
 		},
 		{   id: 2, 
 			link: Small,
+			blurHash: 'L7HMJx00?@.8?bRjbHxt_NRj9Exu'
 		},
 		{   id: 3, 
 			link: Content,
+			blurHash: 'L430KitmK8X;O_XUnNaeV{VsZ}nN'
 		},
 		{   id: 4, 
 			link: Portrait,
+			blurHash: 'L8MHfP003Z%#ETV??akC0fo~wGIA'
 		},
 		{   id: 5, 
 			link: Content,
+			blurHash: 'L7HMJx00?@.8?bRjbHxt_NRj9Exu'
 		},
 		{   id: 6, 
 			link: Small,
+			blurHash: 'L430KitmK8X;O_XUnNaeV{VsZ}nN'
 		},
 	]
 
@@ -116,7 +124,7 @@ function ShowReel() {
 		return(
 			<div key={item.id}>
 				<div className={style.slide}>
-					<img src={item.link} alt="" className={style.image} />
+					<LazyImage src={item.link} alt="" blurHash={item.blurHash} className={style.image} />
 				</div>
 			</div>
 		)

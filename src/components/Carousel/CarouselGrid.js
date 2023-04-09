@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import Slider from 'react-slick'
 
+import Overlay from '../Overlay/Overlay'
+import LazyVideo from '../LazyHash/LazyVideo';
+
+import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
 import { createUseStyles } from 'react-jss'
-import { LazyVideo } from 'react-lazy-media'
-
-import Overlay from '../Overlay/Overlay'
 
 import VideoCover from '../../assets/video/cover.webm'
 import VideoMotion from '../../assets/video/motion.webm'
@@ -93,63 +93,75 @@ function CarouselGrid() {
     const items = [
     {   id: 1, 
         link: 'https://player.vimeo.com/video/772372989?h=02c19fdb13&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Fashion Video',
-        localVideo: VideoCover
+        content: 'Cover Video',
+        localVideo: VideoCover,
+        blurHash: 'LB4{#wbdNbj]yZaeWXogR*e-jEkC'
     },
     {   id: 2, 
         link: 'https://player.vimeo.com/video/732085536?h=5cb9947eaf&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Fashion Video',
-        localVideo: VideoMotion
+        content: 'Motion Video',
+        localVideo: VideoMotion,
+        blurHash: 'L02i62M,O9k6P,m@tNSu.5RCtPSJ'
     },
     {   id: 3, 
         link: 'https://player.vimeo.com/video/734632991?h=773facb522&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Fashion Video',
-        localVideo: VideoWoman
+        content: 'Woman Video',
+        localVideo: VideoWoman,
+        blurHash: 'L17w$bQT-;O:H+qu^+KK}@8x_2Nt'
     },
     {   id: 4, 
         link: 'https://player.vimeo.com/video/759845104?h=41bf313a14&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Fashion Video',
-        localVideo: VideoSekuron
+        content: 'Sekuron Video',
+        localVideo: VideoSekuron,
+        blurHash: 'L9GScM_N%zaxSgICt7-;x[NGtRD%'
     },
     {   id: 5, 
         link: 'https://player.vimeo.com/video/772372989?h=02c19fdb13&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Fashion Video',
-        localVideo: VideoCover
+        content: 'Cover Video',
+        localVideo: VideoCover,
+        blurHash: 'LB4{#wbdNbj]yZaeWXogR*e-jEkC'
     },
     {   id: 6, 
         link: 'https://player.vimeo.com/video/732085536?h=5cb9947eaf&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Fashion Video',
-        localVideo: VideoMotion
+        content: 'Motion Video',
+        localVideo: VideoMotion,
+        blurHash: 'L02i62M,O9k6P,m@tNSu.5RCtPSJ'
     },
     {   id: 7, 
         link: 'https://player.vimeo.com/video/734632991?h=773facb522&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Fashion Video',
-        localVideo: VideoWoman
+        content: 'Woman Video',
+        localVideo: VideoWoman,
+        blurHash: 'L17w$bQT-;O:H+qu^+KK}@8x_2Nt'
     },
     {   id: 8, 
         link: 'https://player.vimeo.com/video/759845104?h=41bf313a14&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Fashion Video',
-        localVideo: VideoSekuron
+        content: 'Sekuron Video',
+        localVideo: VideoSekuron,
+        blurHash: 'L9GScM_N%zaxSgICt7-;x[NGtRD%'
     },
     {   id: 9, 
         link: 'https://player.vimeo.com/video/772372989?h=02c19fdb13&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Fashion Video',
-        localVideo: VideoCover
+        content: 'Cover Video',
+        localVideo: VideoCover,
+        blurHash: 'LB4{#wbdNbj]yZaeWXogR*e-jEkC'
     },
     {   id: 10, 
         link: 'https://player.vimeo.com/video/732085536?h=5cb9947eaf&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Fashion Video',
-        localVideo: VideoMotion
+        content: 'Motion Video',
+        localVideo: VideoMotion,
+        blurHash: 'L02i62M,O9k6P,m@tNSu.5RCtPSJ'
     },
     {   id: 11, 
         link: 'https://player.vimeo.com/video/734632991?h=773facb522&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Fashion Video',
-        localVideo: VideoWoman
+        content: 'Woman Video',
+        localVideo: VideoWoman,
+        blurHash: 'L17w$bQT-;O:H+qu^+KK}@8x_2Nt'
     },
     {   id: 12, 
         link: 'https://player.vimeo.com/video/759845104?h=41bf313a14&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Fashion Video',
-        localVideo: VideoSekuron
+        content: 'Sekuron Video',
+        localVideo: VideoSekuron,
+        blurHash: 'L9GScM_N%zaxSgICt7-;x[NGtRD%'
     }
 ]
     const style = useStyle()
@@ -198,17 +210,8 @@ function CarouselGrid() {
     const carouselItems = items.map((props) => 
     <div key={props.id}>
         <div className={style.projectVideo} onClick={() => handleOpenOverlay(props.link)}>
-            {/* <LazyVideo 
-                src={props.localVideo} 
-                classes={[style.video]} 
-                controls={false} 
-                loop={true}
-                muted={true}
-                autoplay={true} /> */}
-            
-            <video className={style.video} loop muted autoPlay>
-                    <source src={props.localVideo} type="video/webm" />
-            </video>
+        
+            <LazyVideo src={props.localVideo} className={style.video} blurHash={props.blurHash} />
 
             <p>{props.content}</p>
             <div className={style.gridOverlay}>

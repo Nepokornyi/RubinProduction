@@ -4,10 +4,10 @@ import React, { useState, useEffect } from 'react'
 import { createUseStyles } from 'react-jss'
 import { motion } from 'framer-motion'
 import TextMotion from '../TextMotion/TextMotion'
-import { DefaultPlayer as Video} from 'react-html5video'
 import 'react-html5video/dist/styles.css';
 
 import instagramVideo from '../../assets/video/instagram.webm'
+import LazyVideo from '../LazyHash/LazyVideo'
 
 
 const useStyle = createUseStyles({
@@ -55,6 +55,7 @@ function InstaClip() {
 
     const [played, setPlayed] = useState(false);
 
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
         return () => {
@@ -75,7 +76,8 @@ function InstaClip() {
             video.pause()
         }
     }
-    const click = () => {
+    const clickPause = () => {
+        console.log('hey!')
         const video = document.getElementById('instagramVideo');
         if(played && video.muted === true){
             video.muted = false;
@@ -96,19 +98,7 @@ function InstaClip() {
         <TextMotion></TextMotion>
         <div className={style.instagramContainer}>
             <div className={style.instagramVideo} >
-                <Video 
-                    preload="metadata"
-                    className={style.video}
-                    id='instagramVideo'
-                    autoPlay 
-                    loop
-                    muted
-                    playsInline
-                    onPlayPauseClick={click}
-                    controls={['Seek', 'Time', 'Volume', 'Fullscreen']}>
-
-                        <source src={instagramVideo} />
-                </Video>
+                <LazyVideo src={instagramVideo} blurHash='L6FPESI9ERIT~WkE9ER%01RlxZs.' className={style.video} id='instagramVideo' customPlayer={true} onPlayPauseClick={clickPause} />
             </div>
 
         </div>
