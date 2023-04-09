@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/Rubin_web_final/static/css/main.8947c5d2.css",
-    "main.js": "/Rubin_web_final/static/js/main.b4f8ef9b.js",
-    "static/media/instagram.mp4": "/Rubin_web_final/static/media/instagram.963c2c8f93af7af266d5.mp4",
-    "static/media/cover.mp4": "/Rubin_web_final/static/media/cover.ece99abb168c4bc82d18.mp4",
-    "static/media/sekuron.mp4": "/Rubin_web_final/static/media/sekuron.dd261773aa1f68d67ad2.mp4",
-    "static/media/woman.mp4": "/Rubin_web_final/static/media/woman.3231d226152965d096f0.mp4",
-    "static/media/motion.mp4": "/Rubin_web_final/static/media/motion.3f794c87b54b90c007f4.mp4",
-    "static/media/portrait_1.webp": "/Rubin_web_final/static/media/portrait_1.705c2ba771a711b278cb.webp",
-    "static/media/content_5.webp": "/Rubin_web_final/static/media/content_5.2f2a71a56a3f87bbbdaf.webp",
-    "static/media/2-small.webp": "/Rubin_web_final/static/media/2-small.cfe0f8d87b8fd8486786.webp",
+    "main.css": "/Rubin_web_final/static/css/main.59fb58bd.css",
+    "main.js": "/Rubin_web_final/static/js/main.794b24c9.js",
+    "static/media/instagram.webm": "/Rubin_web_final/static/media/instagram.6f26a6d5e858ee816e92.webm",
+    "static/media/sekuron.webm": "/Rubin_web_final/static/media/sekuron.0b2ba673bcb142e16d1c.webm",
+    "static/media/cover.webm": "/Rubin_web_final/static/media/cover.4ea5ce75f28c1d98f829.webm",
+    "static/media/woman.webm": "/Rubin_web_final/static/media/woman.5921542756daed0a15b4.webm",
+    "static/media/motion.webm": "/Rubin_web_final/static/media/motion.67dfd414864a6af0429d.webm",
+    "static/media/2-small.webp": "/Rubin_web_final/static/media/2-small.5b97f0db321b2633290d.webp",
+    "static/media/content_5.webp": "/Rubin_web_final/static/media/content_5.9b313dd8748cc714e2fc.webp",
+    "static/media/portrait_1.webp": "/Rubin_web_final/static/media/portrait_1.ad988f73f2061b3c1eb5.webp",
+    "static/media/Vimeo.svg": "/Rubin_web_final/static/media/Vimeo.cb36002f690f12536d09822f0d120ff9.svg",
+    "static/media/Inst.svg": "/Rubin_web_final/static/media/Inst.1a10f1bcf438f4b6c2421d7a8d0062d2.svg",
     "static/media/tape.svg": "/Rubin_web_final/static/media/tape.7636c79f6f072d6e7e9fd735c8e35959.svg",
     "static/media/slick.svg": "/Rubin_web_final/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/Rubin_web_final/static/media/slick.a4e97f5a2a64f0ab1323.eot",
@@ -17,12 +19,13 @@
     "index.html": "/Rubin_web_final/index.html",
     "static/media/icoClose.svg": "/Rubin_web_final/static/media/icoClose.89d4f0f54703fb30734c4bd4fb83c248.svg",
     "static/media/slick.woff": "/Rubin_web_final/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/Be.svg": "/Rubin_web_final/static/media/Be.cc607c54fe0c9a5f90072bdd19175b8b.svg",
     "static/media/icoBurger.svg": "/Rubin_web_final/static/media/icoBurger.9eb7469d3041250851d06fe18b2c6353.svg",
-    "main.8947c5d2.css.map": "/Rubin_web_final/static/css/main.8947c5d2.css.map",
-    "main.b4f8ef9b.js.map": "/Rubin_web_final/static/js/main.b4f8ef9b.js.map"
+    "main.59fb58bd.css.map": "/Rubin_web_final/static/css/main.59fb58bd.css.map",
+    "main.794b24c9.js.map": "/Rubin_web_final/static/js/main.794b24c9.js.map"
   },
   "entrypoints": [
-    "static/css/main.8947c5d2.css",
-    "static/js/main.b4f8ef9b.js"
+    "static/css/main.59fb58bd.css",
+    "static/js/main.794b24c9.js"
   ]
 }
