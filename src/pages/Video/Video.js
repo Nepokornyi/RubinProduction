@@ -7,7 +7,7 @@ import Overlay from '../../components/Overlay/Overlay'
 import { createUseStyles } from 'react-jss'
 import { motion } from 'framer-motion'
 
-import VideoWide from '../../assets/video/motion.webm'
+import VideoWide from '../../assets/video/motion.mp4'
 import { useAutoplay } from '../../components/Autoplay/AutoplayContext'
 import LazyVideo from '../../components/LazyHash/LazyVideo'
 
@@ -38,11 +38,6 @@ function Video() {
     const style = useStyle()
 
     const [overlay, setOverlay] = useState(false)
-    const {autoplaySupported, loading} = useAutoplay();
-
-    if(loading){
-        return console.log('loading');
-    }
 
     const handleOpenOverlay = () => {setOverlay(true)}
     const handleCloseOverlay = () => {setOverlay(false)}

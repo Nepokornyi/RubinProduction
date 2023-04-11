@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useState, useEffect} from 'react'
 import { isMutedVideoAutoplaySupported } from '../../utils/videoAutoplayUtils';
-import VideoWide from '../../assets/video/motion.webm'
+import VideoWide from '../../assets/video/motion.mp4'
 
 const AutoplayContext = createContext();
 

@@ -3,7 +3,7 @@ import { DefaultPlayer as Video} from 'react-html5video'
 import { decode } from 'blurhash'
 
 
-function LazyVideo({src, blurHash, className, onPlayPauseClick}) {
+function LazyVideo({src, blurHash, className, onPlayPauseClick, customPlayer = false}) {
     const [canvas, setCanvas] = useState(null);
     const [isVideoLoaded, setVideoLoaded] = useState(false);
     const canvasRef = useRef(null);
@@ -56,6 +56,33 @@ function LazyVideo({src, blurHash, className, onPlayPauseClick}) {
         onPlayPauseClick && onPlayPauseClick()
     }
 
+    const videoElement = customPlayer ? (
+        <Video
+            forwardedref={videoRef}
+            className={className}
+            id='instagramVideo'
+            onLoadedData={handleVideoLoad}
+            autoPlay 
+            loop
+            muted
+            playsInline
+            onPlayPauseClick={handleClickPause}
+            controls={['Seek', 'Time', 'Volume', 'Fullscreen']}>
+            <source src={src} />
+        </Video>
+    ) : (
+        <video 
+            ref={videoRef}
+            onLoadedData={handleVideoLoad}
+            className={className}
+            playsInline 
+            autoPlay 
+            loop 
+            muted
+        >
+        </video>
+    )
+
 
     return (
         <>
@@ -74,15 +101,7 @@ function LazyVideo({src, blurHash, className, onPlayPauseClick}) {
                     }} 
                 />
             )}
-            <video 
-                ref={videoRef}
-                onLoadedData={handleVideoLoad}
-                className={className}
-                playsInline 
-                autoPlay 
-                loop 
-                muted
-            />
+            {videoElement}
         </>
     )
 }

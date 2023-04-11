@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import TextMotion from '../TextMotion/TextMotion'
 import 'react-html5video/dist/styles.css';
 
-import instagramVideo from '../../assets/video/instagram.webm'
+import instagramVideo from '../../assets/video/instagramAlt.mp4'
 import LazyVideo from '../LazyHash/LazyVideo'
 
 
@@ -25,6 +25,7 @@ const useStyle = createUseStyles({
             width: '80%',
             height: '75%',
             color: 'white',
+            position: 'relative',
         },
         instagramHeader: {
             width: '100%',
@@ -40,7 +41,7 @@ const useStyle = createUseStyles({
             height: '100%',
             display: 'flex',
             justifyContent: 'center',
-            position: 'relative',
+
         },
     video: {
         minWidth: '200px',
@@ -77,7 +78,6 @@ function InstaClip() {
         }
     }
     const clickPause = () => {
-        console.log('hey!')
         const video = document.getElementById('instagramVideo');
         if(played && video.muted === true){
             video.muted = false;

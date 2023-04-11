@@ -6,11 +6,14 @@ import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-
-import Portrait from '../../assets/img/portrait_1.webp'
-import Small from '../../assets/img/2-small.webp'
-import Content from '../../assets/img/content_5.webp'
 import LazyImage from '../LazyHash/LazyImage';
+
+import Atelier1 from '../../assets/img/01_Atelier.webp'
+import Atelier2 from '../../assets/img/02_Atelier.webp'
+import Atelier3 from '../../assets/img/03_Atelier.webp'
+import Atelier4 from '../../assets/img/04_Atelier.webp'
+import Atelier5 from '../../assets/img/05_Atelier.webp'
+import Atelier6 from '../../assets/img/06_Atelier.webp'
 
 const useStyle = createUseStyles({
 	container:{
@@ -66,35 +69,35 @@ function ShowReel() {
 
 	const items = [
 		{   id: 1, 
-			link: Portrait,
-			blurHash: 'L8MHfP003Z%#ETV??akC0fo~wGIA'
+			link: Atelier1,
+			blurHash: 'L36*L4xa009sNh%3M^NF00bJ~Es*'
 		},
 		{   id: 2, 
-			link: Small,
-			blurHash: 'L7HMJx00?@.8?bRjbHxt_NRj9Exu'
+			link: Atelier2,
+			blurHash: 'L1711Z0e00=y00?HL1WAysD*wIOX'
 		},
 		{   id: 3, 
-			link: Content,
-			blurHash: 'L430KitmK8X;O_XUnNaeV{VsZ}nN'
+			link: Atelier3,
+			blurHash: 'L28XFJ4T00*000.8yXe..8E1^+Vr'
 		},
 		{   id: 4, 
-			link: Portrait,
-			blurHash: 'L8MHfP003Z%#ETV??akC0fo~wGIA'
+			link: Atelier4,
+			blurHash: 'L45#FmRk0wnh4qofoYxZ~WRjIpRk'
 		},
 		{   id: 5, 
-			link: Content,
-			blurHash: 'L7HMJx00?@.8?bRjbHxt_NRj9Exu'
+			link: Atelier5,
+			blurHash: 'L28XFJ4T00*000.8yXe..8E1^+Vr'
 		},
 		{   id: 6, 
-			link: Small,
-			blurHash: 'L430KitmK8X;O_XUnNaeV{VsZ}nN'
+			link: Atelier6,
+			blurHash: 'L28gy]4T00*000.8yXae.8E1^+Vr'
 		},
 	]
 
 	const sliderSettings = {
         dots: true,
         infinite: true,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 1000,
         speed: 1250,
         pauseOnFocus: true,

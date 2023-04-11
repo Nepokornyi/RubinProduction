@@ -14,6 +14,7 @@ content: {
     '@media (max-width: 800px)': {
         width: '100%',
         height: '50%',
+        minHeight: '700px',
         '&:nth-child(even)': {
         backgroundColor: 'var(--main-bg-color-dark)',
         color: 'var(--main-text-color-light)',
