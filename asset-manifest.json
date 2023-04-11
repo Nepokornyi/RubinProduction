@@ -1,15 +1,30 @@
 {
   "files": {
     "main.css": "/Rubin_web_final/static/css/main.59fb58bd.css",
-    "main.js": "/Rubin_web_final/static/js/main.794b24c9.js",
-    "static/media/instagram.webm": "/Rubin_web_final/static/media/instagram.6f26a6d5e858ee816e92.webm",
-    "static/media/sekuron.webm": "/Rubin_web_final/static/media/sekuron.0b2ba673bcb142e16d1c.webm",
-    "static/media/cover.webm": "/Rubin_web_final/static/media/cover.4ea5ce75f28c1d98f829.webm",
-    "static/media/woman.webm": "/Rubin_web_final/static/media/woman.5921542756daed0a15b4.webm",
-    "static/media/motion.webm": "/Rubin_web_final/static/media/motion.67dfd414864a6af0429d.webm",
-    "static/media/2-small.webp": "/Rubin_web_final/static/media/2-small.5b97f0db321b2633290d.webp",
-    "static/media/content_5.webp": "/Rubin_web_final/static/media/content_5.9b313dd8748cc714e2fc.webp",
-    "static/media/portrait_1.webp": "/Rubin_web_final/static/media/portrait_1.ad988f73f2061b3c1eb5.webp",
+    "main.js": "/Rubin_web_final/static/js/main.9f606a70.js",
+    "static/media/instagramAlt.mp4": "/Rubin_web_final/static/media/instagramAlt.19197671caebb335eb05.mp4",
+    "static/media/motion.mp4": "/Rubin_web_final/static/media/motion.8f8a447f2935807b6f83.mp4",
+    "static/media/sekuron.mp4": "/Rubin_web_final/static/media/sekuron.d1bd06dd89666954ddb7.mp4",
+    "static/media/02_instagram.mp4": "/Rubin_web_final/static/media/02_instagram.4e6a79a7f73dfd5b4c36.mp4",
+    "static/media/08_instagram.mp4": "/Rubin_web_final/static/media/08_instagram.8cefa634d685809747ee.mp4",
+    "static/media/samurai.mp4": "/Rubin_web_final/static/media/samurai.02a341040d7bee85cc95.mp4",
+    "static/media/07_instagram.mp4": "/Rubin_web_final/static/media/07_instagram.792acca8a5b42329522d.mp4",
+    "static/media/woman.mp4": "/Rubin_web_final/static/media/woman.8266275a573ad498add9.mp4",
+    "static/media/01_instagram.mp4": "/Rubin_web_final/static/media/01_instagram.ce4062192c7c5092243b.mp4",
+    "static/media/cover.mp4": "/Rubin_web_final/static/media/cover.4f7a576f917d577d9c91.mp4",
+    "static/media/03_instagram.mp4": "/Rubin_web_final/static/media/03_instagram.f8b3962da6ed19da4c40.mp4",
+    "static/media/11_instagram.mp4": "/Rubin_web_final/static/media/11_instagram.4855e4a07351f6942386.mp4",
+    "static/media/05_instagram.mp4": "/Rubin_web_final/static/media/05_instagram.0dea631d4dce5f05b315.mp4",
+    "static/media/04_instagram.mp4": "/Rubin_web_final/static/media/04_instagram.511f006946f927995611.mp4",
+    "static/media/06_instagram.mp4": "/Rubin_web_final/static/media/06_instagram.f26c93a05cb64c18f9ee.mp4",
+    "static/media/09_instagram.mp4": "/Rubin_web_final/static/media/09_instagram.b97771ddfdf61c34adf1.mp4",
+    "static/media/10_instagram.mp4": "/Rubin_web_final/static/media/10_instagram.fed2bc6e2bf02fd4f1e9.mp4",
+    "static/media/03_Atelier.webp": "/Rubin_web_final/static/media/03_Atelier.41315fd2ea1770c2b760.webp",
+    "static/media/01_Atelier.webp": "/Rubin_web_final/static/media/01_Atelier.20e212e15dee1ce7e365.webp",
+    "static/media/04_Atelier.webp": "/Rubin_web_final/static/media/04_Atelier.2d520f30284647c2d2eb.webp",
+    "static/media/02_Atelier.webp": "/Rubin_web_final/static/media/02_Atelier.2426f47cf21c5e9aff72.webp",
+    "static/media/05_Atelier.webp": "/Rubin_web_final/static/media/05_Atelier.a528aad674fda5121ab4.webp",
+    "static/media/06_Atelier.webp": "/Rubin_web_final/static/media/06_Atelier.3abc73084ab3bbcdfcde.webp",
     "static/media/Vimeo.svg": "/Rubin_web_final/static/media/Vimeo.cb36002f690f12536d09822f0d120ff9.svg",
     "static/media/Inst.svg": "/Rubin_web_final/static/media/Inst.1a10f1bcf438f4b6c2421d7a8d0062d2.svg",
     "static/media/tape.svg": "/Rubin_web_final/static/media/tape.7636c79f6f072d6e7e9fd735c8e35959.svg",
@@ -22,10 +37,10 @@
     "static/media/Be.svg": "/Rubin_web_final/static/media/Be.cc607c54fe0c9a5f90072bdd19175b8b.svg",
     "static/media/icoBurger.svg": "/Rubin_web_final/static/media/icoBurger.9eb7469d3041250851d06fe18b2c6353.svg",
     "main.59fb58bd.css.map": "/Rubin_web_final/static/css/main.59fb58bd.css.map",
-    "main.794b24c9.js.map": "/Rubin_web_final/static/js/main.794b24c9.js.map"
+    "main.9f606a70.js.map": "/Rubin_web_final/static/js/main.9f606a70.js.map"
   },
   "entrypoints": [
     "static/css/main.59fb58bd.css",
-    "static/js/main.794b24c9.js"
+    "static/js/main.9f606a70.js"
   ]
 }
