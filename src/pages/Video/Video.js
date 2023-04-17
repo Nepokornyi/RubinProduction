@@ -52,8 +52,9 @@ function Video() {
                 transition={{duration:3, ease: 'easeOut'}}
                 id="Video" 
                 className={style.videoContainer}
+                onClick={handleOpenOverlay} 
             >
-                <LazyVideo src={VideoWide} blurHash='L02i62M,O9k6P,m@tNSu.5RCtPSJ' className={style.background} onClick={handleOpenOverlay} />
+                <LazyVideo src={VideoWide} blurHash='L02i62M,O9k6P,m@tNSu.5RCtPSJ' className={style.background} />
                 <Frame />
             </motion.div>
             </Content>
