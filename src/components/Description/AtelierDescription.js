@@ -60,11 +60,16 @@ const useStyle = createUseStyles({
             marginBottom: '15px'
         }
     },
+    info:{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
     request:{
 		width: '200px',
 		height: '50px',
 		fontSize: '16px',
-        marginTop: '10px',
+        margin: 'auto',
 		backgroundColor: 'var(--main-bg-color-light)',
 		color: 'var(--main-text-color-dark)',
 		textTransform: 'uppercase',
@@ -97,7 +102,7 @@ function AtelierDescription() {
             whileInView={{opacity: 1}}
             transition={{duration:1, ease: 'easeInOut'}}>
             <h2 className={style.header}>ATELIER <br /> FOR YOU</h2>
-            <div>
+            <div className={style.info}>
                 <h4 className={style.subHeader}>Versatile space is equipped with all the tools you need to create stunning content from start to finish.</h4>
                 <ul className={style.list}>
                     <li>Atelier is available for hire, offering a versatile and fully equipped environment for your next project.</li>

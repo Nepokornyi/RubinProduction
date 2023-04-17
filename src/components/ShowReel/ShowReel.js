@@ -59,7 +59,6 @@ const useStyle = createUseStyles({
 	image:{
 		width: '100%',
 		objectFit: 'cover',
-		cursor: 'pointer',
 		overflow: 'hidden',
 	},
 	
