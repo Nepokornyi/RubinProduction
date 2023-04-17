@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
 import Content from '../../components/Content/Content'
 import Header from '../../components/Header/Header'
@@ -8,7 +8,6 @@ import { createUseStyles } from 'react-jss'
 import { motion } from 'framer-motion'
 
 import VideoWide from '../../assets/video/motion.mp4'
-import { useAutoplay } from '../../components/Autoplay/AutoplayContext'
 import LazyVideo from '../../components/LazyHash/LazyVideo'
 
 

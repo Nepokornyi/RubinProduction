@@ -17,7 +17,7 @@ const useStyles = createUseStyles({
         position: 'fixed',
         left: '0',
         top: '0',
-        width: '100vw',
+        width: '100%',
         minHeight: '65px',
         backgroundColor: 'var(--main-bg-color-dark)',
         borderBottom: '1px solid var(--secondary-bg-color-dark)',
