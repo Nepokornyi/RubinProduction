@@ -86,7 +86,7 @@ const useStyle = createUseStyles({
 			top: 0,
 			width: '100%',
 			height: '100%',
-			backgroundImage: 'radial-gradient(circle, transparent 10%, black 90%)',
+			backgroundImage: 'radial-gradient(circle, transparent, black 50%)',
 		}
 	}
 })
