@@ -56,7 +56,7 @@ const useStyle = createUseStyles({
             fontSize: '16px'
         },
         '& > li':{
-            marginBottom: '15px'
+            margin: '15px 0'
         }
     }
 })
@@ -78,9 +78,9 @@ function AboutDescription() {
         </h4>
 
         <ul className={style.list}>
-            <li>I am happy to be your highly skilled Content Creator with a passion for capturing captivating visuals across a wide range of genres like sports, fashion, music videos, and a lot beyond.</li>
-            <li>With years of experience in the industry my bullet point is bringing a creative vision to life, from pre-production planning to shooting on location with expertise in post-production, motion-design, and VFX is especially notable, bringing an added level of polish and flair to your work.</li>
-            <li>Whether shooting on location or in-studio, will have a keen eye for lighting, framing, and composition. Work is marked by its artistry and beauty, as well as ability to communicate a message or tell a story.</li>
+            <p>With years of experience in the industry my bullet point is: </p>
+            <li>bringing a <strong>creative</strong> vision to life, from pre-production <strong>planning</strong> to <strong>shooting</strong> on location</li>
+            <li>with expertise in <strong>post-production</strong>, <strong>motion-design</strong>, and <strong>VFX</strong> is especially notable, bringing an added level of polish and flair to <span style={{color: 'var(--secondary-text-color)', fontWeight: 'bold'}}>your</span> work.</li>
         </ul>
     </motion.div>
   )

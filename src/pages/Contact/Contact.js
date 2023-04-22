@@ -1,12 +1,14 @@
 import React, {useState, useRef} from 'react'
 import { createUseStyles } from 'react-jss'
-import { motion } from 'framer-motion'
+import { m, motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 
 import Content from '../../components/Content/Content'
 import Footer from '../../components/Footer/Footer'
 import DialogSuccess from '../../components/Dialog/DialogSuccess'
 import { emailValidator } from '../../libs/validators'
+
+import backgroundImg from '../../assets/img/circleBackground.svg'
 
 const useStyle = createUseStyles({
 	formContainer:{
@@ -43,7 +45,8 @@ const useStyle = createUseStyles({
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		gap: '35px'
+		gap: '35px',
+		position: 'relative'
 	},
 	mailInput:{
 		minWidth: '300px',
@@ -72,7 +75,19 @@ const useStyle = createUseStyles({
 	},
 
 	responsive:{
-		minHeight: '600px'
+		minHeight: '600px',
+		backgroundImage: `url(${backgroundImg})`,
+		backgroundRepeat: 'no-repeat',
+		backgroundPosition: 'center',
+		'&::before':{
+			content: "''",
+			position: 'absolute',
+			left: 0,
+			top: 0,
+			width: '100%',
+			height: '100%',
+			backgroundImage: 'radial-gradient(circle, transparent 10%, black 90%)',
+		}
 	}
 })
 

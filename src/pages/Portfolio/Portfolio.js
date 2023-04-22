@@ -3,7 +3,6 @@ import CarouselGrid from '../../components/Carousel/CarouselGrid'
 import Content from '../../components/Content/Content'
 
 import { createUseStyles } from 'react-jss'
-import { motion } from 'framer-motion'
 
 const useStyle = createUseStyles({
 	portfolioContainer:{
@@ -65,15 +64,12 @@ function Portfolio() {
 
 	return (
 		<Content className={style.responsive}>
-			<motion.div 
+			<div 
 			id="Portfolio" 
-			className={style.portfolioContainer}
-			initial={{opacity: 0}}
-			whileInView={{opacity: 1}}
-			transition={{duration:1, ease: 'easeOut'}}>
+			className={style.portfolioContainer}>
 			<h2 className={style.header}>Portfolio</h2>
 			<CarouselGrid />
-			</motion.div>
+			</div>
 		</Content>
 	)
 }

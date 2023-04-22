@@ -46,7 +46,7 @@ const useStyle = createUseStyles({
     video: {
         minWidth: '200px',
         height: '100%',
-        objectFit: 'scale-down',
+        objectFit: 'contain',
     },
 })
 
@@ -90,11 +90,7 @@ function InstaClip() {
     }
 
   return (
-    <motion.div 
-        className={style.videoContainer}
-        initial={{opacity: 0}}
-        whileInView={{opacity: 1}}
-        transition={{duration:1, ease: 'easeInOut'}}>
+    <div className={style.videoContainer}>
         <TextMotion></TextMotion>
         <div className={style.instagramContainer}>
             <div className={style.instagramVideo} >
@@ -102,7 +98,7 @@ function InstaClip() {
             </div>
 
         </div>
-    </motion.div>
+    </div>
   )
 }
 

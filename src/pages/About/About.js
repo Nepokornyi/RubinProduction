@@ -36,7 +36,7 @@ const useStyle = createUseStyles({
     },
     expandContent:{
         '@media(max-width:800px)':{
-            minHeight: '1400px'
+            minHeight: '1000px'
         }
     }
     
