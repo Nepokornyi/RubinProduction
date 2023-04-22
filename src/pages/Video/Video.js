@@ -7,7 +7,7 @@ import Overlay from '../../components/Overlay/Overlay'
 import { createUseStyles } from 'react-jss'
 import { motion } from 'framer-motion'
 
-import VideoWide from '../../assets/video/motion.mp4'
+import ShowReel from '../../assets/video/ShowReel.mp4'
 import LazyVideo from '../../components/LazyHash/LazyVideo'
 
 
@@ -53,14 +53,14 @@ function Video() {
                 className={style.videoContainer}
                 onClick={handleOpenOverlay} 
             >
-                <LazyVideo src={VideoWide} blurHash='L02i62M,O9k6P,m@tNSu.5RCtPSJ' className={style.background} />
+                <LazyVideo src={ShowReel} blurHash='L02i62M,O9k6P,m@tNSu.5RCtPSJ' className={style.background} />
                 <Frame />
             </motion.div>
             </Content>
 
             {overlay &&
                 <Overlay onClose={handleCloseOverlay}>
-                    <iframe title="Intro" src='https://player.vimeo.com/video/732085536?h=5cb9947eaf&autoplay=1&loop=1&title=0&byline=0&portrait=0&' className={style.vimeo} allow="autoplay; fullscreen; picture-in-picture" />
+                    <iframe title="Intro" src='https://player.vimeo.com/video/819462068?h=5cb9947eaf&autoplay=1&loop=1&title=0&byline=0&portrait=0&' className={style.vimeo} allow="autoplay; fullscreen; picture-in-picture" />
                 </Overlay>
             }
         </>

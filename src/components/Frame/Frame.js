@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Counter from '../Counter/Counter'
 import { createUseStyles } from 'react-jss'
 import { useMediaQuery } from 'react-responsive'
 
@@ -149,7 +148,7 @@ function Frame() {
                         </div>
                         <div className={`${style.overlayElement} ${style.bottomRight}`}>
                         <span className={`${style.overlayText} ${style.bottomRightText} ${style.counter}`}>
-                            41:98{/* <div id="counter"></div>:<div id='seconds'></div> */}
+                            24:00
                         </span>
                         </div>
                     </div>

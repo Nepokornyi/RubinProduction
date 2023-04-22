@@ -30,8 +30,10 @@ const useStyle = createUseStyles({
             }
         }
     },
-    responsive:{
-        minHeight: '850px'
+    expandContent:{
+        '@media(max-width:800px)':{
+            minHeight: '1400px'
+        }
     }
 })
 
@@ -40,7 +42,7 @@ function Atelier() {
   const style = useStyle();
 
 return (
-	<Content className={style.responsive}>
+	<Content className={style.expandContent}>
 		<div id="Atelier" className={style.atelierContainer}>
 			<Description>
 				<AtelierDescription />

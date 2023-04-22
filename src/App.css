@@ -12,7 +12,7 @@
 }
 
 *{
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', 'Gill Sans';
 }
 body{
     scroll-behavior: smooth;

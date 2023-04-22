@@ -70,6 +70,10 @@ const useStyle = createUseStyles({
 			transitionDuration: '350ms'
 		}
 	},
+
+	responsive:{
+		minHeight: '600px'
+	}
 })
 
 function Contact() {
@@ -78,7 +82,6 @@ function Contact() {
 	const [successDialog, setSuccessDialog] = useState(false);
 
 	const form = useRef();
-
 	const style = useStyle()
 
 	const handleSubmit = (event) => {
@@ -117,7 +120,7 @@ function Contact() {
 	}
 
   return (
-    <Content>
+    <Content className={style.responsive}>
 
         <motion.div 
 			id="Contact"

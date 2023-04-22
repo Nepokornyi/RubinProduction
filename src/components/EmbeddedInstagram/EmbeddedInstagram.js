@@ -4,24 +4,32 @@ import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
     container:{
+        backgroundColor: '#fff',
         height: '90vh',
-        minWidth: '325px',
         marginTop: '60px',
+        padding: 0,
         display: 'flex',
         alignItems: 'flex-start',
         justifyContent: 'center',
-        overflow: 'hidden'
+        overflow: 'scroll',
+        '&::-webkit-scrollbar': {
+            width: 0,
+            height: 0,
+        },
+        '& iframe':{
+            maxWidth: '325px !important'
+        }
     }
 })
 
-function EmbeddedInstagram() {
+function EmbeddedInstagram({ url }) {
 
     const style = useStyles();
     return (
     <>
         <div className={style.container}>
-            <blockquote className="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/Cmo-8GBgBWv/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version={14} style={{background: '#FFF', border: 0, borderRadius: '3px', boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)', margin: '1px', maxWidth: '540px', minWidth: '326px', padding: 0, width: 'calc(100% - 2px)'}}>
-            <div style={{padding: '16px'}}> <a href="https://www.instagram.com/reel/Cmo-8GBgBWv/?utm_source=ig_embed&utm_campaign=loading" style={{background: '#FFFFFF', lineHeight: 0, padding: '0 0', textAlign: 'center', textDecoration: 'none', width: '100%'}} target="_blank" rel="noreferrer"> 
+            <blockquote className="instagram-media" data-instgrm-captioned data-instgrm-permalink={url} data-instgrm-version={14} style={{background: '#FFF', border: 0, borderRadius: '3px', boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)', margin: '1px', maxWidth: '540px', minWidth: '326px', padding: 0, width: 'calc(100% - 2px)'}}>
+            <div style={{padding: '16px'}}> <a href={url} style={{background: '#FFFFFF', lineHeight: 0, padding: '0 0', textAlign: 'center', textDecoration: 'none', width: '100%'}} target="_blank" rel="noreferrer"> 
                 <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}> 
                 <div style={{backgroundColor: '#F4F4F4', borderRadius: '50%', flexGrow: 0, height: '40px', marginRight: '14px', width: '40px'}} />
                 <div style={{display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'center'}}> 
@@ -49,8 +57,9 @@ function EmbeddedInstagram() {
                     <div style={{width: 0, height: 0, borderTop: '8px solid #F4F4F4', borderLeft: '8px solid transparent', transform: 'translateY(-4px) translateX(8px)'}} /></div></div> <div style={{display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'center', marginBottom: '24px'}}> 
                 <div style={{backgroundColor: '#F4F4F4', borderRadius: '4px', flexGrow: 0, height: '14px', marginBottom: '6px', width: '224px'}} /> <div style={{backgroundColor: '#F4F4F4', borderRadius: '4px', flexGrow: 0, height: '14px', width: '144px'}} /></div></a>
             <p style={{color: '#c9c8cd', fontFamily: 'Arial,sans-serif', fontSize: '14px', lineHeight: '17px', marginBottom: 0, marginTop: '8px', overflow: 'hidden', padding: '8px 0 7px', textAlign: 'center', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>
-                <a href="https://www.instagram.com/reel/Cmo-8GBgBWv/?utm_source=ig_embed&utm_campaign=loading" style={{color: '#c9c8cd', fontFamily: 'Arial,sans-serif', fontSize: '14px', fontStyle: 'normal', fontWeight: 'normal', lineHeight: '17px', textDecoration: 'none'}} target="_blank" rel="noreferrer">
-                Video | Photo | Prague (@who1snick)</a></p></div></blockquote>
+                <a href={url} style={{color: '#c9c8cd', fontFamily: 'Arial,sans-serif', fontSize: '14px', fontStyle: 'normal', fontWeight: 'normal', lineHeight: '17px', textDecoration: 'none'}} target="_blank" rel="noreferrer">
+                Video | Photo | Prague (@who1snick)</a></p></div>
+                </blockquote>
         </div>
     </>
     )

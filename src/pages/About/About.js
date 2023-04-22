@@ -33,6 +33,11 @@ const useStyle = createUseStyles({
                 }
             }
         }
+    },
+    expandContent:{
+        '@media(max-width:800px)':{
+            minHeight: '1400px'
+        }
     }
     
 });
@@ -42,7 +47,7 @@ function About() {
     const style = useStyle()
 
     return (
-        <Content>
+        <Content className={style.expandContent}>
             <div id="About" className={style.aboutContainer}>
             <Description>
                 <AboutDescription />

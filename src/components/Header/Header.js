@@ -40,7 +40,6 @@ const useStyles = createUseStyles({
     contact: {
         width: '130px',
         height: '30px',
-        marginRight: '30px',
         backgroundColor: 'var(--main-bg-color-light)',
         color: 'var(--main-text-color-dark)',
         textTransform: 'uppercase',
@@ -184,7 +183,7 @@ function Header() {
                 }
             </div>
         }
-            <HashLink to="/#Contact" scroll={el => scrollWithOffset(el)}><motion.button initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration:2, ease: 'backIn'}} className={style.contact}>Contact</motion.button></HashLink>
+            <HashLink style={{marginRight: '30px'}} to="/#Contact" scroll={el => scrollWithOffset(el)}><motion.button initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration:2, ease: 'backIn'}} className={style.contact}>Contact</motion.button></HashLink>
         </motion.nav>
     </>
   )

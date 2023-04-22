@@ -155,7 +155,7 @@ function CarouselGrid() {
     },
     {   id: 7, 
         type: 'instagram',
-        link: '', 
+        link: 'https://www.instagram.com/reel/CkIS2oQAfUD/?utm_source=ig_embed&amp;utm_campaign=loading', 
         content: 'Instagram2',
         localVideo: InstagramClip2,
         blurHash: 'L27-i%%MN2%0~qxuxsM|-;WBt7oL'
@@ -169,56 +169,56 @@ function CarouselGrid() {
     },
     {   id: 9, 
         type: 'instagram',
-        link: '', 
+        link: 'https://www.instagram.com/reel/Cm9tY56gB7I/?utm_source=ig_embed&amp;utm_campaign=loading', 
         content: 'Instagram4',
         localVideo: InstagramClip4,
         blurHash: 'L26tduxa56oL~WWW9ZoebbNGR%t7'
     },
     {   id: 10, 
         type: 'instagram',
-        link: '', 
+        link: 'https://www.instagram.com/reel/Ckbg5nOAZrB/?utm_source=ig_embed&amp;utm_campaign=loading', 
         content: 'Instagram5',
         localVideo: InstagramClip5,
         blurHash: 'LSHVbj9F_N_3E1MxM{M{IAoft8oe'
     },
     {   id: 11, 
         type: 'instagram',
-        link: '', 
+        link: 'https://www.instagram.com/reel/CNKVDGrHbMM/?utm_source=ig_embed&amp;utm_campaign=loading', 
         content: 'Instagram6',
         localVideo: InstagramClip6,
         blurHash: 'LUH_Gc59Rjt8~VNgRj%1I^R+xWt7'
     },
     {   id: 12, 
         type: 'instagram',
-        link: '', 
+        link: 'https://www.instagram.com/reel/CJbW0AJgaRP/?utm_source=ig_embed&amp;utm_campaign=loading', 
         content: 'Instagram7',
         localVideo: InstagramClip7,
         blurHash: 'LHH_C;00?^~10gxIWDt5E2-oM|M~'
     },
     {   id: 13, 
         type: 'instagram',
-        link: '', 
+        link: 'https://www.instagram.com/reel/CHBL84mH08u/?utm_source=ig_embed&amp;utm_campaign=loading', 
         content: 'Instagram8',
         localVideo: InstagramClip8,
         blurHash: 'L1G@;=Af|,}3000N~V^,02tn0h9s'
     },
     {   id: 14, 
         type: 'instagram',
-        link: '', 
+        link: 'https://www.instagram.com/reel/CiGarpsAFyy/?utm_source=ig_embed&amp;utm_campaign=loading', 
         content: 'Instagram9',
         localVideo: InstagramClip9,
         blurHash: 'L%45qOpyksaKaie:e-aca1aKf5kV'
     },
     {   id: 15, 
         type: 'instagram',
-        link: '', 
+        link: 'https://www.instagram.com/reel/ClooT4PpgwO/?utm_source=ig_embed&amp;utm_campaign=loading', 
         content: 'Instagram10',
         localVideo: InstagramClip10,
         blurHash: 'LcFf?T$*=eNv}Yn%aeNu,@oLR+S2'
     },
     {   id: 16, 
         type: 'instagram',
-        link: '', 
+        link: 'https://www.instagram.com/reel/CmD7_l8AZXf/?utm_source=ig_embed&amp;utm_campaign=loading', 
         content: 'Instagram11',
         localVideo: InstagramClip11,
         blurHash: 'L14Bd#0h4=~A0Nxt^$4;tSnORixv'
@@ -229,7 +229,6 @@ function CarouselGrid() {
     const [overlay, setOverlay] = useState(false)
     const [videoLink, setVideoLink] = useState('')
     const [videoType, setVideoType] = useState('')
-
     const sliderSettings = {
         dots: true,
         infinite: true,
@@ -278,13 +277,13 @@ function CarouselGrid() {
 
     const carouselItems = items.map((props) => 
     <div key={props.id}>
-        <div className={style.projectVideo} onClick={() => handleOpenOverlay(props.link, props.type)}>
+        <div className={style.projectVideo}>
         
             <LazyVideo src={props.localVideo} className={style.video} blurHash={props.blurHash} />
 
             <p>{props.content}</p>
             <div className={style.gridOverlay}>
-                <button>view more</button>
+                <button onClick={() => handleOpenOverlay(props.link, props.type)}>view more</button>
             </div>
         </div>
     </div>
@@ -304,7 +303,7 @@ function CarouselGrid() {
                     <iframe title="Portfolio Clip" src={videoLink} className={style.vimeo} allow="autoplay; loop; fullscreen; picture-in-picture" allowFullScreen />
                 }
                 {videoType === 'instagram' &&
-                    <EmbeddedInstagram />
+                    <EmbeddedInstagram url={videoLink} />
                 }
                 
             </Overlay>
