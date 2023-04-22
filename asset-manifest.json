@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Rubin_web_final/static/css/main.f6d731c9.css",
-    "main.js": "/Rubin_web_final/static/js/main.e0c014c5.js",
+    "main.js": "/Rubin_web_final/static/js/main.95bd68c3.js",
     "static/media/instagramAlt.mp4": "/Rubin_web_final/static/media/instagramAlt.466ded0ed5a62cc2b6a8.mp4",
     "static/media/ShowReel.mp4": "/Rubin_web_final/static/media/ShowReel.557c8ba2f6973e1a5f7e.mp4",
     "static/media/motion.mp4": "/Rubin_web_final/static/media/motion.8f8a447f2935807b6f83.mp4",
@@ -35,10 +35,10 @@
     "static/media/Be.svg": "/Rubin_web_final/static/media/Be.cc607c54fe0c9a5f90072bdd19175b8b.svg",
     "static/media/icoBurger.svg": "/Rubin_web_final/static/media/icoBurger.9eb7469d3041250851d06fe18b2c6353.svg",
     "main.f6d731c9.css.map": "/Rubin_web_final/static/css/main.f6d731c9.css.map",
-    "main.e0c014c5.js.map": "/Rubin_web_final/static/js/main.e0c014c5.js.map"
+    "main.95bd68c3.js.map": "/Rubin_web_final/static/js/main.95bd68c3.js.map"
   },
   "entrypoints": [
     "static/css/main.f6d731c9.css",
-    "static/js/main.e0c014c5.js"
+    "static/js/main.95bd68c3.js"
   ]
 }
