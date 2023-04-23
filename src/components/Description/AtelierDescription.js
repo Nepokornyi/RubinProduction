@@ -12,6 +12,7 @@ const useStyle = createUseStyles({
         minWidth: '350px',
         flexDirection: 'column',
         alignItems: 'center',
+        textAlign: 'center',
         '@media(max-width:800px)':{
             textAlign: 'center',
         }
@@ -103,15 +104,14 @@ function AtelierDescription() {
             transition={{duration:1, ease: 'easeInOut'}}>
             <h2 className={style.header}>ATELIER <br /> FOR YOU</h2>
             <div className={style.info}>
-                <h4 className={style.subHeader}>Versatile space is equipped with all the tools you need to create stunning content from start to finish.</h4>
+                <h4 className={style.subHeader}>SPACE WITH ALL THE TOOLS YOU NEED TO CREATE CONTENT</h4>
                 <ul className={style.list}>
-                    <li>Atelier is available for hire, offering a versatile and fully equipped environment for your next project.</li>
                     <li>From pre-production and planning to post-production and editing, we'll work closely with you to ensure that every aspect of your project is executed to perfection. With experienced director on hand, you can rest assured that you'll receive the guidance and support you need to create high-quality content that truly stands out</li>
                 </ul>
                 <HashLink 
                     smooth to="/#Contact" 
                     scroll={el => scrollWithOffset(el)}>
-                        <button className={style.request}>Request</button>
+                        <button className={style.request}>Contact</button>
                 </HashLink>
             </div>
 

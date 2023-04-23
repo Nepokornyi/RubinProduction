@@ -68,8 +68,8 @@ function Footer() {
             <div className={style.mainContent}>
                 <div>
                     <ul className={style.information}>
-                        <li><strong> e-mail:</strong> nikita.rubin@rubinproduction.eu</li>
-                        <li><strong>tel:</strong> +420 774 153 845</li>
+                        <li><strong> e-mail:</strong> rpinfo@rubinproduction.eu</li>
+                        <li><strong>tel:</strong> +420 773 042 876</li>
                     </ul>
                 </div>
                 <div className={style.iconsContainer}>

@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react'
 import { createUseStyles } from 'react-jss'
-import { m, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 
 import Content from '../../components/Content/Content'
@@ -8,13 +8,14 @@ import Footer from '../../components/Footer/Footer'
 import DialogSuccess from '../../components/Dialog/DialogSuccess'
 import { emailValidator } from '../../libs/validators'
 
-import backgroundImg from '../../assets/img/circleBackground.svg'
+import backgroundImg from '../../assets/img/Foto.svg'
 
 const useStyle = createUseStyles({
 	formContainer:{
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
+		zIndex: 2,
 	},
 	header:{
 		fontSize: '64px',
@@ -76,17 +77,39 @@ const useStyle = createUseStyles({
 
 	responsive:{
 		minHeight: '600px',
-		backgroundImage: `url(${backgroundImg})`,
-		backgroundRepeat: 'no-repeat',
-		backgroundPosition: 'center',
+		overflow: 'hidden',
 		'&::before':{
 			content: "''",
 			position: 'absolute',
-			left: 0,
-			top: 0,
+			top: '0',
+			right: '0',
 			width: '100%',
 			height: '100%',
-			backgroundImage: 'radial-gradient(circle, transparent, var(--main-bg-color-dark) 50%)',
+			backgroundImage: `url(${backgroundImg})`,
+			backgroundSize: '35%',
+			backgroundRepeat: 'no-repeat',
+			backgroundPosition: 'top right',
+			transform: 'rotate(10deg)',
+			zIndex: 0,
+			'@media(max-width:800px)':{
+				backgroundSize: '50%',
+			},
+			'@media(max-width:600px)':{
+				backgroundSize: '60%',
+			}
+
+		},
+		'&::after':{
+			content: "''",
+			position: 'absolute',
+			top: '0',
+			right: '0',
+			width: '100%',
+			height: '100%',
+			backgroundImage: 'radial-gradient(circle, transparent, var(--main-bg-color-dark) 80%)',
+			'@media(min-width:1100px)':{
+				backgroundImage: 'radial-gradient(circle, transparent, var(--main-bg-color-dark) 70%)',
+			}
 		}
 	}
 })

@@ -13,6 +13,8 @@ const useStyle = createUseStyles({
     width: '100%',
     height: '100%',
     position: 'relative',
+    backgroundColor: 'var(--main-bg-color-light)',
+    color: 'var(--main-text-color-dark)',
     '&>div:nth-child(2)': {
         backgroundColor: 'var(--main-bg-color-dark)',
         '&:before':{

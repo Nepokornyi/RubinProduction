@@ -136,7 +136,14 @@ function CarouselGrid() {
         content: 'Fashion Content',
         localVideo: VideoSamurai,
         blurHash: 'LFFg;Hx[zZX7ugtQNGo|cWozJ~sD'
-    }
+    },
+    {   id: 6, 
+        type: 'vimeo',
+        link: 'https://player.vimeo.com/video/734632991?h=773facb522&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
+        content: 'Commercial Ads',
+        localVideo: VideoWoman,
+        blurHash: 'L17w$bQT-;O:H+qu^+KK}@8x_2Nt'
+    },
 ]
     const style = useStyle()
 
