@@ -1,12 +1,11 @@
 import React from 'react';
 
 import Video from '../Video/Video';
-import Services from '../../components/Services/Services';
-import Portfolio from '../Portfolio/Portfolio';
-import Atelier from '../Atelier/Atelier';
 import Contact from '../Contact/Contact';
+import Offer from '../../components/AdsContent/Offer';
 
 import { createUseStyles } from 'react-jss'
+import WorkSteps from '../../components/AdsContent/WorkSteps';
 
 const useStyles = createUseStyles({
     mainContent:{
@@ -17,19 +16,18 @@ const useStyles = createUseStyles({
     }
   });
 
-function Landing() {
+function AdsLanding() {
 
     const style = useStyles()
 
     return (
         <div className={style.mainContent}>
-            <Video />
-            <Services />
-            <Atelier />
-            <Portfolio />
-            <Contact />
+            <Video ads={true} />
+            <Offer />
+            <WorkSteps />
+            <Contact ads={true} />
         </div>
     )
 }
 
-export default Landing
+export default AdsLanding

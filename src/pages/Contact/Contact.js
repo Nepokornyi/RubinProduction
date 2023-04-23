@@ -114,7 +114,7 @@ const useStyle = createUseStyles({
 	}
 })
 
-function Contact() {
+function Contact({ ads }) {
 	const [email, setEmail] = useState('');
     const [error, setError] = useState('');
 	const [successDialog, setSuccessDialog] = useState(false);
@@ -161,7 +161,7 @@ function Contact() {
     <Content className={style.responsive}>
 
         <motion.div 
-			id="Contact"
+			id={ads === true ? "AdsContact" : "Contact"}
 			className={style.formContainer}
 			initial={{opacity: 0}}
             whileInView={{opacity: 1}}

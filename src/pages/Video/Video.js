@@ -8,6 +8,7 @@ import { createUseStyles } from 'react-jss'
 import { motion } from 'framer-motion'
 
 import ShowReel from '../../assets/video/ShowReel.mp4'
+import AdsReel from '../../assets/video/AdsReel.mp4'
 import LazyVideo from '../../components/LazyHash/LazyVideo'
 
 
@@ -32,7 +33,7 @@ const useStyle = createUseStyles({
     }
 })
 
-function Video() {
+function Video({ ads }) {
 
     const style = useStyle()
 
@@ -44,7 +45,7 @@ function Video() {
     return (
         <>
             <Content className={style.gradient}>
-            <Header />
+            <Header ads={ads} />
             <motion.div 
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
@@ -53,7 +54,7 @@ function Video() {
                 className={style.videoContainer}
                 onClick={handleOpenOverlay} 
             >
-                <LazyVideo src={ShowReel} blurHash='L02i62M,O9k6P,m@tNSu.5RCtPSJ' className={style.background} />
+                {ads === true ? <LazyVideo src={AdsReel} className={style.background} /> : <LazyVideo src={ShowReel} blurHash='L02i62M,O9k6P,m@tNSu.5RCtPSJ' className={style.background} />}
                 <Frame />
             </motion.div>
             </Content>

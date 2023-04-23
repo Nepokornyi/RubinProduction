@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Content from '../../components/Content/Content'
-import ServiceInformation from '../../components/ServiceInformation/ServiceInformation';
+import Content from '../Content/Content'
+import ServiceInformation from '../ServiceInformation/ServiceInformation';
 
 import { createUseStyles } from 'react-jss'
 

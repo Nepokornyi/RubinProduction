@@ -20,12 +20,6 @@ import VideoSamurai from '../../assets/video/samurai.mp4'
 
 
 const useStyle = createUseStyles({
-    mainContainer: {
-        width: '90vw',
-        '& > div > div':{
-            transition: 'transform 3s cubic-bezier(0.2,1,0.3,1) 0s'
-        }
-    },
     projectVideo: {
         minWidth: '300px',
         minHeight: '250px',
