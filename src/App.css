@@ -1,10 +1,10 @@
 :root{
-    --main-bg-color-dark:black;
+    --main-bg-color-dark:rgb(20, 19, 22);
     --main-bg-color-light:white;
 
-    --main-text-color-dark:black;
+    --main-text-color-dark:rgb(20, 19, 22);
     --main-text-color-light:white;
-    --secondary-text-color:#FF0000;
+    --secondary-text-color:rgb(227, 30, 54);
     --hover-text-color:#939393;
 
     --secondary-bg-color-dark: #474747;

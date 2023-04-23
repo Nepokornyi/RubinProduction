@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Video from '../Video/Video';
-import About from '../About/About';
+import Services from '../Services/Services';
 import Portfolio from '../Portfolio/Portfolio';
 import Atelier from '../Atelier/Atelier';
 import Contact from '../Contact/Contact';
@@ -24,9 +24,9 @@ function Landing() {
     return (
         <div className={style.mainContent}>
             <Video />
-            <About />
-            <Portfolio />
+            <Services />
             <Atelier />
+            <Portfolio />
             <Contact />
         </div>
     )

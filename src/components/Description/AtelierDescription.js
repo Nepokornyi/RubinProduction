@@ -30,7 +30,7 @@ const useStyle = createUseStyles({
             bottom: '5px',
             right: '35px',
             rotate: '15deg',
-            color: 'red',
+            color: 'var(--secondary-text-color)',
             fontSize: '30px',
         },
         '&:before':{
@@ -39,7 +39,7 @@ const useStyle = createUseStyles({
             top: 0,
             left: '65px',
             rotate: '-15deg',
-            color: 'red',
+            color: 'var(--secondary-text-color)',
             fontSize: '30px',
         },
     },

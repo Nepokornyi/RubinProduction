@@ -26,7 +26,7 @@ const useStyle = createUseStyles({
 			top: '15px',
 			left: '80px',
 			rotate: '-15deg',
-			color: 'red',
+			color: 'var(--secondary-text-color)',
 			fontSize: '36px',
 			fontWeight: '500'
 		},
@@ -36,7 +36,7 @@ const useStyle = createUseStyles({
 			top: '-5px',
 			right: '100px',
 			rotate: '-13deg',
-			color: 'red',
+			color: 'var(--secondary-text-color)',
 			fontSize: '52px',
 			fontWeight: '500'
 		},

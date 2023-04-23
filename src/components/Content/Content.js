@@ -11,13 +11,13 @@ const useStyle = createUseStyles({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        '&:nth-child(even)': {
-          backgroundColor: 'var(--main-bg-color-light)',
-          color: 'var(--main-text-color-dark)',
-          '@media (max-width:800px)': {
-            height: '200vh'
-          }
-        }
+        // '&:nth-child(even)': {
+        //     backgroundColor: 'var(--main-bg-color-light)',
+        //     color: 'var(--main-text-color-dark)',
+        //     '@media (max-width:800px)': {
+        //     height: '200vh'
+        //     }
+        // }
     },
 });
 

@@ -97,7 +97,6 @@ function Header() {
 
   const [sideMenu, setSideMenu] = useState(false);
   const isMobile = useMediaQuery({query: '(max-width:600px)'});
-  const isTablet = useMediaQuery({query: '(min-width:900px)'});
 
   const style = useStyles();
 
@@ -126,33 +125,26 @@ function Header() {
                 animate='show'
             >
                 <HashLink 
-                    smooth to="/#About" 
+                    smooth to="/#" 
                     scroll={el => scrollWithOffset(el)}
-                ><motion.li variants={item} className={style.listItem}>About</motion.li>
+                ><motion.li variants={item} className={style.listItem}>ShowReel</motion.li>
                 </HashLink>
                 <HashLink 
-                    smooth to="/#Portfolio" 
+                    smooth to="/#Services" 
                     scroll={el => scrollWithOffset(el)}
-                ><motion.li variants={item} className={style.listItem}>Portfolio</motion.li>
+                ><motion.li variants={item} className={style.listItem}>Services</motion.li>
                 </HashLink>
                 <HashLink 
                     smooth to="/#Atelier" 
                     scroll={el => scrollWithOffset(el)}
                     ><motion.li variants={item} className={style.listItem}>Atelier</motion.li>
                 </HashLink>
+                <HashLink 
+                    smooth to="/#Portfolio" 
+                    scroll={el => scrollWithOffset(el)}
+                    ><motion.li variants={item} className={style.listItem}>Portfolio</motion.li>
+                </HashLink>
             </motion.ul>
-        }
-        {isTablet && 
-            <HashLink 
-                to="/#" 
-                scroll={el => scrollWithOffset(el)}
-            ><motion.h2 
-                initial={{opacity: 0}} 
-                animate={{opacity: 1}} 
-                transition={{duration:1.5, ease: 'backIn'}} 
-                className={style.menuHeader}
-                >Nikita Rubin</motion.h2>
-            </HashLink>
         }
         {isMobile &&
             <div className={style.mobileHeader}>
@@ -161,22 +153,28 @@ function Header() {
                     <div className={style.sideMenu}>
                         <ul className={style.dropDownList}>
                         <HashLink 
-                            to="/#About" 
+                            to="/#" 
                             scroll={el => scrollWithOffset(el)}
                         >
-                            <li className={style.listItem} onClick={handleRedirect}>About</li>
+                            <li className={style.listItem} onClick={handleRedirect}>ShowReel</li>
                         </HashLink>
                         <HashLink 
-                            to="/#Portfolio" 
+                            to="/#Services" 
                             scroll={el => scrollWithOffset(el)}
                         >
-                            <li className={style.listItem} onClick={handleRedirect}>Portfolio</li>
+                            <li className={style.listItem} onClick={handleRedirect}>Services</li>
                         </HashLink>
                         <HashLink 
                             to="/#Atelier" 
                             scroll={el => scrollWithOffset(el)}
                         >   
                             <li className={style.listItem} onClick={handleRedirect}>Atelier</li>
+                        </HashLink>
+                        <HashLink 
+                            to="/#Portfolio" 
+                            scroll={el => scrollWithOffset(el)}
+                        >   
+                            <li className={style.listItem} onClick={handleRedirect}>Portfolio</li>
                         </HashLink>
                         </ul>
                     </div>

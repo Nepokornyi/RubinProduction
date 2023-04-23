@@ -27,7 +27,7 @@ const useStyle = createUseStyles({
 			top: '0px',
 			left: '80px',
 			rotate: '-11deg',
-			color: 'red',
+			color: 'var(--secondary-text-color)',
 			fontSize: '48px',
 			fontWeight: '400'
 		},
@@ -86,7 +86,7 @@ const useStyle = createUseStyles({
 			top: 0,
 			width: '100%',
 			height: '100%',
-			backgroundImage: 'radial-gradient(circle, transparent, black 50%)',
+			backgroundImage: 'radial-gradient(circle, transparent, var(--main-bg-color-dark) 50%)',
 		}
 	}
 })
