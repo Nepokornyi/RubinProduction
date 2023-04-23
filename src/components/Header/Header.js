@@ -90,6 +90,11 @@ const useStyles = createUseStyles({
             color: 'var(--hover-text-color)',
             transitionDuration: '350ms'
         }
+    },
+    adsMenu:{
+        '@media(max-width:600px)':{
+            fontSize: '14px'
+        }
     }
 });
 
@@ -128,7 +133,7 @@ function Header({ ads }) {
                     <HashLink 
                         smooth to="/Ads/#" 
                         scroll={el => scrollWithOffset(el)}
-                    ><motion.li variants={item} className={style.listItem}>Rubin Production</motion.li>
+                    ><motion.li variants={item} className={`${style.listItem} ${style.adsMenu}`}>Rubin Production</motion.li>
                     </HashLink>
                 </motion.ul>
         </>
