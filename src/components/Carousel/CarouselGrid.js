@@ -16,17 +16,6 @@ import VideoMotion from '../../assets/video/motion.mp4'
 import VideoWoman from '../../assets/video/woman.mp4'
 import VideoSekuron from '../../assets/video/sekuron.mp4'
 import VideoSamurai from '../../assets/video/samurai.mp4'
-// import InstagramClip1 from '../../assets/video/01_instagram.mp4'
-// import InstagramClip2 from '../../assets/video/02_instagram.mp4'
-// import InstagramClip3 from '../../assets/video/03_instagram.mp4'
-import InstagramClip4 from '../../assets/video/04_instagram.mp4'
-import InstagramClip5 from '../../assets/video/05_instagram.mp4'
-import InstagramClip6 from '../../assets/video/06_instagram.mp4'
-import InstagramClip7 from '../../assets/video/07_instagram.mp4'
-import InstagramClip8 from '../../assets/video/08_instagram.mp4'
-import InstagramClip9 from '../../assets/video/09_instagram.mp4'
-import InstagramClip10 from '../../assets/video/10_instagram.mp4'
-// import InstagramClip11 from '../../assets/video/11_instagram.mp4'
 
 
 
@@ -147,84 +136,7 @@ function CarouselGrid() {
         content: 'Fashion Content',
         localVideo: VideoSamurai,
         blurHash: 'LFFg;Hx[zZX7ugtQNGo|cWozJ~sD'
-    },
-    // {   id: 6, 
-    //     type: 'instagram',
-    //     link: 'https://www.instagram.com/reel/Cmo-8GBgBWv/?utm_source=ig_embed&utm_campaign=loading', 
-    //     content: 'Instagram1',
-    //     localVideo: InstagramClip1,
-    //     blurHash: 'L4BWf200~W~q.9yXE0IUR%%gD$M{'
-    // },
-    // {   id: 7, 
-    //     type: 'instagram',
-    //     link: 'https://www.instagram.com/reel/CkIS2oQAfUD/?utm_source=ig_embed&amp;utm_campaign=loading', 
-    //     content: 'Instagram2',
-    //     localVideo: InstagramClip2,
-    //     blurHash: 'L27-i%%MN2%0~qxuxsM|-;WBt7oL'
-    // },
-    // {   id: 8, 
-    //     type: 'instagram',
-    //     link: 'https://www.instagram.com/reel/Cm4n4PPBQZ4/?utm_source=ig_embed&amp;utm_campaign=loading', 
-    //     content: 'Instagram3',
-    //     localVideo: InstagramClip3,
-    //     blurHash: 'L7EeYw}sIBRk1MEg9aWUIpSzkWV@'
-    // },
-    {   id: 9, 
-        type: 'instagram',
-        link: 'https://www.instagram.com/reel/Cm9tY56gB7I/?utm_source=ig_embed&amp;utm_campaign=loading', 
-        content: 'AI Video Content',
-        localVideo: InstagramClip4,
-        blurHash: 'L26tduxa56oL~WWW9ZoebbNGR%t7'
-    },
-    {   id: 10, 
-        type: 'instagram',
-        link: 'https://www.instagram.com/reel/Ckbg5nOAZrB/?utm_source=ig_embed&amp;utm_campaign=loading', 
-        content: 'Visual Effects',
-        localVideo: InstagramClip5,
-        blurHash: 'LSHVbj9F_N_3E1MxM{M{IAoft8oe'
-    },
-    {   id: 11, 
-        type: 'instagram',
-        link: 'https://www.instagram.com/reel/CNKVDGrHbMM/?utm_source=ig_embed&amp;utm_campaign=loading', 
-        content: 'Commercial Content',
-        localVideo: InstagramClip6,
-        blurHash: 'LUH_Gc59Rjt8~VNgRj%1I^R+xWt7'
-    },
-    {   id: 12, 
-        type: 'instagram',
-        link: 'https://www.instagram.com/reel/CJbW0AJgaRP/?utm_source=ig_embed&amp;utm_campaign=loading', 
-        content: 'Fashion Content',
-        localVideo: InstagramClip7,
-        blurHash: 'LHH_C;00?^~10gxIWDt5E2-oM|M~'
-    },
-    {   id: 13, 
-        type: 'instagram',
-        link: 'https://www.instagram.com/reel/CHBL84mH08u/?utm_source=ig_embed&amp;utm_campaign=loading', 
-        content: 'Commercial Ads',
-        localVideo: InstagramClip8,
-        blurHash: 'L1G@;=Af|,}3000N~V^,02tn0h9s'
-    },
-    {   id: 14, 
-        type: 'instagram',
-        link: 'https://www.instagram.com/reel/CiGarpsAFyy/?utm_source=ig_embed&amp;utm_campaign=loading', 
-        content: 'Cinematography',
-        localVideo: InstagramClip9,
-        blurHash: 'L%45qOpyksaKaie:e-aca1aKf5kV'
-    },
-    {   id: 15, 
-        type: 'instagram',
-        link: 'https://www.instagram.com/reel/ClooT4PpgwO/?utm_source=ig_embed&amp;utm_campaign=loading', 
-        content: 'Commercial Ads',
-        localVideo: InstagramClip10,
-        blurHash: 'LcFf?T$*=eNv}Yn%aeNu,@oLR+S2'
-    },
-    // {   id: 16, 
-    //     type: 'instagram',
-    //     link: 'https://www.instagram.com/reel/CmD7_l8AZXf/?utm_source=ig_embed&amp;utm_campaign=loading', 
-    //     content: 'Instagram11',
-    //     localVideo: InstagramClip11,
-    //     blurHash: 'L14Bd#0h4=~A0Nxt^$4;tSnORixv'
-    // }
+    }
 ]
     const style = useStyle()
 

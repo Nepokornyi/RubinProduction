@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Content from '../../components/Content/Content'
+import ServiceInformation from '../../components/ServiceInformation/ServiceInformation';
 
 import { createUseStyles } from 'react-jss'
 
@@ -38,6 +39,14 @@ const useStyle = createUseStyles({
 			}
 		}
 	},
+    expandContent:{
+        '@media(max-width:800px)':{
+            minHeight: '1150px'
+        },
+        '@media(max-width:600px)':{
+            minHeight: '1500px'
+        }
+    }
 });
 
 function Services() {
@@ -48,7 +57,7 @@ function Services() {
         <Content className={style.expandContent}>
             <div id="Services" className={style.servicesContainer}>
                 <h2 className={style.header}>Services</h2>
-                <>ServiceInformation</>
+                <ServiceInformation />
             </div>
         </Content>
     )

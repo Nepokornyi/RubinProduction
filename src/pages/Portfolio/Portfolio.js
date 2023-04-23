@@ -16,6 +16,7 @@ const useStyle = createUseStyles({
 	},
 	header:{
 		fontSize: '64px',
+		height: '10vh',
 		textAlign: 'center',
 		position: 'relative',
 		margin: '10px 0 25px 0',
