@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss'
 import { useMediaQuery } from 'react-responsive'
 
 const  borderStyle = '3px solid var(--main-bg-color-light)';
-const borderSpace = '20px';
+const borderSpace = '30px';
 
 const useStyle = createUseStyles({
     '@keyframes pop':{
@@ -21,20 +21,20 @@ const useStyle = createUseStyles({
         cursor: 'default',
         pointerEvents: 'none',
         position: 'absolute',
-        left: '50%',
-        top: '50%',
-        transform: 'translate(-50%, -50%)',
-        marginTop: '5vh',
-        width: '95%',
-        height: '85%',
-        marginBottom: '2.5vh',
+        left: '0',
+        top: '65px',
+        width: '100%',
+        height: 'calc(100% - 65px)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         opacity: 0.6,
     },
 
     overlayHelper: {
         position: 'relative',
         width: '100%',
-        height: '100%'
+        height: '85%'
     },
 
     overlayElement: {
@@ -126,31 +126,29 @@ function Frame() {
 
     return (
         <>
-            <div className={style.frameContainer}>
-                <div className={style.overlay}>
-                    <div className={style.overlayHelper}>
-                        <div className={`${style.overlayElement} ${style.topLeft}`}>
-                        <span id="overlay-top-left-text" className={style.overlayText}>
-                        </span>
-                        </div>
-                        <div className={`${style.overlayElement} ${style.topRight}`}>
-                        <span id="overlay-top-right-text" className={style.overlayText}>
-                            <span className={style.animation}>🔴</span> REC
-                        </span>
-                        </div>
-                        <div className={`${style.overlayElement} ${style.bottomLeft}`}>
-                        <span className={`${style.overlayText} ${style.bottomLeftText}`}>
-                            60 FPS <br />
-                            {isLaptop && '1920x1080'}
-                            {isTablet && '1280x720'}
-                            {isMobile && '640x360'}
-                        </span>
-                        </div>
-                        <div className={`${style.overlayElement} ${style.bottomRight}`}>
-                        <span className={`${style.overlayText} ${style.bottomRightText} ${style.counter}`}>
-                            24:00
-                        </span>
-                        </div>
+            <div className={style.overlay}>
+                <div className={style.overlayHelper}>
+                    <div className={`${style.overlayElement} ${style.topLeft}`}>
+                    <span id="overlay-top-left-text" className={style.overlayText}>
+                    </span>
+                    </div>
+                    <div className={`${style.overlayElement} ${style.topRight}`}>
+                    <span id="overlay-top-right-text" className={style.overlayText}>
+                        <span className={style.animation}>🔴</span> REC
+                    </span>
+                    </div>
+                    <div className={`${style.overlayElement} ${style.bottomLeft}`}>
+                    <span className={`${style.overlayText} ${style.bottomLeftText}`}>
+                        60 FPS <br />
+                        {isLaptop && '1920x1080'}
+                        {isTablet && '1280x720'}
+                        {isMobile && '640x360'}
+                    </span>
+                    </div>
+                    <div className={`${style.overlayElement} ${style.bottomRight}`}>
+                    <span className={`${style.overlayText} ${style.bottomRightText} ${style.counter}`}>
+                        24:00
+                    </span>
                     </div>
                 </div>
             </div>

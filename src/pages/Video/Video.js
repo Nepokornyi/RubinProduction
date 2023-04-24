@@ -19,6 +19,7 @@ const useStyle = createUseStyles({
         height: '100%',
         display: 'flex',
         alignItems: 'flex-end',
+        paddingTop: '65px',
     },
     background: {
         width: '100%',
@@ -30,7 +31,7 @@ const useStyle = createUseStyles({
         width: '80vw',
         height: '95vh',
         border: 'none'
-    }
+    },
 })
 
 function Video({ ads }) {
@@ -44,19 +45,19 @@ function Video({ ads }) {
 
     return (
         <>
-            <Content className={style.gradient}>
-            <Header ads={ads} />
-            <motion.div 
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                transition={{duration:3, ease: 'easeOut'}}
-                id="Video" 
-                className={style.videoContainer}
-                onClick={handleOpenOverlay} 
-            >
-                {ads === true ? <LazyVideo src={AdsReel} className={style.background} /> : <LazyVideo src={ShowReel} blurHash='L02i62M,O9k6P,m@tNSu.5RCtPSJ' className={style.background} />}
-                <Frame />
-            </motion.div>
+            <Content>
+                <Header ads={ads} />
+                <motion.div 
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{duration:3, ease: 'easeOut'}}
+                    id="Video" 
+                    className={style.videoContainer}
+                    onClick={handleOpenOverlay} 
+                >
+                    {ads === true ? <LazyVideo src={AdsReel} className={style.background} /> : <LazyVideo src={ShowReel} blurHash='L02i62M,O9k6P,m@tNSu.5RCtPSJ' className={style.background} />}
+                    <Frame />
+                </motion.div>
             </Content>
 
             {overlay &&
