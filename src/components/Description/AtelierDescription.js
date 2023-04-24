@@ -21,6 +21,8 @@ const useStyle = createUseStyles({
         fontSize: '56px',
         textAlign: 'center',
         position: 'relative',
+        fontWeight: '700',
+        zIndex: 1,
         margin: 0,
         '@media (max-width:1000px)': {
             fontSize: '48px'
@@ -29,23 +31,29 @@ const useStyle = createUseStyles({
             content: "'X'",
             position: 'absolute',
             bottom: '5px',
-            right: '35px',
+            right: '-10px',
             rotate: '15deg',
             color: 'var(--secondary-text-color)',
             fontSize: '30px',
+            fontWeight: 300,
+            zIndex: -1
         },
         '&:before':{
             content: "'X'",
             position: 'absolute',
-            top: 0,
-            left: '65px',
+            top: '-25px',
+            left: '10px',
             rotate: '-15deg',
             color: 'var(--secondary-text-color)',
-            fontSize: '30px',
+            fontSize: '48px',
+            fontWeight: 300,
+            zIndex: -1
         },
     },
     subHeader:{
         fontSize: '22px',
+        fontWeight: '700',
+        margin: '18px 0 0 0',
         '@media (max-width:900px)':{
             fontSize: '18px'
         }
@@ -53,34 +61,38 @@ const useStyle = createUseStyles({
     list: {
         listStyle: 'none',
         padding: 0,
+        margin: '20px 0',
         fontSize: '18px',
         '@media (max-width:1000px)': {
             fontSize: '16px'
         },
         '& > li':{
-            marginBottom: '15px'
+            marginBottom: '15px',
+            fontWeight: '500'
         }
     },
     info:{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        width: '400px'
     },
-    request:{
+    contact:{
 		width: '200px',
 		height: '50px',
 		fontSize: '16px',
         margin: 'auto',
-		backgroundColor: 'var(--main-bg-color-light)',
-		color: 'var(--main-text-color-dark)',
+		backgroundColor: 'var(--main-bg-color-dark)',
+		color: 'var(--main-text-color-light)',
 		textTransform: 'uppercase',
-		border: '1px solid var(--main-bg-color-dark)',
+		border: '1px solid var(--main-bg-color-light)',
 		transitionDuration: '350ms',
 		cursor: 'pointer',
+        fontWeight: '700',
 		'&:hover': {
-			backgroundColor: 'var(--main-bg-color-dark)',
-			border: '1px solid var(--main-bg-color-light)',
-			color: 'var(--main-text-color-light)',
+			backgroundColor: 'var(--main-bg-color-light)',
+			border: '1px solid var(--main-bg-color-dark)',
+			color: 'var(--main-text-color-dark)',
 			transitionDuration: '350ms'
 		}
 	},
@@ -104,14 +116,14 @@ function AtelierDescription() {
             transition={{duration:1, ease: 'easeInOut'}}>
             <h2 className={style.header}>ATELIER <br /> FOR YOU</h2>
             <div className={style.info}>
-                <h4 className={style.subHeader}>SPACE WITH ALL THE TOOLS YOU NEED TO CREATE CONTENT</h4>
+                <h4 className={style.subHeader}>SPACE WITH ALL THE TOOLS <span style={{color: 'var(--secondary-text-color)'}}>YOU</span> NEED TO CREATE CONTENT</h4>
                 <ul className={style.list}>
                     <li>From pre-production and planning to post-production and editing, we'll work closely with you to ensure that every aspect of your project is executed to perfection. With experienced director on hand, you can rest assured that you'll receive the guidance and support you need to create high-quality content that truly stands out</li>
                 </ul>
                 <HashLink 
                     smooth to="/#Contact" 
                     scroll={el => scrollWithOffset(el)}>
-                        <button className={style.request}>Contact</button>
+                        <button className={style.contact}>Contact</button>
                 </HashLink>
             </div>
 

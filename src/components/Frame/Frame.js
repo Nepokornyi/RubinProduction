@@ -34,7 +34,7 @@ const useStyle = createUseStyles({
     overlayHelper: {
         position: 'relative',
         width: '100%',
-        height: '85%'
+        height: '90%'
     },
 
     overlayElement: {

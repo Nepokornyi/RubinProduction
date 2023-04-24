@@ -22,12 +22,14 @@ import VideoSamurai from '../../assets/video/samurai.mp4'
 const useStyle = createUseStyles({
     projectVideo: {
         minWidth: '300px',
-        minHeight: '250px',
+        height: '35vh',
         position: 'relative',
         overflow: 'hidden',
-        margin: '15px',
+        '@media(max-width:800px)':{
+            height: '70vh'
+        },
         '&:hover $gridOverlay': {
-            transform: 'translateY(-0%)',
+            opacity: 1,
             transitionDuration: '350ms',
             transitionTimingFunction: 'ease-in-out',
           },
@@ -57,7 +59,7 @@ const useStyle = createUseStyles({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        transform: 'translateY(-101%)',
+        opacity: 0,
         transition: 'ease',
         transitionDuration: '350ms',
         '& > button': {
@@ -150,22 +152,16 @@ function CarouselGrid() {
     const sliderSettings = {
         dots: true,
         infinite: true,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2500,
         speed: 1250,
         pauseOnFocus: true,
         swipeToSlide: true,
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         rows: 2,
         arrows: false,
         responsive: [
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 2,
-                }
-            },
             {
                 breakpoint: 800,
                 settings: {
@@ -196,27 +192,25 @@ function CarouselGrid() {
     }
 
     const carouselItems = items.map((props) => 
-    <div key={props.id}>
-        <div className={style.projectVideo} onClick={() => {isTablet && handleOpenOverlay(props.link, props.type)}} >
-        
-            <LazyVideo src={props.localVideo} className={style.video} blurHash={props.blurHash} />
+    <div key={props.id} className={style.projectVideo} onClick={() => {isTablet && handleOpenOverlay(props.link, props.type)}} >
+    
+        <LazyVideo src={props.localVideo} className={style.video} blurHash={props.blurHash} />
 
-            <p>{props.content}</p>
-            
-            {!isTablet &&
-            <>
-                <div className={style.gridOverlay}>
-                    <button onClick={() => handleOpenOverlay(props.link, props.type)}>view more</button>
-                </div>
-            </>
-            }
-        </div>
+        <p>{props.content}</p>
+        
+        {!isTablet &&
+        <>
+            <div className={style.gridOverlay}>
+                <button onClick={() => handleOpenOverlay(props.link, props.type)}>view more</button>
+            </div>
+        </>
+        }
     </div>
 );
 
   return (
     <>
-        <div style={{width: '95%'}}>
+        <div style={{width: '100%', height: '80%'}}>
             <Slider {...sliderSettings}>
                 {carouselItems}
             </Slider>

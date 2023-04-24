@@ -13,24 +13,30 @@ import backgroundImg from '../../assets/img/Foto.svg'
 const useStyle = createUseStyles({
 	formContainer:{
 		display: 'flex',
+		height: 'calc(100% - 100px)',
 		flexDirection: 'column',
 		alignItems: 'center',
+		justifyContent: 'center',
 		zIndex: 2,
 	},
 	header:{
 		fontSize: '64px',
+		height: '20%',
 		textAlign: 'center',
 		position: 'relative',
 		textTransform: 'uppercase',
+		fontWeight: 700,
+		zIndex: 1,
 		'&:after':{
 			content: "'X'",
 			position: 'absolute',
-			top: '0px',
-			left: '80px',
+			top: '-10px',
+			left: '-10px',
 			rotate: '-11deg',
 			color: 'var(--secondary-text-color)',
 			fontSize: '48px',
-			fontWeight: '400'
+			fontWeight: '400',
+			zIndex: -1
 		},
 		'@media(max-width:700px)':{
 			fontSize: '52px',
@@ -42,18 +48,39 @@ const useStyle = createUseStyles({
 	},
 	form:{
 		minWidth: '80vw',
-		minHeight: '20vh',
+		minHeight: '80%',
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
 		gap: '35px',
 		position: 'relative'
 	},
-	mailInput:{
-		minWidth: '300px',
-		height: '40px',
-		width: '60vw'
+	inputRow:{
+		display: 'flex',
+		gap: '20px'
 	},
+	inputColumn:{
+		display: 'flex',
+		flexDirection: 'column',
+		gap: '20px'
+	},
+	input:{
+		minWidth: '350px',
+		height: '35px',
+		width: '35vw',
+		border: 0,
+		margin: 0,
+		padding: '20px',
+	},
+	textarea:{
+		height: '225px',
+		width: '35vw',
+		padding: '20px',
+		border: 0,
+		margin: 0,
+	},
+
+
 	error:{
 		color: 'var(--secondary-text-color)'
 	},
@@ -61,11 +88,12 @@ const useStyle = createUseStyles({
 		width: '200px',
 		height: '50px',
 		fontSize: '16px',
-		backgroundColor: 'var(--main-bg-color-light)',
-		color: 'var(--main-text-color-dark)',
+		backgroundColor: 'var(--secondary-text-color)',
+		color: 'var(--main-text-color-light)',
 		textTransform: 'uppercase',
 		border: 'none',
 		transitionDuration: '350ms',
+		fontWeight: 700,
 		cursor: 'pointer',
 		'&:hover': {
 			backgroundColor: 'var(--main-bg-color-dark)',
@@ -116,6 +144,8 @@ const useStyle = createUseStyles({
 
 function Contact({ ads }) {
 	const [email, setEmail] = useState('');
+	const [name, setName] = useState('');
+	const [phone, setPhone] = useState('');
     const [error, setError] = useState('');
 	const [successDialog, setSuccessDialog] = useState(false);
 
@@ -169,8 +199,16 @@ function Contact({ ads }) {
 			<h2 className={style.header}>Contact</h2>
 			<form ref={form} onSubmit={handleSubmit} noValidate className={style.form}>
 
-				<div className={style}>
-					<input type="email" name="email" value={email} onChange={(event) => {setEmail(event.target.value.trim())}} className={style.mailInput} placeholder='Email*' required />
+				<div className={style.inputRow}>
+					<div className={style.inputColumn}>
+						<input type="text" name="name" value={name} className={style.input} placeholder='Name' />
+						<input type="email" name="email" value={email} onChange={(event) => {setEmail(event.target.value.trim())}} className={style.input} placeholder='Email*' required />
+						<input type="number" name="phone" value={phone} className={style.input} placeholder='Phone number' />
+					</div>
+					<div>
+						<textarea className={style.textarea} name="message" cols="30" rows="10" placeholder='Message'></textarea>
+					</div>
+					
 					{error && <p className={style.error}>{error}</p>}   
 				</div>
 

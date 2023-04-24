@@ -45,7 +45,7 @@ const useStyle = createUseStyles({
 		height: '45vh',
 		display: 'flex', 
 		justifyContent: 'center',
-		margin: '5px',
+		margin: '25px 15px',
 		'& > p':{
             position: 'absolute',
             top: '20px',
@@ -96,7 +96,7 @@ function ShowReel() {
 	const sliderSettings = {
         dots: true,
         infinite: true,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 1000,
         speed: 1250,
         pauseOnFocus: true,

@@ -12,7 +12,19 @@ const useStyle = createUseStyles({
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		justifyContent: 'center'
+		justifyContent: 'center',
+		borderBottom: '1px solid var(--secondary-text-color)'
+	},
+	headerWrapper:{
+		width: '100%',
+		height: '20%',
+		minHeight: '80px',
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		'@media(max-width: 800px)':{
+			height: '10%',
+		}
 	},
 	header:{
 		fontSize: '64px',
@@ -21,25 +33,29 @@ const useStyle = createUseStyles({
 		position: 'relative',
 		margin: '10px 0 25px 0',
 		textTransform: 'uppercase',
+		fontWeight: '700',
+		zIndex: 1,
 		'&:after':{
 			content: "'X'",
 			position: 'absolute',
 			top: '15px',
-			left: '80px',
+			left: '60px',
 			rotate: '-15deg',
 			color: 'var(--secondary-text-color)',
 			fontSize: '36px',
-			fontWeight: '500'
+			fontWeight: '500',
+			zIndex: -1
 		},
 		'&:before':{
 			content: "'X'",
 			position: 'absolute',
-			top: '-5px',
-			right: '100px',
+			top: '-10px',
+			right: '90px',
 			rotate: '-13deg',
 			color: 'var(--secondary-text-color)',
-			fontSize: '52px',
-			fontWeight: '500'
+			fontSize: '56px',
+			fontWeight: '300',
+			zIndex: -1
 		},
 		'@media(max-width:700px)':{
 			fontSize: '52px',
@@ -68,8 +84,10 @@ function Portfolio() {
 			<div 
 			id="Portfolio" 
 			className={style.portfolioContainer}>
-			<h2 className={style.header}>Portfolio</h2>
-			<CarouselGrid />
+				<div className={style.headerWrapper}>
+					<h2 className={style.header}>Portfolio</h2>
+				</div>
+				<CarouselGrid />
 			</div>
 		</Content>
 	)

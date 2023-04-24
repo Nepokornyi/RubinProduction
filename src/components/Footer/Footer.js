@@ -11,7 +11,7 @@ const useStyle = createUseStyles({
         position: 'absolute',
         bottom: 0,
         width: '100%',
-        borderTop: '1px solid var(--secondary-bg-color-dark)',
+        borderTop: '1px solid var(--secondary-text-color)',
         zIndex: '5',
         '@media(max-width:800px)':{
             fontSize: '11px',
@@ -23,7 +23,7 @@ const useStyle = createUseStyles({
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        margin: '0 25px',
+        margin: '0 10vw',
     },
     information:{
         listStyle: 'none',
