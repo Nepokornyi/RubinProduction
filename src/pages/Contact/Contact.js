@@ -22,6 +22,7 @@ const useStyle = createUseStyles({
 	header:{
 		fontSize: '64px',
 		height: '20%',
+		margin: 0,
 		textAlign: 'center',
 		position: 'relative',
 		textTransform: 'uppercase',
@@ -48,11 +49,11 @@ const useStyle = createUseStyles({
 	},
 	form:{
 		minWidth: '80vw',
-		minHeight: '80%',
+		height: '80%',
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		gap: '35px',
+		gap: '25px',
 		position: 'relative'
 	},
 	inputRow:{
@@ -208,10 +209,8 @@ function Contact({ ads }) {
 					<div>
 						<textarea className={style.textarea} name="message" cols="30" rows="10" placeholder='Message'></textarea>
 					</div>
-					
-					{error && <p className={style.error}>{error}</p>}   
 				</div>
-
+				{error && <p className={style.error}>{error}</p>}   
 				<button type="submit" className={style.submit}>Send</button>
 		  </form>
         </motion.div>
