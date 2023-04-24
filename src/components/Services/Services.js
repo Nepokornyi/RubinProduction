@@ -29,6 +29,7 @@ const useStyle = createUseStyles({
 		}
 	},
 	header:{
+		margin: 0,
 		fontSize: '64px',
 		textAlign: 'center',
 		position: 'relative',
