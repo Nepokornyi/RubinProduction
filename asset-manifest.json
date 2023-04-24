@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/RubinProduction/static/css/main.a9830709.css",
-    "main.js": "/RubinProduction/static/js/main.1cb39e4e.js",
+    "main.css": "/RubinProduction/static/css/main.38b35e2e.css",
+    "main.js": "/RubinProduction/static/js/main.cd255992.js",
     "static/media/ShowReel.mp4": "/RubinProduction/static/media/ShowReel.557c8ba2f6973e1a5f7e.mp4",
     "static/media/AdsReel.mp4": "/RubinProduction/static/media/AdsReel.bfb053ff4645c5b67e31.mp4",
     "static/media/motion.mp4": "/RubinProduction/static/media/motion.8f8a447f2935807b6f83.mp4",
@@ -37,11 +37,11 @@
     "static/media/slick.woff": "/RubinProduction/static/media/slick.295183786cd8a1389865.woff",
     "static/media/Be.svg": "/RubinProduction/static/media/Be.cc607c54fe0c9a5f90072bdd19175b8b.svg",
     "static/media/icoBurger.svg": "/RubinProduction/static/media/icoBurger.9eb7469d3041250851d06fe18b2c6353.svg",
-    "main.a9830709.css.map": "/RubinProduction/static/css/main.a9830709.css.map",
-    "main.1cb39e4e.js.map": "/RubinProduction/static/js/main.1cb39e4e.js.map"
+    "main.38b35e2e.css.map": "/RubinProduction/static/css/main.38b35e2e.css.map",
+    "main.cd255992.js.map": "/RubinProduction/static/js/main.cd255992.js.map"
   },
   "entrypoints": [
-    "static/css/main.a9830709.css",
-    "static/js/main.1cb39e4e.js"
+    "static/css/main.38b35e2e.css",
+    "static/js/main.cd255992.js"
   ]
 }
