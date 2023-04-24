@@ -13,7 +13,7 @@ const useStyle = createUseStyles({
 		flexDirection: 'column',
 		alignItems: 'center',
 		justifyContent: 'center',
-		borderBottom: '1px solid var(--secondary-text-color)'
+		// borderBottom: '1px solid var(--secondary-text-color)'
 	},
 	headerWrapper:{
 		width: '100%',
