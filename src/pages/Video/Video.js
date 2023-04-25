@@ -19,6 +19,7 @@ const useStyle = createUseStyles({
         height: '100%',
         display: 'flex',
         alignItems: 'flex-end',
+        boxSizing: 'border-box',
         paddingTop: '65px',
     },
     background: {

@@ -13,18 +13,14 @@ const useStyle = createUseStyles({
 		flexDirection: 'column',
 		alignItems: 'center',
 		justifyContent: 'center',
-		// borderBottom: '1px solid var(--secondary-text-color)'
 	},
 	headerWrapper:{
 		width: '100%',
-		height: '20%',
+		height: '25%',
 		minHeight: '80px',
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		'@media(max-width: 800px)':{
-			height: '10%',
-		}
 	},
 	header:{
 		fontSize: '64px',

@@ -67,7 +67,7 @@ const useStyle = createUseStyles({
             fontSize: '16px'
         },
         '& > li':{
-            marginBottom: '15px',
+            marginBottom: '10px',
             fontWeight: '500'
         }
     },
@@ -75,7 +75,8 @@ const useStyle = createUseStyles({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        width: '400px'
+        maxWidth: '400px',
+        minWidth: '350px'
     },
     contact:{
 		width: '200px',
@@ -94,7 +95,7 @@ const useStyle = createUseStyles({
 			border: '1px solid var(--main-bg-color-dark)',
 			color: 'var(--main-text-color-dark)',
 			transitionDuration: '350ms'
-		}
+		},
 	},
 })
 

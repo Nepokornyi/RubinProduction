@@ -13,16 +13,25 @@ import backgroundImg from '../../assets/img/Foto.svg'
 const useStyle = createUseStyles({
 	formContainer:{
 		display: 'flex',
-		height: 'calc(100% - 100px)',
+		minHeight: '800px',
+		boxSizing: 'border-box',
 		flexDirection: 'column',
 		alignItems: 'center',
 		justifyContent: 'center',
 		zIndex: 2,
 	},
+	headerWrapper:{
+		height: '30%',
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		'@media(max-width:800px)':{
+			height: '25%'
+		}
+	},
 	header:{
 		fontSize: '64px',
-		height: '20%',
-		textAlign: 'center',
+
 		position: 'relative',
 		textTransform: 'uppercase',
 		fontWeight: 700,
@@ -48,16 +57,22 @@ const useStyle = createUseStyles({
 	},
 	form:{
 		minWidth: '80vw',
-		height: '80%',
+		height: '70%',
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
 		gap: '25px',
-		position: 'relative'
+		position: 'relative',
+		'@media(max-width:800px)':{
+			height: '75%'
+		}
 	},
 	inputRow:{
 		display: 'flex',
-		gap: '20px'
+		gap: '20px',
+		'@media(max-width:800px)':{
+			flexDirection: 'column'
+		}
 	},
 	inputColumn:{
 		display: 'flex',
@@ -65,12 +80,15 @@ const useStyle = createUseStyles({
 		gap: '20px'
 	},
 	input:{
-		minWidth: '350px',
+		minWidth: '300px',
 		height: '35px',
 		width: '35vw',
 		border: 0,
 		margin: 0,
 		padding: '20px',
+		'@media(max-width:800px)':{
+			height: '15px'
+		}
 	},
 	textarea:{
 		height: '225px',
@@ -78,6 +96,10 @@ const useStyle = createUseStyles({
 		padding: '20px',
 		border: 0,
 		margin: 0,
+		'@media(max-width:800px)':{
+			height: '100px',
+			minWidth: '300px',
+		}
 	},
 
 
@@ -104,7 +126,9 @@ const useStyle = createUseStyles({
 	},
 
 	responsive:{
-		minHeight: '600px',
+		'@media(max-width:800px)':{
+			minHeight: '1000px'
+		},
 		overflow: 'hidden',
 		'&::before':{
 			content: "''",
@@ -175,7 +199,9 @@ function Contact({ ads }) {
 				'KJ0DMbdu2V3mz40mc'
 			)
 			.then((result) =>{
+				setName('');
 				setEmail('');
+				setPhone('');
 			}, (error) => {
 				alert(error);
 			});
@@ -195,23 +221,28 @@ function Contact({ ads }) {
 			className={style.formContainer}
 			initial={{opacity: 0}}
             whileInView={{opacity: 1}}
-            transition={{duration:1, ease: 'easeInOut'}}>
-			<h2 className={style.header}>Contact</h2>
+            transition={{duration:1, ease: 'easeInOut'}}
+		>
+			<div className={style.headerWrapper}>
+				<h2 className={style.header}>Contact</h2>
+			</div>
 			<form ref={form} onSubmit={handleSubmit} noValidate className={style.form}>
 
 				<div className={style.inputRow}>
 					<div className={style.inputColumn}>
-						<input type="text" name="name" value={name} className={style.input} placeholder='Name' />
+						<input type="text" name="name" value={name} onChange={(event) => {setName(event.target.value.trim())}} className={style.input} placeholder='Name' />
 						<input type="email" name="email" value={email} onChange={(event) => {setEmail(event.target.value.trim())}} className={style.input} placeholder='Email*' required />
-						<input type="number" name="phone" value={phone} className={style.input} placeholder='Phone number' />
+						<input type="number" name="phone" value={phone} onChange={(event) => {setPhone(event.target.value.trim())}} className={style.input} placeholder='Phone number' />
 					</div>
 					<div>
 						<textarea className={style.textarea} name="message" cols="30" rows="10" placeholder='Message'></textarea>
 					</div>
 				</div>
+
 				{error && <p className={style.error}>{error}</p>}   
 				<button type="submit" className={style.submit}>Send</button>
-		  </form>
+
+			</form>
         </motion.div>
 		<Footer />
 		<DialogSuccess open={successDialog} onClose={handleDialogClose} />

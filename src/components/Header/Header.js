@@ -25,6 +25,9 @@ const useStyles = createUseStyles({
         '& a': {
             textDecoration: 'none',
             color: 'var(--main-text-color-light)'
+        },
+        '@media(max-width:800px)':{
+            fontSize: '14px'
         }
     },
     list: {
@@ -34,7 +37,7 @@ const useStyles = createUseStyles({
         padding: 0,
         listStyleType: 'none',
         listStylePosition: 'inside',
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
     },
     mobileHeader: {
         marginLeft: '30px',

@@ -23,11 +23,14 @@ const useStyle = createUseStyles({
 				top:0,
 				width: '15px',
 				height: '100%',
-				right: '-15px',
+				right: '-18.5px',
 				display: 'flex !important',
 				flexDirection: 'column',
 				justifyContent: 'center'
 			}
+		},
+		'@media((min-width:801px) and (max-width:950px))':{
+			width: '85%'
 		}
 
 	},
@@ -45,7 +48,7 @@ const useStyle = createUseStyles({
 		height: '45vh',
 		display: 'flex', 
 		justifyContent: 'center',
-		margin: '25px 15px',
+		margin: '25px 0px',
 		'& > p':{
             position: 'absolute',
             top: '20px',
@@ -53,7 +56,7 @@ const useStyle = createUseStyles({
             transform: 'translate(-50%)'
 		},
 		'@media(max-width:800px)':{
-			height: '75vh',
+			height: '80vh',
 		}
 	},
 	image:{
@@ -61,6 +64,7 @@ const useStyle = createUseStyles({
 		objectFit: 'cover',
 		overflow: 'hidden',
 	},
+
 	
 })
 

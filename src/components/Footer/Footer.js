@@ -19,7 +19,7 @@ const useStyle = createUseStyles({
     },
     mainContent:{
         position: 'relative',
-        minHeight: '100px',
+        height: '100px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
