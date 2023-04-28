@@ -33,14 +33,14 @@ const useStyles = createUseStyles({
     list: {
         display: 'flex',
         gap: '25px',
-        marginLeft: '30px',
+        marginLeft: '35px',
         padding: 0,
         listStyleType: 'none',
         listStylePosition: 'inside',
         textTransform: 'uppercase',
     },
     mobileHeader: {
-        marginLeft: '30px',
+        marginLeft: '35px',
     },
     contact: {
         width: '130px',
@@ -212,7 +212,7 @@ function Header({ ads }) {
             }
         </>
         }
-                <HashLink style={{marginRight: '30px'}} to={ads ? "#/#AdsContact" : "/#Contact"} scroll={el => scrollWithOffset(el)}><motion.button initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration:2, ease: 'backIn'}} className={style.contact}>Contact</motion.button></HashLink>
+                <HashLink style={{marginRight: '35px'}} to={ads ? "#/#AdsContact" : "/#Contact"} scroll={el => scrollWithOffset(el)}><motion.button initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration:2, ease: 'backIn'}} className={style.contact}>Contact</motion.button></HashLink>
         </motion.nav>
     </>
   )

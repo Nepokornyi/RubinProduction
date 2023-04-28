@@ -53,7 +53,6 @@ function LazyVideo({src, blurHash, className, onPlayPauseClick, customPlayer = f
     }
 
     const handleClickPause = () => {
-        
         onPlayPauseClick && onPlayPauseClick()
     }
 

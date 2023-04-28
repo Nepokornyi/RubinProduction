@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss'
 import { useMediaQuery } from 'react-responsive'
 
 const  borderStyle = '3px solid var(--main-bg-color-light)';
-const borderSpace = '30px';
+const borderSpace = '35px';
 
 const useStyle = createUseStyles({
     '@keyframes pop':{
