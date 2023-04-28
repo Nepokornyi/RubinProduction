@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import Content from '../../components/Content/Content'
 import Header from '../../components/Header/Header'
 import Frame from '../../components/Frame/Frame'
-import Overlay from '../../components/Overlay/Overlay'
+// import Overlay from '../../components/Overlay/Overlay'
 import { createUseStyles } from 'react-jss'
 import { motion } from 'framer-motion'
 
@@ -33,16 +33,54 @@ const useStyle = createUseStyles({
         height: '95vh',
         border: 'none'
     },
+    frameFadeout:{
+        opacity: 0,
+        transitionDuration: '350ms'
+    }
 })
 
 function Video({ ads }) {
 
     const style = useStyle()
 
-    const [overlay, setOverlay] = useState(false)
+    const [played, setPlayed] = useState(false);
+    const [hideFrame, setHideFrame] = useState(false);
 
-    const handleOpenOverlay = () => {setOverlay(true)}
-    const handleCloseOverlay = () => {setOverlay(false)}
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
+    const handleScroll = () => {
+        const video = document.getElementById('ShowReel')
+        const videoTop = video.getBoundingClientRect().top;
+        const videoBottom = video.getBoundingClientRect().bottom;
+
+        if(videoTop < window.innerHeight && videoBottom > 100 && !played) {
+            video.play();
+            setPlayed(true);
+        }
+        else{
+            video.pause()
+        }
+    }
+
+    const handlePlayPause = () => {
+        const video = document.getElementById('ShowReel');
+        
+        if(video.muted === true){
+            video.muted = false;
+            video.volume = 0.5;
+            setHideFrame(true);
+        }
+        else{
+            video.muted = true;
+            setHideFrame(false);
+        }
+    }
+
 
     return (
         <>
@@ -54,18 +92,12 @@ function Video({ ads }) {
                     transition={{duration:3, ease: 'easeOut'}}
                     id="Video" 
                     className={style.videoContainer}
-                    onClick={handleOpenOverlay} 
+                    onClick={handlePlayPause}
                 >
-                    {ads === true ? <LazyVideo src={AdsReel} className={style.background} /> : <LazyVideo src={ShowReel} blurHash='L02i62M,O9k6P,m@tNSu.5RCtPSJ' className={style.background} />}
-                    <Frame />
+                    <LazyVideo src={ads ? AdsReel : ShowReel} blurHash='L02i62M,O9k6P,m@tNSu.5RCtPSJ' className={style.background} id='ShowReel' />
+                    <Frame frameFade={hideFrame && style.frameFadeout} />
                 </motion.div>
             </Content>
-
-            {overlay &&
-                <Overlay onClose={handleCloseOverlay}>
-                    <iframe title="Intro" src='https://player.vimeo.com/video/819462068?h=5cb9947eaf&autoplay=1&loop=1&title=0&byline=0&portrait=0&' className={style.vimeo} allow="autoplay; fullscreen; picture-in-picture" />
-                </Overlay>
-            }
         </>
     )
 }

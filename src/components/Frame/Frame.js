@@ -29,6 +29,7 @@ const useStyle = createUseStyles({
         alignItems: 'center',
         justifyContent: 'center',
         opacity: 0.6,
+        transitionDuration: '350ms'
     },
 
     overlayHelper: {
@@ -115,7 +116,7 @@ const useStyle = createUseStyles({
     }
   })
 
-function Frame() {
+function Frame({ frameFade }) {
 
     const isMobile = useMediaQuery({query: '(max-width:500px)'});
     const isTablet = useMediaQuery({query: '(min-width:501px) and (max-width:900px)'});
@@ -126,7 +127,7 @@ function Frame() {
 
     return (
         <>
-            <div className={style.overlay}>
+            <div className={`${style.overlay} ${frameFade}`}>
                 <div className={style.overlayHelper}>
                     <div className={`${style.overlayElement} ${style.topLeft}`}>
                     <span id="overlay-top-left-text" className={style.overlayText}>
