@@ -100,9 +100,9 @@ function ShowReel() {
 	const sliderSettings = {
         dots: true,
         infinite: true,
-        autoplay: false,
-        autoplaySpeed: 1000,
-        speed: 1250,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        speed: 1500,
         pauseOnFocus: true,
         swipeToSlide: true,
         slidesToShow: 1,

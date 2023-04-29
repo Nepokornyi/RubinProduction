@@ -152,9 +152,9 @@ function CarouselGrid() {
     const sliderSettings = {
         dots: true,
         infinite: true,
-        autoplay: false,
-        autoplaySpeed: 2500,
-        speed: 1250,
+        autoplay: true,
+        autoplaySpeed: 3250,
+        speed: 1750,
         pauseOnFocus: true,
         swipeToSlide: true,
         slidesToShow: 2,
