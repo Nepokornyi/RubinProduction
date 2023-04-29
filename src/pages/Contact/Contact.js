@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser'
 import Content from '../../components/Content/Content'
 import Footer from '../../components/Footer/Footer'
 import DialogSuccess from '../../components/Dialog/DialogSuccess'
-import { emailValidator } from '../../libs/validators'
+import { emailValidator, nameValidator, phoneValidator } from '../../libs/validators'
 
 import backgroundImg from '../../assets/img/Foto.svg'
 
@@ -171,6 +171,7 @@ function Contact({ ads }) {
 	const [name, setName] = useState('');
 	const [phone, setPhone] = useState('');
     const [error, setError] = useState('');
+    const [textArea, setTextArea] = useState('');
 	const [successDialog, setSuccessDialog] = useState(false);
 
 	const form = useRef();
@@ -179,12 +180,19 @@ function Contact({ ads }) {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-
 		if(email.length === 0){
 			setError('Please fill your email')
 		}
 
 		else if(email.trim() !== '' && !emailValidator(email)){
+			setError('Invalid email address format');
+		}
+
+		else if(name.trim() !== '' && !nameValidator(name)){
+			setError('Invalid email address format');
+		}
+
+		else if(phone.trim() !== '' && !phoneValidator(phone)){
 			setError('Invalid email address format');
 		}
 
@@ -232,10 +240,10 @@ function Contact({ ads }) {
 					<div className={style.inputColumn}>
 						<input type="text" name="name" value={name} onChange={(event) => {setName(event.target.value.trim())}} className={style.input} placeholder='Name' />
 						<input type="email" name="email" value={email} onChange={(event) => {setEmail(event.target.value.trim())}} className={style.input} placeholder='Email*' required />
-						<input type="number" name="phone" value={phone} onChange={(event) => {setPhone(event.target.value.trim())}} className={style.input} placeholder='Phone number' />
+						<input type="tel" name="phone" value={phone} onChange={(event) => {setPhone(event.target.value.trim())}} className={style.input} placeholder='Phone number' />
 					</div>
 					<div>
-						<textarea className={style.textarea} name="message" cols="30" rows="10" placeholder='Message'></textarea>
+						<textarea className={style.textarea} value={textArea} onChange={(event) => {setTextArea(event.target.value.trim())}} name="message" cols="30" rows="10" placeholder='Message'></textarea>
 					</div>
 				</div>
 

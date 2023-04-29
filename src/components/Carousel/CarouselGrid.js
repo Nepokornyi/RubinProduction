@@ -147,7 +147,7 @@ function CarouselGrid() {
     const [videoLink, setVideoLink] = useState('')
     const [videoType, setVideoType] = useState('')
 
-    const isTablet = useMediaQuery({query: '(max-width:800px)'});
+    const isMobile = useMediaQuery({query: '(max-width:600px)'});
 
     const sliderSettings = {
         dots: true,
@@ -192,18 +192,16 @@ function CarouselGrid() {
     }
 
     const carouselItems = items.map((props) => 
-    <div key={props.id} className={style.projectVideo} onClick={() => {isTablet && handleOpenOverlay(props.link, props.type)}} >
+    <div key={props.id} className={style.projectVideo} onClick={() => {isMobile && handleOpenOverlay(props.link, props.type)}} >
     
         <LazyVideo src={props.localVideo} className={style.video} blurHash={props.blurHash} />
 
         <p>{props.content}</p>
         
-        {!isTablet &&
-        <>
-            <div className={style.gridOverlay}>
-                <button onClick={() => handleOpenOverlay(props.link, props.type)}>view more</button>
-            </div>
-        </>
+        {!isMobile &&
+        <div className={style.gridOverlay}>
+            <button onClick={() => handleOpenOverlay(props.link, props.type)}>view more</button>
+        </div>
         }
     </div>
 );

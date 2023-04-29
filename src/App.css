@@ -42,6 +42,10 @@ body{
     width: 15px;
 }
 
+.slick-slide > div{
+    display: flex;
+}
+
 
 @media (min-width: 801px){
     #About, #Atelier{
