@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser'
 import Content from '../../components/Content/Content'
 import Footer from '../../components/Footer/Footer'
 import DialogSuccess from '../../components/Dialog/DialogSuccess'
-import { emailValidator, nameValidator, phoneValidator } from '../../libs/validators'
+import { emailValidator } from '../../libs/validators'
 
 import backgroundImg from '../../assets/img/Foto.svg'
 
@@ -31,7 +31,6 @@ const useStyle = createUseStyles({
 	},
 	header:{
 		fontSize: '64px',
-
 		position: 'relative',
 		textTransform: 'uppercase',
 		fontWeight: 700,
@@ -80,6 +79,7 @@ const useStyle = createUseStyles({
 		gap: '20px'
 	},
 	input:{
+		fontWeight: 700,
 		minWidth: '300px',
 		height: '35px',
 		width: '35vw',
@@ -100,6 +100,20 @@ const useStyle = createUseStyles({
 			height: '100px',
 			minWidth: '300px',
 		}
+	},
+
+	requiredWrapper:{
+		position: 'relative'
+	},
+	asterisk:{
+		position: 'absolute',
+		color: 'var(--secondary-text-color)',
+		top: '50%',
+		transform: 'translateY(-50%)',
+		left: '60px',
+	},
+	hideAsterisk:{
+		display: 'none',
 	},
 
 
@@ -172,7 +186,12 @@ function Contact({ ads }) {
 	const [phone, setPhone] = useState('');
     const [error, setError] = useState('');
     const [textArea, setTextArea] = useState('');
+	const [isTyping, setIsTyping] = useState(false)
 	const [successDialog, setSuccessDialog] = useState(false);
+
+	const regexLetters = /^[a-zA-Z\s]*$/;
+	const regexPhone = /^(\+\d{0,2}\s?)?((\(\d{0,4}\)|\d{0,4})\s?)(\d{0,4}([\s-]?\d{0,4}){0,3})$/;
+
 
 	const form = useRef();
 	const style = useStyle()
@@ -188,20 +207,12 @@ function Contact({ ads }) {
 			setError('Invalid email address format');
 		}
 
-		else if(name.trim() !== '' && !nameValidator(name)){
-			setError('Invalid email address format');
-		}
-
-		else if(phone.trim() !== '' && !phoneValidator(phone)){
-			setError('Invalid email address format');
-		}
-
         else{
             setError('');
 			setSuccessDialog(true);
 
 			emailjs.sendForm(
-				'service_oel6o25',
+				'service_8lcm3qw',
 				'template_13uaodo',
 				form.current,
 				'KJ0DMbdu2V3mz40mc'
@@ -210,6 +221,7 @@ function Contact({ ads }) {
 				setName('');
 				setEmail('');
 				setPhone('');
+				setTextArea('');
 			}, (error) => {
 				alert(error);
 			});
@@ -238,12 +250,58 @@ function Contact({ ads }) {
 
 				<div className={style.inputRow}>
 					<div className={style.inputColumn}>
-						<input type="text" name="name" value={name} onChange={(event) => {setName(event.target.value.trim())}} className={style.input} placeholder='Name' />
-						<input type="email" name="email" value={email} onChange={(event) => {setEmail(event.target.value.trim())}} className={style.input} placeholder='Email*' required />
-						<input type="tel" name="phone" value={phone} onChange={(event) => {setPhone(event.target.value.trim())}} className={style.input} placeholder='Phone number' />
+						<input 
+							type="text" 
+							name="name" 
+							value={name} 
+							onChange={(event) => {
+								if(regexLetters.test(event.target.value) && event.target.value.length <= 40){
+									setName(event.target.value)
+								}}
+							}
+							className={style.input} placeholder='Name' />
+						<div className={style.requiredWrapper}>
+							<input 
+								type="email" 
+								name="email" 
+								value={email} 
+								onChange={(event) => {
+									if(event.target.value.length < 42){
+										setEmail(event.target.value.trim())
+									}
+
+									if(event.target.value.length >= 1){
+										setIsTyping(true)
+									}
+									else{
+										setIsTyping(false)
+									}
+								}}
+								className={style.input} placeholder='Email' />
+								<span className={`${style.asterisk} ${isTyping ? style.hideAsterisk : ''}`}>*</span>
+						</div>
+
+						<input 
+							type="tel" 
+							name="phone" 
+							value={phone} 
+							onChange={(event) => {
+								if(regexPhone.test(event.target.value) && event.target.value.length <= 15){
+									setPhone(event.target.value)
+								}}
+							}
+							className={style.input} placeholder='Phone number' />
 					</div>
 					<div>
-						<textarea className={style.textarea} value={textArea} onChange={(event) => {setTextArea(event.target.value.trim())}} name="message" cols="30" rows="10" placeholder='Message'></textarea>
+						<textarea 
+							className={style.textarea}
+							value={textArea} 
+							onChange={(event) => {setTextArea(event.target.value)}} 
+							name="message" 
+							cols="30" 
+							rows="10"
+							maxLength='500' 
+							placeholder='Message' />
 					</div>
 				</div>
 

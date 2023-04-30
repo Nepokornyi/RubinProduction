@@ -3,9 +3,9 @@ import React from 'react';
 import Video from '../Video/Video';
 import Contact from '../Contact/Contact';
 import Offer from '../../components/AdsContent/Offer';
+import WorkSteps from '../../components/AdsContent/WorkSteps';
 
 import { createUseStyles } from 'react-jss'
-import WorkSteps from '../../components/AdsContent/WorkSteps';
 
 const useStyles = createUseStyles({
     mainContent:{

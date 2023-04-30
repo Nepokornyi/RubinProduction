@@ -11,7 +11,6 @@ import pictureWork1 from '../../../assets/img/work1.png'
 import pictureWork2 from '../../../assets/img/work2.png'
 import pictureWork3 from '../../../assets/img/work3.png'
 import pictureWork4 from '../../../assets/img/work4.png'
-import pictureWork5 from '../../../assets/img/work5.png'
 
 
 const useStyle = createUseStyles({
@@ -22,6 +21,10 @@ const useStyle = createUseStyles({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        border: '0.5px solid var(--secondary-text-color)',
+        '@media(max-width:600px)':{
+            border: 'none'
+        }
     },
     image: {
         position: 'absolute',
@@ -31,12 +34,20 @@ const useStyle = createUseStyles({
     },
     text: {
         display: 'flex',
+        minWidth: '225px',
+        width: '50%',
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
         textAlign: 'center',
         '& h3':{
-            color: 'var(--secondary-text-color)'
+            fontSize: '22px',
+            color: 'var(--secondary-text-color)',
+            marginBottom:0,
+        },
+        '& p':{
+            marginTop: '10px',
+            fontSize: '17px'
         }
     }
 })
@@ -63,8 +74,8 @@ function Work() {
         },
         {   id: 5, 
             type: 'text',
-            title: 'SEE OUR RESULTS IN REALTIME',
-            description: 'Stay in touch with shooting process. Look at the monitor and tell us your opinion'
+            title: 'WORKFLOW',
+            description: 'With us you will understand each step in production process. Prepare your questions!'
         },
         {   id: 6, 
             type: 'picture',
@@ -74,19 +85,10 @@ function Work() {
             type: 'picture',
             link: pictureWork4
         },
-        {   id: 8, 
-            type: 'text',
-            title: 'WORKFLOW',
-            description: 'With us you will understand each step in production process. Prepare your questions!'
-        },
         {   id: 9, 
             type: 'text',
             title: 'CONTENT DELIVERY',
             description: 'At the end you will get huge amount of content. Together we will cover all your needs!'
-        },
-        {   id: 10, 
-            type: 'picture',
-            link: pictureWork5
         },
     ]
         const style = useStyle()
@@ -94,7 +96,7 @@ function Work() {
         const sliderSettings = {
             dots: true,
             infinite: true,
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 2500,
             speed: 1250,
             pauseOnFocus: true,
@@ -113,7 +115,6 @@ function Work() {
                 {
                     breakpoint: 800,
                     settings: {
-                        rows: 1,
                         slidesToShow: 1,
                     }
                 }
@@ -140,7 +141,7 @@ function Work() {
     
       return (
         <>
-            <div style={{width: '95%'}}>
+            <div style={{width: '100%', height: '80%'}}>
                 <Slider {...sliderSettings}>
                     {carouselItems}
                 </Slider>

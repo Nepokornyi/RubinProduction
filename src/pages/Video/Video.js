@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Content from '../../components/Content/Content'
 import Header from '../../components/Header/Header'
 import Frame from '../../components/Frame/Frame'
-// import Overlay from '../../components/Overlay/Overlay'
 import { createUseStyles } from 'react-jss'
 import { motion } from 'framer-motion'
 
@@ -95,7 +94,7 @@ function Video({ ads }) {
                     onClick={handlePlayPause}
                 >
                     <LazyVideo src={ads ? AdsReel : ShowReel} blurHash='L02i62M,O9k6P,m@tNSu.5RCtPSJ' className={style.background} id='ShowReel' />
-                    <Frame frameFade={hideFrame && style.frameFadeout} />
+                    {ads ? null : <Frame frameFade={hideFrame && style.frameFadeout} />}
                 </motion.div>
             </Content>
         </>

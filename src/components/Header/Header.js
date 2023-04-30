@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { HashLink } from 'react-router-hash-link';
 
 import { createUseStyles } from 'react-jss';
 import { useMediaQuery } from 'react-responsive';
 import { motion } from 'framer-motion'
 import { container, item } from '../../libs/animation';
+import { Link as ScrollLink} from 'react-scroll'
 
 import icoHamburger from '../../assets/img/icoBurger.svg'
 import icoClose from '../../assets/img/icoClose.svg'
@@ -33,7 +33,7 @@ const useStyles = createUseStyles({
     list: {
         display: 'flex',
         gap: '25px',
-        marginLeft: '35px',
+        marginLeft: '37.5px',
         padding: 0,
         listStyleType: 'none',
         listStylePosition: 'inside',
@@ -100,7 +100,7 @@ const useStyles = createUseStyles({
     },
     adsMenu:{
         '@media(max-width:600px)':{
-            fontSize: '14px'
+            fontSize: '13.5px'
         }
     }
 });
@@ -116,11 +116,6 @@ function Header({ ads }) {
   const handleCloseMenu = () => { setSideMenu(false); }
   const handleRedirect = () => { setSideMenu(false) }
 
-  const scrollWithOffset = (el) => {
-    const yCoords = el.getBoundingClientRect().top + window.pageYOffset;
-    const yOffset = 10;
-    window.scrollTo({ top: yCoords - yOffset, behavior: 'smooth' }); 
-  }
   return (
     <>
         <motion.nav 
@@ -137,11 +132,13 @@ function Header({ ads }) {
                     initial='hidden'
                     animate='show'
                 >
-                    <HashLink 
-                        smooth to="/Ads/#" 
-                        scroll={el => scrollWithOffset(el)}
+                    <ScrollLink 
+                        to="ShowReel"
+                        spy={true}
+                        smooth={true}
+                        offset={-10}
                     ><motion.li variants={item} className={`${style.listItem} ${style.adsMenu}`}>Rubin Production</motion.li>
-                    </HashLink>
+                    </ScrollLink>
                 </motion.ul>
         </>
         :
@@ -153,26 +150,34 @@ function Header({ ads }) {
                     initial='hidden'
                     animate='show'
                 >
-                    <HashLink 
-                        smooth to="/#" 
-                        scroll={el => scrollWithOffset(el)}
+                    <ScrollLink 
+                        to="ShowReel"
+                        spy={true}
+                        smooth={true} 
+                        offset={-10}
                     ><motion.li variants={item} className={style.listItem}>ShowReel</motion.li>
-                    </HashLink>
-                    <HashLink 
-                        smooth to="/#Services" 
-                        scroll={el => scrollWithOffset(el)}
+                    </ScrollLink>
+                    <ScrollLink 
+                        to="Services" 
+                        spy={true}
+                        smooth={true} 
+                        offset={-10}
                     ><motion.li variants={item} className={style.listItem}>Services</motion.li>
-                    </HashLink>
-                    <HashLink 
-                        smooth to="/#Atelier" 
-                        scroll={el => scrollWithOffset(el)}
+                    </ScrollLink>
+                    <ScrollLink 
+                        to="Atelier" 
+                        spy={true}
+                        smooth={true} 
+                        offset={-10}
                         ><motion.li variants={item} className={style.listItem}>Atelier</motion.li>
-                    </HashLink>
-                    <HashLink 
-                        smooth to="/#Portfolio" 
-                        scroll={el => scrollWithOffset(el)}
+                    </ScrollLink>
+                    <ScrollLink 
+                        to="Portfolio" 
+                        spy={true}
+                        smooth={true} 
+                        offset={-10}
                         ><motion.li variants={item} className={style.listItem}>Portfolio</motion.li>
-                    </HashLink>
+                    </ScrollLink>
                 </motion.ul>
             }
             {isMobile &&
@@ -181,30 +186,38 @@ function Header({ ads }) {
                     {sideMenu &&
                         <div className={style.sideMenu}>
                             <ul className={style.dropDownList}>
-                            <HashLink 
-                                to="/#" 
-                                scroll={el => scrollWithOffset(el)}
+                            <ScrollLink 
+                                to="home"
+                                spy={true}
+                                smooth={true} 
+                                offset={-10}
                             >
                                 <li className={style.listItem} onClick={handleRedirect}>ShowReel</li>
-                            </HashLink>
-                            <HashLink 
-                                to="/#Services" 
-                                scroll={el => scrollWithOffset(el)}
+                            </ScrollLink>
+                            <ScrollLink 
+                                to="Services" 
+                                spy={true}
+                                smooth={true} 
+                                offset={-10}
                             >
                                 <li className={style.listItem} onClick={handleRedirect}>Services</li>
-                            </HashLink>
-                            <HashLink 
-                                to="/#Atelier" 
-                                scroll={el => scrollWithOffset(el)}
+                            </ScrollLink>
+                            <ScrollLink 
+                                to="Atelier" 
+                                spy={true}
+                                smooth={true} 
+                                offset={-10}
                             >   
                                 <li className={style.listItem} onClick={handleRedirect}>Atelier</li>
-                            </HashLink>
-                            <HashLink 
-                                to="/#Portfolio" 
-                                scroll={el => scrollWithOffset(el)}
+                            </ScrollLink>
+                            <ScrollLink 
+                                to="Portfolio" 
+                                spy={true}
+                                smooth={true} 
+                                offset={-10}
                             >   
                                 <li className={style.listItem} onClick={handleRedirect}>Portfolio</li>
-                            </HashLink>
+                            </ScrollLink>
                             </ul>
                         </div>
                     }
@@ -212,7 +225,14 @@ function Header({ ads }) {
             }
         </>
         }
-                <HashLink style={{marginRight: '35px'}} to={ads ? "#/#AdsContact" : "/#Contact"} scroll={el => scrollWithOffset(el)}><motion.button initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration:2, ease: 'backIn'}} className={style.contact}>Contact</motion.button></HashLink>
+                <ScrollLink 
+                    to={ads ? "AdsContact" : "Contact"}
+                    spy={true}
+                    smooth={true}
+                    style={{marginRight: '35px'}}
+                    offset={-10}>
+                    <motion.button initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration:2, ease: 'backIn'}} className={style.contact}>Contact</motion.button>
+                </ScrollLink>
         </motion.nav>
     </>
   )

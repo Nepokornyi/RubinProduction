@@ -54,6 +54,7 @@
     "react-blurhash": "^0.3.0",
     "react-html5video": "^2.5.1",
     "react-lazy-load-image-component": "^1.5.6",
+    "react-scroll": "^1.8.9",
     "react-slick": "^0.29.0"
   }
 }

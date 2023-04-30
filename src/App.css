@@ -16,6 +16,11 @@
     font-weight: 700;
 }
 
+::placeholder::before{
+    content: "*";
+    color: var(--secondary-text-color);
+}
+
 *{
     font-family: 'Montserrat', 'Gill Sans';
 }

@@ -41,6 +41,9 @@ const useStyle = createUseStyles({
         width: '150px',
         height: '150px',
         position: 'relative',
+        '&:nth-child(3)':{
+            width: '2000px'
+        }
     },
     addX:{
         position: 'relative',
