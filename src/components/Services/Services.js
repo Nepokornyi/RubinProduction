@@ -29,13 +29,13 @@ const useStyle = createUseStyles({
 		}
 	},
 	header:{
-		margin: 0,
 		fontSize: '64px',
 		textAlign: 'center',
 		position: 'relative',
+		margin: 0,
 		textTransform: 'uppercase',
 		fontWeight: '700',
-		zIndex: 2,
+		zIndex: 1,
 		'&:before':{
 			content: "'X'",
 			position: 'absolute',
@@ -56,6 +56,7 @@ const useStyle = createUseStyles({
 		}
 	},
     expandContent:{
+		minHeight: '700px',
         '@media(max-width:800px)':{
             minHeight: '1450px'
         },

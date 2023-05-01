@@ -96,9 +96,9 @@ function Work() {
         const sliderSettings = {
             dots: true,
             infinite: true,
-            autoplay: false,
-            autoplaySpeed: 2500,
-            speed: 1250,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            speed: 1500,
             pauseOnFocus: true,
             swipeToSlide: true,
             slidesToShow: 3,
@@ -141,7 +141,7 @@ function Work() {
     
       return (
         <>
-            <div style={{width: '100%', height: '80%'}}>
+            <div style={{width: '100%', height: '70%'}}>
                 <Slider {...sliderSettings}>
                     {carouselItems}
                 </Slider>

@@ -208,7 +208,7 @@ function CarouselGrid() {
 
   return (
     <>
-        <div style={{width: '100%', height: '75%'}}>
+        <div style={{width: '100%', height: '80%'}}>
             <Slider {...sliderSettings}>
                 {carouselItems}
             </Slider>

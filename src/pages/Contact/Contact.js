@@ -13,7 +13,7 @@ import backgroundImg from '../../assets/img/Foto.svg'
 const useStyle = createUseStyles({
 	formContainer:{
 		display: 'flex',
-		minHeight: '800px',
+		minHeight: '700px',
 		boxSizing: 'border-box',
 		flexDirection: 'column',
 		alignItems: 'center',
@@ -21,7 +21,7 @@ const useStyle = createUseStyles({
 		zIndex: 2,
 	},
 	headerWrapper:{
-		height: '30%',
+		height: '20%',
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
@@ -56,7 +56,7 @@ const useStyle = createUseStyles({
 	},
 	form:{
 		minWidth: '80vw',
-		height: '70%',
+		height: '80%',
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
@@ -140,6 +140,7 @@ const useStyle = createUseStyles({
 	},
 
 	responsive:{
+		minHeight: '700px',
 		'@media(max-width:800px)':{
 			minHeight: '1000px'
 		},

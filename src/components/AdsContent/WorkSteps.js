@@ -16,7 +16,7 @@ const useStyle = createUseStyles({
 	},
 	headerWrapper:{
         width: '100%',
-		height: '20%',
+		height: '30%',
 		minHeight: '80px',
 		display: 'flex',
 		alignItems: 'center',
@@ -52,7 +52,7 @@ const useStyle = createUseStyles({
 		}
 	},
 	adaptiveContent:{
-		minHeight: '700px'
+		minHeight: '750px'
 	}
 })
 

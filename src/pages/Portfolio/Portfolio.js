@@ -16,7 +16,7 @@ const useStyle = createUseStyles({
 	},
 	headerWrapper:{
 		width: '100%',
-		height: '25%',
+		height: '20%',
 		minHeight: '80px',
 		display: 'flex',
 		alignItems: 'center',
@@ -24,10 +24,9 @@ const useStyle = createUseStyles({
 	},
 	header:{
 		fontSize: '64px',
-		height: '10vh',
 		textAlign: 'center',
 		position: 'relative',
-		margin: '10px 0 25px 0',
+		margin: 0,
 		textTransform: 'uppercase',
 		fontWeight: '700',
 		zIndex: 1,
@@ -67,7 +66,7 @@ const useStyle = createUseStyles({
 		}
 	},
 	responsive:{
-		minHeight: '775px'
+		minHeight: '700px'
 	}
 })
 
@@ -77,9 +76,7 @@ function Portfolio() {
 
 	return (
 		<Content className={style.responsive}>
-			<div 
-			id="Portfolio" 
-			className={style.portfolioContainer}>
+			<div id="Portfolio" className={style.portfolioContainer}>
 				<div className={style.headerWrapper}>
 					<h2 className={style.header}>Portfolio</h2>
 				</div>
