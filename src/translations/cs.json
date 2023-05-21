@@ -2,6 +2,7 @@
 {
     "page": {
         "landing": {
+            "scroll_down": "Přímo k věci!",
             "frame": {
                 "fps": "60 fps",
                 "resolution_big": "1920x1080",
@@ -41,7 +42,7 @@
             "button": "ukázat více"
         },
         "contact": {
-            "heading": "POTŘEBUJETE PORADIT?",
+            "heading": "KONZULTACE?",
             "button": "ZÍISKAT NEZÁVAZNOU NABÍDKU"
         }
     },
