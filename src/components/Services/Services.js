@@ -61,9 +61,6 @@ const useStyle = createUseStyles({
 		minHeight: '700px',
         '@media(max-width:800px)':{
             minHeight: '1450px'
-        },
-        '@media(max-width:600px)':{
-            minHeight: '1700px'
         }
     }
 });

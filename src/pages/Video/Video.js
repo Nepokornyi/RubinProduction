@@ -33,6 +33,7 @@ const useStyle = createUseStyles({
         zIndex: 4,
         backgroundColor: 'transparent',
         transition: 'background-color 500ms ease',
+        cursor: 'pointer'
     },
     activeOverlayDesktop:{
         '&:hover':{

@@ -19,7 +19,6 @@ const useStyle = createUseStyles({
         animationIterationCount: 'infinite'
     },
     overlay: {
-        cursor: 'default',
         pointerEvents: 'none',
         position: 'absolute',
         left: '0',

@@ -22,6 +22,7 @@ const useStyle = createUseStyles({
     },
     card:{
         height: '265px',
+        maxWidth: '450px',
         flex: '0 0 calc(33.33% - 20px)',
         display: 'flex',
         flexDirection: 'column',
@@ -29,10 +30,8 @@ const useStyle = createUseStyles({
         alignItems: 'center',
         textAlign: 'center',
         '@media(max-width:800px)':{
-            minWidth: '225px',
-        },
-        '@media(max-width:600px)':{
             flex: '0 0 calc(60% - 20px)',
+            minWidth: '225px',
         }
     },
     image:{

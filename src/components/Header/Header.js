@@ -80,7 +80,6 @@ const useStyles = createUseStyles({
         top: '65px',
         left: '0px',
         width: '200px',
-        height: '200px',
         backgroundColor: 'rgba(0,0,0,0.7)',
         zIndex: '5'
     },
@@ -90,17 +89,22 @@ const useStyles = createUseStyles({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-evenly',
-        height: '170px',
         textTransform: 'uppercase',
     },
     listItem: {
         transitionDuration: '350ms',
+        margin: '10px 0',
         fontWeight: 700,
         cursor: 'pointer',
         '&:hover': {
             color: 'var(--hover-text-color)',
             transitionDuration: '350ms'
         }
+    },
+    menuLanguageList: {
+        listStyle: 'none',
+        paddingLeft: '25px',
+        margin: 0,
     },
 
     changeLanguage: {
@@ -150,7 +154,7 @@ const useStyles = createUseStyles({
     },
 
     adsMenu: {
-        '@media(max-width:600px)':{
+        '@media(max-width:700px)':{
             fontSize: '13.5px'
         }
     }
@@ -160,12 +164,13 @@ function Header({ ads }) {
 
   const [sideMenu, setSideMenu] = useState(false);
   const [languageMenu, setLanguageMenu] = useState(false);
-  const isMobile = useMediaQuery({query: '(max-width:600px)'});
+  const isMobile = useMediaQuery({query: '(max-width:700px)'});
 
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (language) => {
     toggleLanguageMenu();
+    setSideMenu(false);
     i18n.changeLanguage(language);
   }
 
@@ -278,6 +283,15 @@ function Header({ ads }) {
                             >   
                                 <li className={style.listItem} onClick={handleRedirect}>{t('header.menu.menu_portfolio')}</li>
                             </ScrollLink>
+                                <li className={style.listItem}>
+                                    <IcoLanguage className={style.changeLanguage} onClick={toggleLanguageMenu} />
+                                </li>
+                                {languageMenu &&
+                                    <ul className={style.menuLanguageList}>
+                                    <li className={style.listItem} onClick={() => {changeLanguage('cs')}}>{t('language.cz')}</li>
+                                        <li className={style.listItem} onClick={() => {changeLanguage('en')}}>{t('language.en')}</li>
+                                    </ul>
+                                }
                             </ul>
                         </div>
                     }
@@ -288,15 +302,19 @@ function Header({ ads }) {
             <motion.div 
                 className={style.rightPanel}
                 initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration:2, ease: 'backIn'}}>
-                <IcoLanguage className={style.changeLanguage} onClick={toggleLanguageMenu} />
-                {languageMenu && 
-                    <div className={style.languageDropdown}>
-                        <ul className={style.languageList}>
-                            <li onClick={() => {changeLanguage('cs')}}>{t('language.cz')}</li>
-                            <li onClick={() => {changeLanguage('en')}}>{t('language.en')}</li>
-                        </ul>
-                    </div>
-                }
+                {!isMobile && (
+                <>
+                    <IcoLanguage className={style.changeLanguage} onClick={toggleLanguageMenu} />
+                    {languageMenu && (
+                        <div className={style.languageDropdown}>
+                            <ul className={style.languageList}>
+                                <li onClick={() => {changeLanguage('cs')}}>{t('language.cz')}</li>
+                                <li onClick={() => {changeLanguage('en')}}>{t('language.en')}</li>
+                            </ul>
+                        </div>
+                    )}
+                </>
+                )}
                 <ScrollLink 
                     to={ads ? "AdsContact" : "Contact"}
                     spy={true}
