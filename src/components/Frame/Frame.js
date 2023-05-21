@@ -22,20 +22,21 @@ const useStyle = createUseStyles({
         pointerEvents: 'none',
         position: 'absolute',
         left: '0',
-        top: '65px',
+        top: '0',
         width: '100%',
-        height: 'calc(100% - 65px)',
+        height: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         opacity: 0.6,
-        transitionDuration: '350ms'
+        transitionDuration: '350ms',
+        zIndex: 5
     },
 
     overlayHelper: {
         position: 'relative',
         width: '100%',
-        height: '90%'
+        height: '100%'
     },
 
     overlayElement: {
@@ -135,20 +136,20 @@ function Frame({ frameFade }) {
                     </div>
                     <div className={`${style.overlayElement} ${style.topRight}`}>
                     <span id="overlay-top-right-text" className={style.overlayText}>
-                        <span className={style.animation}>🔴</span> REC
+                        {/* <span className={style.animation}>🔴</span> REC */}
                     </span>
                     </div>
                     <div className={`${style.overlayElement} ${style.bottomLeft}`}>
                     <span className={`${style.overlayText} ${style.bottomLeftText}`}>
-                        60 FPS <br />
+                        {/* 60 FPS <br />
                         {isLaptop && '1920x1080'}
                         {isTablet && '1280x720'}
-                        {isMobile && '640x360'}
+                        {isMobile && '640x360'} */}
                     </span>
                     </div>
                     <div className={`${style.overlayElement} ${style.bottomRight}`}>
                     <span className={`${style.overlayText} ${style.bottomRightText} ${style.counter}`}>
-                        24:00
+                        {/* 24:00 */}
                     </span>
                     </div>
                 </div>
