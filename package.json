@@ -51,8 +51,10 @@
     "blurhash": "^2.0.5",
     "framer-motion": "^10.9.2",
     "gh-pages": "^5.0.0",
+    "i18next": "^22.5.0",
     "react-blurhash": "^0.3.0",
     "react-html5video": "^2.5.1",
+    "react-i18next": "^12.3.1",
     "react-lazy-load-image-component": "^1.5.6",
     "react-scroll": "^1.8.9",
     "react-slick": "^0.29.0"

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { createUseStyles } from 'react-jss'
+import { useTranslation } from 'react-i18next'
 
 import {ReactComponent as IcoInst} from '../../assets/img/instagram.svg'
 import {ReactComponent as IcoBe} from '../../assets/img/behance.svg'
@@ -83,15 +84,16 @@ const useStyle = createUseStyles({
 
 function Footer() {
 
-    const style = useStyle()
+    const style = useStyle();
+    const { t } = useTranslation();
 
     return (
         <div className={style.footer}>
             <div className={style.mainContent}>
                 <div>
                     <ul className={style.information}>
-                        <li><strong> e-mail:</strong> info@rubinproduction.eu</li>
-                        <li><strong>tel:</strong> +420 773 042 876</li>
+                        <li dangerouslySetInnerHTML={{ __html: t('footer.contact_email') }}></li>
+                        <li dangerouslySetInnerHTML={{ __html: t('footer.contact_phone') }}></li>
                     </ul>
                 </div>
                 <div className={style.iconsContainer}>

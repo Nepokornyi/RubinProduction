@@ -6,8 +6,11 @@ import { motion } from 'framer-motion'
 import { container, item } from '../../libs/animation';
 import { Link as ScrollLink} from 'react-scroll'
 
+import { useTranslation } from 'react-i18next';
+
 import icoHamburger from '../../assets/img/icoBurger.svg'
 import icoClose from '../../assets/img/icoClose.svg'
+import {ReactComponent as IcoLanguage} from '../../assets/img/icoLanguage.svg'
 
 const useStyles = createUseStyles({
     header: {
@@ -21,7 +24,7 @@ const useStyles = createUseStyles({
         height: '65px',
         backgroundColor: 'var(--main-bg-color-dark)',
         borderBottom: '1px solid var(--secondary-bg-color-dark)',
-        zIndex: '5',
+        zIndex: 10,
         '& a': {
             textDecoration: 'none',
             color: 'var(--main-text-color-light)'
@@ -71,6 +74,7 @@ const useStyles = createUseStyles({
             transitionDuration: '350ms'
         }
     },
+
     sideMenu: {
         position: 'absolute',
         top: '65px',
@@ -98,7 +102,54 @@ const useStyles = createUseStyles({
             transitionDuration: '350ms'
         }
     },
-    adsMenu:{
+
+    changeLanguage: {
+        width: '24px', 
+        height: '24px', 
+        marginRight: '25px', 
+        cursor: 'pointer',
+        transition: '350ms ease',
+        '&:hover':{
+            color: 'var(--hover-text-color)'
+        }
+    },
+    rightPanel: {
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center', 
+        alignItems: 'center'
+    },
+    languageDropdown: {
+        position: 'absolute',
+        top: '48.5px',
+        left: '-12px',
+        width: '50px',
+        height: '75px',
+        backgroundColor: 'rgba(0,0,0,0.7)',
+        zIndex: '5'
+    },
+    languageList: {
+        width: '100%',
+        height: '100%',
+        listStyle: 'none',
+        padding: 0,
+        margin: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '10px',
+        cursor: 'pointer',
+        '& > li': {
+            color: 'var(--main-text-color-light)',
+            transition: 'color 350ms ease',
+            '&:hover': {
+                color: 'var(--hover-text-color)',
+            }
+        }
+    },
+
+    adsMenu: {
         '@media(max-width:600px)':{
             fontSize: '13.5px'
         }
@@ -108,12 +159,21 @@ const useStyles = createUseStyles({
 function Header({ ads }) {
 
   const [sideMenu, setSideMenu] = useState(false);
+  const [languageMenu, setLanguageMenu] = useState(false);
   const isMobile = useMediaQuery({query: '(max-width:600px)'});
+
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (language) => {
+    toggleLanguageMenu();
+    i18n.changeLanguage(language);
+  }
 
   const style = useStyles();
 
   const handleOpenMenu = () => { setSideMenu(true); }
   const handleCloseMenu = () => { setSideMenu(false); }
+  const toggleLanguageMenu = () => { setLanguageMenu(!languageMenu) }
   const handleRedirect = () => { setSideMenu(false) }
 
   return (
@@ -137,7 +197,7 @@ function Header({ ads }) {
                         spy={true}
                         smooth={true}
                         offset={-10}
-                    ><motion.li variants={item} className={`${style.listItem} ${style.adsMenu}`}>Rubin Production</motion.li>
+                    ><motion.li variants={item} className={`${style.listItem} ${style.adsMenu}`}>{t('header_ads.brand')}</motion.li>
                     </ScrollLink>
                 </motion.ul>
         </>
@@ -155,28 +215,28 @@ function Header({ ads }) {
                         spy={true}
                         smooth={true} 
                         offset={-10}
-                    ><motion.li variants={item} className={style.listItem}>ShowReel</motion.li>
+                    ><motion.li variants={item} className={style.listItem}>{t('header.menu.menu_showreel')}</motion.li>
                     </ScrollLink>
                     <ScrollLink 
                         to="Services" 
                         spy={true}
                         smooth={true} 
                         offset={-10}
-                    ><motion.li variants={item} className={style.listItem}>Services</motion.li>
+                    ><motion.li variants={item} className={style.listItem}>{t('header.menu.menu_services')}</motion.li>
                     </ScrollLink>
                     <ScrollLink 
                         to="Atelier" 
                         spy={true}
                         smooth={true} 
                         offset={-10}
-                        ><motion.li variants={item} className={style.listItem}>Atelier</motion.li>
+                        ><motion.li variants={item} className={style.listItem}>{t('header.menu.menu_atelier')}</motion.li>
                     </ScrollLink>
                     <ScrollLink 
                         to="Portfolio" 
                         spy={true}
                         smooth={true} 
                         offset={-10}
-                        ><motion.li variants={item} className={style.listItem}>Portfolio</motion.li>
+                        ><motion.li variants={item} className={style.listItem}>{t('header.menu.menu_portfolio')}</motion.li>
                     </ScrollLink>
                 </motion.ul>
             }
@@ -187,12 +247,12 @@ function Header({ ads }) {
                         <div className={style.sideMenu}>
                             <ul className={style.dropDownList}>
                             <ScrollLink 
-                                to="home"
+                                to="ShowReel"
                                 spy={true}
                                 smooth={true} 
                                 offset={-10}
                             >
-                                <li className={style.listItem} onClick={handleRedirect}>ShowReel</li>
+                                <li className={style.listItem} onClick={handleRedirect}>{t('header.menu.menu_showreel')}</li>
                             </ScrollLink>
                             <ScrollLink 
                                 to="Services" 
@@ -200,7 +260,7 @@ function Header({ ads }) {
                                 smooth={true} 
                                 offset={-10}
                             >
-                                <li className={style.listItem} onClick={handleRedirect}>Services</li>
+                                <li className={style.listItem} onClick={handleRedirect}>{t('header.menu.menu_services')}</li>
                             </ScrollLink>
                             <ScrollLink 
                                 to="Atelier" 
@@ -208,7 +268,7 @@ function Header({ ads }) {
                                 smooth={true} 
                                 offset={-10}
                             >   
-                                <li className={style.listItem} onClick={handleRedirect}>Atelier</li>
+                                <li className={style.listItem} onClick={handleRedirect}>{t('header.menu.menu_atelier')}</li>
                             </ScrollLink>
                             <ScrollLink 
                                 to="Portfolio" 
@@ -216,7 +276,7 @@ function Header({ ads }) {
                                 smooth={true} 
                                 offset={-10}
                             >   
-                                <li className={style.listItem} onClick={handleRedirect}>Portfolio</li>
+                                <li className={style.listItem} onClick={handleRedirect}>{t('header.menu.menu_portfolio')}</li>
                             </ScrollLink>
                             </ul>
                         </div>
@@ -225,14 +285,27 @@ function Header({ ads }) {
             }
         </>
         }
+            <motion.div 
+                className={style.rightPanel}
+                initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration:2, ease: 'backIn'}}>
+                <IcoLanguage className={style.changeLanguage} onClick={toggleLanguageMenu} />
+                {languageMenu && 
+                    <div className={style.languageDropdown}>
+                        <ul className={style.languageList}>
+                            <li onClick={() => {changeLanguage('cs')}}>{t('language.cz')}</li>
+                            <li onClick={() => {changeLanguage('en')}}>{t('language.en')}</li>
+                        </ul>
+                    </div>
+                }
                 <ScrollLink 
                     to={ads ? "AdsContact" : "Contact"}
                     spy={true}
                     smooth={true}
                     style={{marginRight: '35px'}}
                     offset={-10}>
-                    <motion.button initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration:2, ease: 'backIn'}} className={style.contact}>Contact</motion.button>
+                    <button className={style.contact}>{t('header.menu.menu_contact')}</button>
                 </ScrollLink>
+            </motion.div>
         </motion.nav>
     </>
   )

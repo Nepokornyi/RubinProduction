@@ -2,6 +2,7 @@ import React from 'react'
 import Dialog from './Dialog';
 
 import { createUseStyles } from 'react-jss'
+import { useTranslation } from 'react-i18next';
 
 const useStyle = createUseStyles({
     dialog:{
@@ -31,6 +32,7 @@ const useStyle = createUseStyles({
 function DialogSuccess({open ,onClose}) {
 
     const style = useStyle();
+    const { t } = useTranslation();
 
     if(!open) return null;
 
@@ -41,7 +43,7 @@ function DialogSuccess({open ,onClose}) {
     return (
         <Dialog onClose={handleClose}>
             <div className={style.dialog} onClick={e => e.stopPropagation()}>
-                <h2 className={style.message}>Thank you! I'll get back to you soon.</h2>
+                <h2 className={style.message}>{t('dialog.success.message')}</h2>
                 <button onClick={handleClose} className={style.closeButton}>X</button>
             </div>
         </Dialog>

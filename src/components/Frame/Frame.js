@@ -2,6 +2,7 @@ import React from 'react'
 
 import { createUseStyles } from 'react-jss'
 import { useMediaQuery } from 'react-responsive'
+import { useTranslation } from 'react-i18next';
 
 const  borderStyle = '3px solid var(--main-bg-color-light)';
 const borderSpace = '35px';
@@ -123,8 +124,8 @@ function Frame({ frameFade }) {
     const isTablet = useMediaQuery({query: '(min-width:501px) and (max-width:900px)'});
     const isLaptop = useMediaQuery({query: '(min-width:901px)'});
 
-
     const style = useStyle();
+    const { t } = useTranslation();
 
     return (
         <>
@@ -136,20 +137,20 @@ function Frame({ frameFade }) {
                     </div>
                     <div className={`${style.overlayElement} ${style.topRight}`}>
                     <span id="overlay-top-right-text" className={style.overlayText}>
-                        {/* <span className={style.animation}>🔴</span> REC */}
+                        <span className={style.animation}>🔴</span> REC
                     </span>
                     </div>
                     <div className={`${style.overlayElement} ${style.bottomLeft}`}>
                     <span className={`${style.overlayText} ${style.bottomLeftText}`}>
-                        {/* 60 FPS <br />
-                        {isLaptop && '1920x1080'}
-                        {isTablet && '1280x720'}
-                        {isMobile && '640x360'} */}
+                        {t('page.landing.frame.fps')} <br />
+                        {isLaptop && t('page.landing.frame.resolution_big')}
+                        {isTablet && t('page.landing.frame.resolution_medium')}
+                        {isMobile && t('page.landing.frame.resolution_small')}
                     </span>
                     </div>
                     <div className={`${style.overlayElement} ${style.bottomRight}`}>
                     <span className={`${style.overlayText} ${style.bottomRightText} ${style.counter}`}>
-                        {/* 24:00 */}
+                        {t('page.landing.frame.duration')}
                     </span>
                     </div>
                 </div>

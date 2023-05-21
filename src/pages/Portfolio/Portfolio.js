@@ -3,6 +3,7 @@ import CarouselGrid from '../../components/Carousel/CarouselGrid'
 import Content from '../../components/Content/Content'
 
 import { createUseStyles } from 'react-jss'
+import { useTranslation } from 'react-i18next'
 
 const useStyle = createUseStyles({
 	portfolioContainer:{
@@ -72,13 +73,14 @@ const useStyle = createUseStyles({
 
 function Portfolio() {
 
-  const style = useStyle()
+  const style = useStyle();
+  const { t } = useTranslation();
 
 	return (
 		<Content className={style.responsive}>
 			<div id="Portfolio" className={style.portfolioContainer}>
 				<div className={style.headerWrapper}>
-					<h2 className={style.header}>Portfolio</h2>
+					<h2 className={style.header}>{t('page.portfolio.heading')}</h2>
 				</div>
 				<CarouselGrid />
 			</div>

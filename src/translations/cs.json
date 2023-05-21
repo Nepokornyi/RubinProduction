@@ -1,0 +1,109 @@
+
+{
+    "page": {
+        "landing": {
+            "frame": {
+                "fps": "60 fps",
+                "resolution_big": "1920x1080",
+                "resolution_medium": "1280x720",
+                "resolution_small": "640x360",
+                "duration": "24:00"
+            }
+        },
+        "services": {
+            "heading": "co umíme",
+            "list": {
+                "title_pre_prod": "NAPLÁNOVAT",
+                "description_pre_prod": "Naplánujeme vše dopředu: scénář, harmonogram, logistiku  i catering",
+                "title_prod": "NATOČIT",
+                "description_prod": "Díky štábu plný ostřílených filmařů jsme schopni kreativně uchopit jakoukoliv výzvu",
+                "pricing_prod": "<strong>Cena:</strong> už od 5.000,- Kč",
+                "title_post_prod": "SESTŘÍHAT",
+                "description_post_prod": "Natočený materiál nestříháme jen pro hezký výsledek. Klademe důraz na děj a vizuál tak, aby vzbudil žádané emoce u diváka"
+            }
+        },
+        "atelier": {
+            "heading": "ATELIÉR",
+            "subheading": "<span>UŽ OD 5000,- CZK</span>",
+            "description": "Ateliér můžete využít k focení a natáčení vašich projektů. K realizaci Vám poskytneme profesionální osvětlení, asistenta i catering.",
+            "pricing": "",
+            "call_to_action": "KONTAKTUJTE NÁS"
+        },
+        "portfolio": {
+            "heading": "NAŠE PRÁCE",
+            "video_category": {
+                "music": "Hudební Video",
+                "film": "Krátký Film",
+                "ad": "Komerční Reklama",
+                "corporate": "Firemní Akce",
+                "fashion": "Módní Přehlídka"
+            },
+            "button": "ukázat více"
+        },
+        "contact": {
+            "heading": "POTŘEBUJETE PORADIT?",
+            "button": "ZÍISKAT NEZÁVAZNOU NABÍDKU"
+        }
+    },
+
+    "header": {
+        "menu": {
+            "menu_showreel": "showreel",
+            "menu_services": "služby",
+            "menu_atelier": "ateliér",
+            "menu_portfolio": "portfolio",
+            "menu_contact": "kontakty"
+        }
+    },
+
+    "input": {
+        "email_placeholder": "Email"
+    },
+
+    "ads": {
+        "voucher": {
+            "heading": "SLEVOVÝ POUKAZ",
+            "email_title": "ZANECHTE SVŮJ E-MAIL",
+            "email_description": "Chcete vědět jak Vám video může efektivně pozvednout povědomí vašeho brandu?",
+            "discount": "ZÍSKEJTE 30% SLEVU",
+            "discount_description": "Natáčení či focení od 5.000,- Kč"
+        },
+        "services": {
+            "heading": "CO UMÍME",
+            "video_prod_title": "PRODUKCE",
+            "video_prod_description": "Firemní rozhovory, obsah na sociální sítě, TV reklamy, spoty včetně módního obsahu",
+            "streaming_title": "ONLINE STREAMING",
+            "streaming_description": "Potřebujete streamovat akci na internet ale je to moc komplikované? Díky naší praxi akce proběhne bez obtíží.",
+            "photography_title": "FOTOGRAFOVÁNÍ",
+            "photography_description": "Statický obsah pro webové stránky, tiskovou kampaň nebo sociální sítě",
+            "atelier_title": "ATELIÉR",
+            "atelier_description": "Ateliér je plně vybaven osvětlovací a kamerovou technikou pro podporu Vašeho tvůrčího procesu."
+
+        },
+        "contact": {
+            "heading": "POTŘEBUJETE PORADIT?",
+            "button": "ZÍISKAT NEZÁVAZNOU NABÍDKU"
+        }
+    },
+
+    "header_ads": {
+        "brand": "Rubin Production",
+        "contact_button": "KONTAKTY"
+    },
+
+    "dialog": {
+        "success": {
+            "message": "Děkuji! Brzy se ozvu."
+        }
+    },
+
+    "footer": {
+        "contact_email": "<strong>e-mail:</strong> info@rubinproduction.eu",
+        "contact_phone": "<strong>tel:</strong> +420 773 042 876"
+    },
+    
+    "language": {
+        "cz": "CZ",
+        "en": "EN"
+    }
+}

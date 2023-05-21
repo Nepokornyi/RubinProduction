@@ -2,6 +2,7 @@ import React from 'react'
 import { HashLink } from 'react-router-hash-link';
 
 import { createUseStyles } from 'react-jss'
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion'
 
 const useStyle = createUseStyles({
@@ -21,6 +22,7 @@ const useStyle = createUseStyles({
         fontSize: '56px',
         textAlign: 'center',
         position: 'relative',
+        textTransform: 'uppercase',
         fontWeight: '700',
         zIndex: 1,
         margin: 0,
@@ -53,7 +55,11 @@ const useStyle = createUseStyles({
     subHeader:{
         fontSize: '22px',
         fontWeight: '700',
+        textTransform: 'uppercase',
         margin: '18px 0 0 0',
+        '& > span': {
+            color: 'var(--secondary-text-color)'
+        },
         '@media (max-width:900px)':{
             fontSize: '18px'
         }
@@ -76,7 +82,7 @@ const useStyle = createUseStyles({
         flexDirection: 'column',
         alignItems: 'center',
         maxWidth: '400px',
-        minWidth: '350px'
+        minWidth: '350px',
     },
     contact:{
 		width: '200px',
@@ -101,7 +107,8 @@ const useStyle = createUseStyles({
 
 function AtelierDescription() {
 
-    const style = useStyle()
+    const style = useStyle();
+    const { t } = useTranslation();
 
     const scrollWithOffset = (el) => {
         const yCoords = el.getBoundingClientRect().top + window.pageYOffset;
@@ -115,16 +122,17 @@ function AtelierDescription() {
             initial={{opacity: 0}}
             whileInView={{opacity: 1}}
             transition={{duration:1, ease: 'easeInOut'}}>
-            <h2 className={style.header}>ATELIER <br /> FOR YOU</h2>
+            <h2 className={style.header} dangerouslySetInnerHTML={{ __html: t('page.atelier.heading') }}></h2>
             <div className={style.info}>
-                <h4 className={style.subHeader}>SPACE WITH ALL THE TOOLS <span style={{color: 'var(--secondary-text-color)'}}>YOU</span> NEED TO CREATE CONTENT</h4>
+                <h4 className={style.subHeader} dangerouslySetInnerHTML={{ __html: t('page.atelier.subheading') }}></h4>
                 <ul className={style.list}>
-                    <li>From pre-production and planning to post-production and editing, we'll work closely with you to ensure that every aspect of your project is executed to perfection. With experienced director on hand, you can rest assured that you'll receive the guidance and support you need to create high-quality content that truly stands out</li>
+                    <li>{t('page.atelier.description')}</li>
+                    <li dangerouslySetInnerHTML={{ __html: t('page.atelier.pricing') }}></li>
                 </ul>
                 <HashLink 
                     smooth to="/#Contact" 
                     scroll={el => scrollWithOffset(el)}>
-                        <button className={style.contact}>Contact</button>
+                        <button className={style.contact}>{t('page.atelier.call_to_action')}</button>
                 </HashLink>
             </div>
 

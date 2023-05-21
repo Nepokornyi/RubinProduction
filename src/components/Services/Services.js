@@ -3,7 +3,9 @@ import React from 'react'
 import Content from '../Content/Content'
 import ServiceInformation from '../ServiceInformation/ServiceInformation';
 
+import { motion } from 'framer-motion'
 import { createUseStyles } from 'react-jss'
+import { useTranslation } from 'react-i18next';
 
 const useStyle = createUseStyles({
     servicesContainer:{
@@ -69,16 +71,23 @@ const useStyle = createUseStyles({
 function Services() {
 
     const style = useStyle()
+	const { t } = useTranslation()
 
     return (
         <Content className={style.expandContent}>
-            <div id="Services" className={style.servicesContainer}>
+            <motion.div 
+				id="Services" 
+				className={style.servicesContainer}
+				initial={{opacity: 0}}
+				whileInView={{opacity: 1}}
+				transition={{duration: 1, ease: 'easeInOut'}}
+			>
 				<div className={style.headerWrapper}>
-					<h2 className={style.header}>Services</h2>
+					<h2 className={style.header}>{t('page.services.heading')}</h2>
 				</div>
 
                 <ServiceInformation />
-            </div>
+            </motion.div>
         </Content>
     )
 }

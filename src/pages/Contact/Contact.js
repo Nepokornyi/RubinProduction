@@ -7,6 +7,7 @@ import Content from '../../components/Content/Content'
 import Footer from '../../components/Footer/Footer'
 import DialogSuccess from '../../components/Dialog/DialogSuccess'
 import { emailValidator } from '../../libs/validators'
+import { useTranslation } from 'react-i18next'
 
 import backgroundImg from '../../assets/img/Foto.svg'
 
@@ -183,19 +184,14 @@ const useStyle = createUseStyles({
 
 function Contact({ ads }) {
 	const [email, setEmail] = useState('');
-	const [name, setName] = useState('');
-	const [phone, setPhone] = useState('');
     const [error, setError] = useState('');
-    const [textArea, setTextArea] = useState('');
 	const [isTyping, setIsTyping] = useState(false)
 	const [successDialog, setSuccessDialog] = useState(false);
 
-	const regexLetters = /^[a-zA-Z\s]*$/;
-	const regexPhone = /^(\+\d{0,2}\s?)?((\(\d{0,4}\)|\d{0,4})\s?)(\d{0,4}([\s-]?\d{0,4}){0,3})$/;
-
 
 	const form = useRef();
-	const style = useStyle()
+	const style = useStyle();
+	const { t } = useTranslation();
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -219,10 +215,7 @@ function Contact({ ads }) {
 				'KJ0DMbdu2V3mz40mc'
 			)
 			.then((result) =>{
-				setName('');
 				setEmail('');
-				setPhone('');
-				setTextArea('');
 			}, (error) => {
 				alert(error);
 			});
@@ -245,22 +238,12 @@ function Contact({ ads }) {
             transition={{duration:1, ease: 'easeInOut'}}
 		>
 			<div className={style.headerWrapper}>
-				<h2 className={style.header}>Contact</h2>
+				<h2 className={style.header}>{t('page.contact.heading')}</h2>
 			</div>
 			<form ref={form} onSubmit={handleSubmit} noValidate className={style.form}>
 
 				<div className={style.inputRow}>
 					<div className={style.inputColumn}>
-						<input 
-							type="text" 
-							name="name" 
-							value={name} 
-							onChange={(event) => {
-								if(regexLetters.test(event.target.value) && event.target.value.length <= 40){
-									setName(event.target.value)
-								}}
-							}
-							className={style.input} placeholder='Name' />
 						<div className={style.requiredWrapper}>
 							<input 
 								type="email" 
@@ -281,33 +264,11 @@ function Contact({ ads }) {
 								className={style.input} placeholder='Email' />
 								<span className={`${style.asterisk} ${isTyping ? style.hideAsterisk : ''}`}>*</span>
 						</div>
-
-						<input 
-							type="tel" 
-							name="phone" 
-							value={phone} 
-							onChange={(event) => {
-								if(regexPhone.test(event.target.value) && event.target.value.length <= 15){
-									setPhone(event.target.value)
-								}}
-							}
-							className={style.input} placeholder='Phone number' />
-					</div>
-					<div>
-						<textarea 
-							className={style.textarea}
-							value={textArea} 
-							onChange={(event) => {setTextArea(event.target.value)}} 
-							name="message" 
-							cols="30" 
-							rows="10"
-							maxLength='500' 
-							placeholder='Message' />
 					</div>
 				</div>
 
 				{error && <p className={style.error}>{error}</p>}   
-				<button type="submit" className={style.submit}>Send</button>
+				<button type="submit" className={style.submit}>{t('page.contact.button')}</button>
 
 			</form>
         </motion.div>

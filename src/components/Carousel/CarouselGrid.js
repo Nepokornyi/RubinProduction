@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { createUseStyles } from 'react-jss'
 import { useMediaQuery } from 'react-responsive'
+import { useTranslation } from 'react-i18next';
 
 import VideoCover from '../../assets/video/cover.mp4'
 import VideoMotion from '../../assets/video/motion.mp4'
@@ -97,51 +98,54 @@ const useStyle = createUseStyles({
 
 function CarouselGrid() {
 
+    const style = useStyle();
+    const { t } = useTranslation();
+
     const items = [
     {   id: 1,
         type: 'vimeo',
         link: 'https://player.vimeo.com/video/772372989?h=02c19fdb13&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Music Video',
+        content: t('page.portfolio.video_category.music'),
         localVideo: VideoCover,
         blurHash: 'LB4{#wbdNbj]yZaeWXogR*e-jEkC'
     },
     {   id: 2,
         type: 'vimeo', 
         link: 'https://player.vimeo.com/video/732085536?h=5cb9947eaf&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Short Film',
+        content: t('page.portfolio.video_category.film'),
         localVideo: VideoMotion,
         blurHash: 'L02i62M,O9k6P,m@tNSu.5RCtPSJ'
     },
     {   id: 3, 
         type: 'vimeo',
         link: 'https://player.vimeo.com/video/734632991?h=773facb522&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Commercial Ads',
+        content: t('page.portfolio.video_category.ad'),
         localVideo: VideoWoman,
         blurHash: 'L17w$bQT-;O:H+qu^+KK}@8x_2Nt'
     },
     {   id: 4, 
         type: 'vimeo',
         link: 'https://player.vimeo.com/video/759845104?h=41bf313a14&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Corporate Content',
+        content: t('page.portfolio.video_category.corporate'),
         localVideo: VideoSekuron,
         blurHash: 'L9GScM_N%zaxSgICt7-;x[NGtRD%'
     },
     {   id: 5, 
         type: 'vimeo',
         link: 'https://player.vimeo.com/video/727726230?h=8cdb39082b&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Fashion Content',
+        content: t('page.portfolio.video_category.fashion'),
         localVideo: VideoSamurai,
         blurHash: 'LFFg;Hx[zZX7ugtQNGo|cWozJ~sD'
     },
     {   id: 6, 
         type: 'vimeo',
         link: 'https://player.vimeo.com/video/734632991?h=773facb522&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: 'Commercial Ads',
+        content: t('page.portfolio.video_category.ad'),
         localVideo: VideoWoman,
         blurHash: 'L17w$bQT-;O:H+qu^+KK}@8x_2Nt'
     },
 ]
-    const style = useStyle()
+
 
     const [overlay, setOverlay] = useState(false)
     const [videoLink, setVideoLink] = useState('')
@@ -200,7 +204,7 @@ function CarouselGrid() {
         
         {!isMobile &&
         <div className={style.gridOverlay}>
-            <button onClick={() => handleOpenOverlay(props.link, props.type)}>view more</button>
+            <button onClick={() => handleOpenOverlay(props.link, props.type)}>{t('page.portfolio.button')}</button>
         </div>
         }
     </div>
