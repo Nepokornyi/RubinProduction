@@ -24,7 +24,7 @@ const useStyles = createUseStyles({
         height: '65px',
         backgroundColor: 'var(--main-bg-color-dark)',
         borderBottom: '1px solid var(--secondary-bg-color-dark)',
-        zIndex: 10,
+        zIndex: 15,
         '& a': {
             textDecoration: 'none',
             color: 'var(--main-text-color-light)'

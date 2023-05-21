@@ -14,11 +14,12 @@ import backgroundImg from '../../assets/img/Foto.svg'
 const useStyle = createUseStyles({
 	formContainer:{
 		display: 'flex',
-		minHeight: '700px',
+		minHeight: '35%',
 		boxSizing: 'border-box',
 		flexDirection: 'column',
 		alignItems: 'center',
 		justifyContent: 'center',
+		gap: '30px',
 		zIndex: 2,
 	},
 	headerWrapper:{
@@ -57,11 +58,10 @@ const useStyle = createUseStyles({
 	},
 	form:{
 		minWidth: '80vw',
-		height: '80%',
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		gap: '25px',
+		gap: '30px',
 		position: 'relative',
 		'@media(max-width:800px)':{
 			height: '75%'
@@ -83,9 +83,9 @@ const useStyle = createUseStyles({
 		fontWeight: 700,
 		minWidth: '300px',
 		height: '35px',
-		width: '35vw',
+		width: '80vw',
 		border: 0,
-		margin: 0,
+		margin: '15px 0',
 		padding: '20px',
 		'@media(max-width:800px)':{
 			height: '15px'
@@ -122,8 +122,8 @@ const useStyle = createUseStyles({
 		color: 'var(--secondary-text-color)'
 	},
 	submit:{
-		width: '200px',
 		height: '50px',
+		padding: '0 20px',
 		fontSize: '16px',
 		backgroundColor: 'var(--secondary-text-color)',
 		color: 'var(--main-text-color-light)',
@@ -142,9 +142,6 @@ const useStyle = createUseStyles({
 
 	responsive:{
 		minHeight: '700px',
-		'@media(max-width:800px)':{
-			minHeight: '1000px'
-		},
 		overflow: 'hidden',
 		'&::before':{
 			content: "''",

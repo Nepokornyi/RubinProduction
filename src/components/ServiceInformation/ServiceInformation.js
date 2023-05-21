@@ -8,19 +8,19 @@ import icoPostProd from '../../assets/img/icoPostProd.svg'
 import icoProd from '../../assets/img/icoProd.svg'
 
 const useStyle = createUseStyles({
-    content:{
+    content: {
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'center',
         gap: '20px',
         minHeight: '320px',
-        height: '80%',
+        height: '50%',
         '@media(max-width: 800px)':{
 			height: '90%',
 		}
     },
-    card:{
+    card: {
         height: '265px',
         maxWidth: '450px',
         flex: '0 0 calc(33.33% - 20px)',
@@ -32,9 +32,12 @@ const useStyle = createUseStyles({
         '@media(max-width:800px)':{
             flex: '0 0 calc(60% - 20px)',
             minWidth: '225px',
+        },
+        '& p': {
+            marginBottom: 0,
         }
     },
-    image:{
+    image: {
         width: '150px',
         height: '150px',
         position: 'relative',
@@ -42,9 +45,12 @@ const useStyle = createUseStyles({
             width: '2000px'
         }
     },
-    title:{
+    title: {
         color: 'var(--secondary-text-color)',
         margin: 0,
+    }, 
+    pricing: {
+        margin: '5px'
     }
 })
 
@@ -66,7 +72,7 @@ function ServiceInformation() {
             </div>
             <h3 className={style.title}>{props.title}</h3>
             <p>{props.description}</p>
-            <p dangerouslySetInnerHTML={{ __html: props.pricing }}></p>
+            <p className={style.pricing} dangerouslySetInnerHTML={{ __html: props.pricing }}></p>
         </div>
     )
 
