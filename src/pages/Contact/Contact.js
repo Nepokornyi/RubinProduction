@@ -49,7 +49,7 @@ const useStyle = createUseStyles({
 			zIndex: -1
 		},
 		'@media(max-width:700px)':{
-			fontSize: '52px',
+			fontSize: '48px',
 			'&:after':{
 				top: '-5px',
 				left: '65px',

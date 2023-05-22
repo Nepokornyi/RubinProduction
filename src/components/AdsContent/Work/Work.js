@@ -11,6 +11,7 @@ import pictureWork1 from '../../../assets/img/work1.png'
 import pictureWork2 from '../../../assets/img/work2.png'
 import pictureWork3 from '../../../assets/img/work3.png'
 import pictureWork4 from '../../../assets/img/work4.png'
+import { useTranslation } from 'react-i18next';
 
 
 const useStyle = createUseStyles({
@@ -53,11 +54,14 @@ const useStyle = createUseStyles({
 })
 
 function Work() {
+
+    const { t } = useTranslation();
+
     const items = [
         {   id: 1,
             type: 'text',
-            title: 'NO CHARGE FOR EQUIPMENT',
-            description: 'Let us help you to discover high-quality world of content'
+            title: t('ads.services.video_prod_title'),
+            description: t('ads.services.video_prod_description')
         },
         {   id: 2,
             type: 'picture',
@@ -69,13 +73,13 @@ function Work() {
         },
         {   id: 4, 
             type: 'text',
-            title: 'SHOOTING CREW',
-            description: 'Gaffers, Assistance, CameraOperator and even Director. Everyone on board!'
+            title: t('ads.services.streaming_title'),
+            description: t('ads.services.streaming_description')
         },
         {   id: 5, 
             type: 'text',
-            title: 'WORKFLOW',
-            description: 'With us you will understand each step in production process. Prepare your questions!'
+            title: t('ads.services.photography_title'),
+            description: t('ads.services.photography_description')
         },
         {   id: 6, 
             type: 'picture',
@@ -87,8 +91,8 @@ function Work() {
         },
         {   id: 9, 
             type: 'text',
-            title: 'CONTENT DELIVERY',
-            description: 'At the end you will get huge amount of content. Together we will cover all your needs!'
+            title: t('ads.services.atelier_title'),
+            description:  t('ads.services.atelier_description')
         },
     ]
         const style = useStyle()

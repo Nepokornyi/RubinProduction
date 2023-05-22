@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 const  borderStyle = '3px solid var(--main-bg-color-light)';
 const borderSpace = '35px';
+const mobileSpace = '15px';
 
 const useStyle = createUseStyles({
     '@keyframes pop':{
@@ -77,7 +78,7 @@ const useStyle = createUseStyles({
         borderTop: borderStyle,
         top: borderSpace,
         left: borderSpace,
-        textAlign: 'left'
+        textAlign: 'left',
     },
 
     topRight: {
@@ -85,7 +86,7 @@ const useStyle = createUseStyles({
         borderTop: borderStyle,
         top: borderSpace,
         right: borderSpace,
-        textAlign: 'right'
+        textAlign: 'right',
     },
 
     bottomLeft: {
@@ -107,13 +108,21 @@ const useStyle = createUseStyles({
     bottomLeftText: {
         position: 'absolute',
         bottom: borderSpace,
-        left: borderSpace
+        left: borderSpace,
+        '@media(max-width:500px)': {
+            bottom: mobileSpace,
+            left: mobileSpace,
+        }
     },
 
     bottomRightText: {
         position: 'absolute',
         bottom: borderSpace,
-        right: borderSpace
+        right: borderSpace,
+        '@media(max-width:500px)': {
+            bottom: mobileSpace,
+            right: mobileSpace,
+        }
     }
   })
 

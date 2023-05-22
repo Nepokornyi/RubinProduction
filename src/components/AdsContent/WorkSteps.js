@@ -1,7 +1,8 @@
 import React from 'react'
 import Content from '../Content/Content'
 import { createUseStyles } from 'react-jss'
-import { useMediaQuery } from 'react-responsive'
+import { useTranslation } from 'react-i18next'
+
 import Work from './Work/Work'
 
 const useStyle = createUseStyles({
@@ -59,14 +60,13 @@ const useStyle = createUseStyles({
 function WorkSteps() {
 
     const style = useStyle()
-
-	const isMobile = useMediaQuery({query: '(max-width:600px)'});
+	const { t } = useTranslation();
 
     return (
         <Content className={style.adaptiveContent}>
             <div id="Services" className={style.workContainer}>
 				<div className={style.headerWrapper}>
-                	<h2 className={style.header}>How {isMobile && <br/>} it works?</h2>
+                	<h2 className={style.header}>{t('ads.services.heading')}</h2>
 				</div>
                 <Work />
             </div>

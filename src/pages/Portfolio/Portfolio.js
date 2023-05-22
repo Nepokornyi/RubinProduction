@@ -54,7 +54,7 @@ const useStyle = createUseStyles({
 			zIndex: -1
 		},
 		'@media(max-width:700px)':{
-			fontSize: '52px',
+			fontSize: '48px',
 			'&:after':{
 				top: '5px',
 				left: '70px',
@@ -67,7 +67,7 @@ const useStyle = createUseStyles({
 		}
 	},
 	responsive:{
-		minHeight: '700px'
+		minHeight: '700px',
 	}
 })
 
