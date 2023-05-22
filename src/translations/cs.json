@@ -35,6 +35,9 @@
             "video_category": {
                 "music": "Hudební Video",
                 "film": "Krátký Film",
+                "tv_spot": "TV Spot",
+                "show": "TV Show",
+                "app": "Aplikace",
                 "ad": "Komerční Reklama",
                 "corporate": "Firemní Akce",
                 "fashion": "Módní Přehlídka"

@@ -17,6 +17,11 @@ import VideoMotion from '../../assets/video/motion.mp4'
 import VideoWoman from '../../assets/video/woman.mp4'
 import VideoSekuron from '../../assets/video/sekuron.mp4'
 import VideoSamurai from '../../assets/video/samurai.mp4'
+import VideoTVSpot from '../../assets/video/jacobs.mp4'
+import VideoTVShow from '../../assets/video/samosebou.mp4'
+import VideoCake from '../../assets/video/cake.mp4'
+import VideoApplication from '../../assets/video/application.mp4'
+import VideoBakery from '../../assets/video/bakery.mp4'
 
 
 
@@ -145,18 +150,46 @@ function CarouselGrid() {
     },
     {   id: 5, 
         type: 'vimeo',
+        link: 'https://player.vimeo.com/video/734656185?h=69548e618a&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
+        content: t('page.portfolio.video_category.tv_spot'),
+        localVideo: VideoTVSpot,
+        blurHash: 'L17m~f0000~X-=xD4-xuIo-pxu56'
+    },
+    {   id: 6, 
+        type: 'vimeo',
         link: 'https://player.vimeo.com/video/727726230?h=8cdb39082b&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
         content: t('page.portfolio.video_category.fashion'),
         localVideo: VideoSamurai,
         blurHash: 'LFFg;Hx[zZX7ugtQNGo|cWozJ~sD'
     },
-    {   id: 6, 
+    {   id: 7, 
         type: 'vimeo',
-        link: 'https://player.vimeo.com/video/734632991?h=773facb522&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
-        content: t('page.portfolio.video_category.ad'),
-        localVideo: VideoWoman,
-        blurHash: 'L17w$bQT-;O:H+qu^+KK}@8x_2Nt'
+        link: 'https://player.vimeo.com/video/732384138?h=04b28d93d9&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
+        content: t('page.portfolio.video_category.show'),
+        localVideo: VideoTVShow,
+        blurHash: 'L79i^|?F0JbZ0gIWwKoL4.of~Wo2',
     },
+    {   id: 8, 
+        type: 'vimeo',
+        link: 'https://player.vimeo.com/video/722883251?h=6c4a5876b9&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
+        content: t('page.portfolio.video_category.corporate'),
+        localVideo: VideoCake,
+        blurHash: 'L7F}WJ+]~U#l05ozEMj[0z$%MKtR',
+    },
+    {   id: 9, 
+        type: 'vimeo',
+        link: 'https://player.vimeo.com/video/727716165?h=d3f26388ce&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
+        content: t('page.portfolio.video_category.app'),
+        localVideo: VideoApplication,
+        blurHash: 'L~PQo]?1oMNEt7j]j[fiRQaxj[j[',
+    },
+    {   id: 10, 
+        type: 'vimeo',
+        link: 'https://player.vimeo.com/video/722881788?h=54c3ae4a52&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
+        content: t('page.portfolio.video_category.corporate'),
+        localVideo: VideoBakery,
+        blurHash: 'LDFhR}sA00tlysI;9F?GWUs,xabc',
+    }
 ]
 
 

@@ -35,6 +35,9 @@
             "video_category": {
                 "music": "Music Video",
                 "film": "Short Film",
+                "tv_spot": "TV Spot",
+                "show": "TV Show",
+                "app": "Application",
                 "ad": "Commercial Ads",
                 "corporate": "Corporate Content",
                 "fashion": "Fashion Content"
