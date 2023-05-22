@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import { createUseStyles } from 'react-jss';
 import { useMediaQuery } from 'react-responsive';
@@ -155,13 +155,14 @@ const useStyles = createUseStyles({
 
     adsMenu: {
         '@media(max-width:700px)':{
-            fontSize: '13.5px'
+            fontSize: '9.5px'
         }
     }
 });
 
 function Header({ ads }) {
 
+  const dropdownRef = useRef(null);
   const [sideMenu, setSideMenu] = useState(false);
   const [languageMenu, setLanguageMenu] = useState(false);
   const isMobile = useMediaQuery({query: '(max-width:700px)'});
@@ -180,6 +181,20 @@ function Header({ ads }) {
   const handleCloseMenu = () => { setSideMenu(false); }
   const toggleLanguageMenu = () => { setLanguageMenu(!languageMenu) }
   const handleRedirect = () => { setSideMenu(false) }
+
+  const handleClickOutside = (event) => {
+    if(dropdownRef.current && !dropdownRef.current.contains(event.target)){
+        setLanguageMenu(false);
+        setSideMenu(false);
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [])
 
   return (
     <>
@@ -201,7 +216,7 @@ function Header({ ads }) {
                         to="ShowReel"
                         spy={true}
                         smooth={true}
-                        offset={-10}
+                        offset={-65}
                     ><motion.li variants={item} className={`${style.listItem} ${style.adsMenu}`}>{t('header_ads.brand')}</motion.li>
                     </ScrollLink>
                 </motion.ul>
@@ -219,7 +234,7 @@ function Header({ ads }) {
                         to="ShowReel"
                         spy={true}
                         smooth={true} 
-                        offset={-10}
+                        offset={-65}
                     ><motion.li variants={item} className={style.listItem}>{t('header.menu.menu_showreel')}</motion.li>
                     </ScrollLink>
                     <ScrollLink 
@@ -249,13 +264,13 @@ function Header({ ads }) {
                 <div className={style.mobileHeader}>
                     {sideMenu === false ? <img src={icoHamburger} width="28px" height="21px" onClick={handleOpenMenu} alt="" /> : <img src={icoClose} onClick={handleCloseMenu} alt="" />}
                     {sideMenu &&
-                        <div className={style.sideMenu}>
+                        <div ref={dropdownRef} className={style.sideMenu}>
                             <ul className={style.dropDownList}>
                             <ScrollLink 
                                 to="ShowReel"
                                 spy={true}
                                 smooth={true} 
-                                offset={-10}
+                                offset={-65}
                             >
                                 <li className={style.listItem} onClick={handleRedirect}>{t('header.menu.menu_showreel')}</li>
                             </ScrollLink>
@@ -301,8 +316,9 @@ function Header({ ads }) {
         }
             <motion.div 
                 className={style.rightPanel}
+                ref={dropdownRef}
                 initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration:2, ease: 'backIn'}}>
-                {!isMobile && (
+                {(ads || !isMobile) && (
                 <>
                     <IcoLanguage className={style.changeLanguage} onClick={toggleLanguageMenu} />
                     {languageMenu && (

@@ -124,7 +124,7 @@ function Offer() {
             <div className={style.headerWrapper}>
                 <h2 className={style.header}>{t('ads.voucher.heading')}</h2>
             </div>
-            <div className={style.content}>
+            <div id="Services" className={style.content}>
                 {content}
             </div>
 

@@ -43,10 +43,6 @@ const useStyle = createUseStyles({
 			fontSize: '48px',
 			fontWeight: '400',
 			zIndex: -1,
-			'@media(max-width:600px)':{
-				top: '50px',
-				left: '30px'
-			}
 		},
 		'@media(max-width:800px)':{
 			fontSize: '52px',
@@ -64,7 +60,7 @@ function WorkSteps() {
 
     return (
         <Content className={style.adaptiveContent}>
-            <div id="Services" className={style.workContainer}>
+            <div className={style.workContainer}>
 				<div className={style.headerWrapper}>
                 	<h2 className={style.header}>{t('ads.services.heading')}</h2>
 				</div>
