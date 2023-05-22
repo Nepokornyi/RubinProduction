@@ -181,7 +181,7 @@ function Video({ ads }) {
                         to="Services"
                         spy={true}
                         smooth={true}
-                        offset={-10}>
+                        offset={-50}>
                         <div className={style.callToActionButton}>
                                 <IcoArrow style={{width: '52px', height: '52px'}} />
                                 <p>{t('page.landing.scroll_down')}</p>

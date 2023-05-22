@@ -14,8 +14,9 @@ const useStyle = createUseStyles({
         justifyContent: 'center',
         alignItems: 'center',
         gap: '20px',
+        paddingBottom: '15px',
         minHeight: '320px',
-        height: '50%',
+        height: '80%',
         '@media(max-width: 800px)':{
 			height: '90%',
 		}
@@ -31,7 +32,8 @@ const useStyle = createUseStyles({
         textAlign: 'center',
         '@media(max-width:800px)':{
             flex: '0 0 calc(60% - 20px)',
-            minWidth: '225px',
+            minWidth: '265px',
+            gap: 0,
         },
         '& p': {
             marginBottom: 0,
@@ -40,10 +42,7 @@ const useStyle = createUseStyles({
     image: {
         width: '150px',
         height: '150px',
-        position: 'relative',
-        '&:nth-child(3)':{
-            width: '2000px'
-        }
+        position: 'relative'
     },
     title: {
         color: 'var(--secondary-text-color)',

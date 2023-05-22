@@ -16,7 +16,7 @@ const useStyle = createUseStyles({
         alignItems: 'center',
         justifyItems: 'center',
         touchAction: 'none',
-        zIndex: 6,
+        zIndex: 20,
         '& > video': {
             width: 'auto',
             height: '90vh',

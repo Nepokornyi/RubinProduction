@@ -56,13 +56,17 @@ const useStyle = createUseStyles({
             transform: 'translate(-50%)'
 		},
 		'@media(max-width:800px)':{
-			height: '80vh',
+			height: 'auto',
 		}
 	},
 	image:{
 		width: '100%',
 		objectFit: 'cover',
+		objectPosition: 'center',
 		overflow: 'hidden',
+		'@media(max-width:800px)': {
+			objectFit: 'contain'
+		}
 	},
 
 	

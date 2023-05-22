@@ -21,6 +21,13 @@ import VideoSamurai from '../../assets/video/samurai.mp4'
 
 
 const useStyle = createUseStyles({
+    sliderContainer: {
+        width: '100%', 
+        height: '80%', 
+        '@media(max-width:500px)':{
+            height: '50%'
+        }
+    },
     projectVideo: {
         minWidth: '300px',
         height: '35vh',
@@ -28,6 +35,9 @@ const useStyle = createUseStyles({
         overflow: 'hidden',
         '@media(max-width:800px)':{
             height: '70vh'
+        },
+        '@media(max-width:500px)':{
+            height: '35vh'
         },
         '&:hover $gridOverlay': {
             opacity: 1,
@@ -47,7 +57,10 @@ const useStyle = createUseStyles({
         opacity: '0.65',
         objectFit: 'cover',
         width: '100%',
-        height: '100%'
+        height: '100%',
+        '@media(max-width:800px)': {
+            objectFit: 'contain'
+        }
     },
     gridOverlay: {
         background: 'rgba(0,0,0,0.65)',
@@ -212,7 +225,7 @@ function CarouselGrid() {
 
   return (
     <>
-        <div style={{width: '100%', height: '80%'}}>
+        <div className={style.sliderContainer}>
             <Slider {...sliderSettings}>
                 {carouselItems}
             </Slider>

@@ -35,6 +35,7 @@ const useStyle = createUseStyles({
 		textAlign: 'center',
 		position: 'relative',
 		margin: 0,
+		padding: '20px 0',
 		textTransform: 'uppercase',
 		fontWeight: '700',
 		zIndex: 1,
@@ -50,7 +51,7 @@ const useStyle = createUseStyles({
 			zIndex: -1,
 		},
 		'@media(max-width:700px)':{
-			fontSize: '52px',
+			fontSize: '48px',
 			'&:before':{
 				top: '0px',
 				right: '-25px',
@@ -58,9 +59,10 @@ const useStyle = createUseStyles({
 		}
 	},
     expandContent:{
-		minHeight: '700px',
+		height: 'auto',
+		minHeight: '0px',
         '@media(max-width:800px)':{
-            minHeight: '1450px'
+            minHeight: '1000px'
         }
     }
 });
