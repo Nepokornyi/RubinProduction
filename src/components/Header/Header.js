@@ -5,12 +5,14 @@ import { useMediaQuery } from 'react-responsive';
 import { motion } from 'framer-motion'
 import { container, item } from '../../libs/animation';
 import { Link as ScrollLink} from 'react-scroll'
+import { Link as PageRedirect } from 'react-router-dom';
 
 import { useTranslation } from 'react-i18next';
 
 import icoHamburger from '../../assets/img/icoBurger.svg'
 import icoClose from '../../assets/img/icoClose.svg'
 import {ReactComponent as IcoLanguage} from '../../assets/img/icoLanguage.svg'
+import icoBrand from '../../assets/img/favicon.ico'
 
 const useStyles = createUseStyles({
     header: {
@@ -153,6 +155,11 @@ const useStyles = createUseStyles({
         }
     },
 
+    favicon: {
+        width: '36px',
+        height: '36px'
+    },
+
     adsMenu: {
         '@media(max-width:700px)':{
             fontSize: '9.5px'
@@ -162,7 +169,8 @@ const useStyles = createUseStyles({
 
 function Header({ ads }) {
 
-  const dropdownRef = useRef(null);
+  const dropdownMenuRef = useRef(null);
+  const dropdownLanguageRef  = useRef(null);
   const [sideMenu, setSideMenu] = useState(false);
   const [languageMenu, setLanguageMenu] = useState(false);
   const isMobile = useMediaQuery({query: '(max-width:700px)'});
@@ -183,9 +191,11 @@ function Header({ ads }) {
   const handleRedirect = () => { setSideMenu(false) }
 
   const handleClickOutside = (event) => {
-    if(dropdownRef.current && !dropdownRef.current.contains(event.target)){
-        setLanguageMenu(false);
+    if(dropdownMenuRef.current && !dropdownMenuRef.current.contains(event.target)){
         setSideMenu(false);
+    }
+    else if(dropdownLanguageRef.current && !dropdownLanguageRef.current.contains(event.target)){
+        setLanguageMenu(false);
     }
   }
 
@@ -212,13 +222,10 @@ function Header({ ads }) {
                     initial='hidden'
                     animate='show'
                 >
-                    <ScrollLink 
-                        to="ShowReel"
-                        spy={true}
-                        smooth={true}
-                        offset={-65}
-                    ><motion.li variants={item} className={`${style.listItem} ${style.adsMenu}`}>{t('header_ads.brand')}</motion.li>
-                    </ScrollLink>
+                    <PageRedirect 
+                        to="/"
+                    ><motion.li variants={item} className={`${style.listItem} ${style.adsMenu}`}><img src={icoBrand} alt="icon" className={style.favicon} /></motion.li>
+                    </PageRedirect>
                 </motion.ul>
         </>
         :
@@ -264,7 +271,7 @@ function Header({ ads }) {
                 <div className={style.mobileHeader}>
                     {sideMenu === false ? <img src={icoHamburger} width="28px" height="21px" onClick={handleOpenMenu} alt="" /> : <img src={icoClose} onClick={handleCloseMenu} alt="" />}
                     {sideMenu &&
-                        <div ref={dropdownRef} className={style.sideMenu}>
+                        <div ref={dropdownMenuRef} className={style.sideMenu}>
                             <ul className={style.dropDownList}>
                             <ScrollLink 
                                 to="ShowReel"
@@ -316,13 +323,12 @@ function Header({ ads }) {
         }
             <motion.div 
                 className={style.rightPanel}
-                ref={dropdownRef}
                 initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration:2, ease: 'backIn'}}>
                 {(ads || !isMobile) && (
                 <>
                     <IcoLanguage className={style.changeLanguage} onClick={toggleLanguageMenu} />
                     {languageMenu && (
-                        <div className={style.languageDropdown}>
+                        <div ref={dropdownLanguageRef} className={style.languageDropdown}>
                             <ul className={style.languageList}>
                                 <li onClick={() => {changeLanguage('cs')}}>{t('language.cz')}</li>
                                 <li onClick={() => {changeLanguage('en')}}>{t('language.en')}</li>

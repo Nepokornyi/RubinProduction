@@ -4,8 +4,7 @@ import { createUseStyles } from 'react-jss'
 const useStyle = createUseStyles({
     content: {
         width: '100%',
-        minHeight: '400px',
-        height: '100vh',
+        minHeight: '300px',
         display: 'flex',
         position: 'relative',
         flexDirection: 'column',

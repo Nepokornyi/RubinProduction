@@ -3,9 +3,7 @@ import React from 'react'
 import { createUseStyles } from 'react-jss'
 
 const useStyle = createUseStyles({
-
 content: {
-    height: '100%',
     width: '50%',
     position: 'relative',
     display: 'flex',
@@ -13,16 +11,18 @@ content: {
     justifyContent: 'center',
     '@media (max-width: 800px)': {
         width: '100%',
-        height: '50%',
-        minHeight: '500px',
-        '&:nth-child(even)': {
-        backgroundColor: 'var(--main-bg-color-dark)',
-        color: 'var(--main-text-color-light)',
-            }
+        '&:nth-child(1)':{
+            minHeight: '500px',
+        },
+        '&:nth-child(2)': {
+            height: 'auto',
+            backgroundColor: 'var(--main-bg-color-dark)',
+            color: 'var(--main-text-color-light)',
+            padding: '25px 0 50px 0',
+        }
         },
     }
 })
-
 
 function Description({children}) {
 
