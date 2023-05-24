@@ -8,17 +8,14 @@ import { useTranslation } from 'react-i18next'
 const useStyle = createUseStyles({
 	portfolioContainer:{
 		width: '100%',
-		height: '100%',
 		position: 'relative',
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
 		justifyContent: 'center',
+		borderBottom: '1px solid var(--secondary-text-color)',
 	},
 	headerWrapper:{
-		width: '100%',
-		height: '20%',
-		minHeight: '80px',
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
@@ -27,7 +24,7 @@ const useStyle = createUseStyles({
 		fontSize: '64px',
 		textAlign: 'center',
 		position: 'relative',
-		margin: 0,
+		margin: '25px 0',
 		textTransform: 'uppercase',
 		fontWeight: '700',
 		zIndex: 1,
@@ -54,7 +51,7 @@ const useStyle = createUseStyles({
 			zIndex: -1
 		},
 		'@media(max-width:700px)':{
-			fontSize: '48px',
+			fontSize: '46px',
 			'&:after':{
 				top: '5px',
 				left: '70px',
@@ -66,9 +63,6 @@ const useStyle = createUseStyles({
 			},
 		}
 	},
-	responsive:{
-		minHeight: '700px',
-	}
 })
 
 function Portfolio() {

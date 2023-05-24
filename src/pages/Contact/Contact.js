@@ -14,26 +14,22 @@ import backgroundImg from '../../assets/img/Foto.svg'
 const useStyle = createUseStyles({
 	formContainer:{
 		display: 'flex',
-		minHeight: '35%',
 		boxSizing: 'border-box',
 		flexDirection: 'column',
 		alignItems: 'center',
 		justifyContent: 'center',
-		gap: '30px',
 		zIndex: 2,
+		paddingBottom: '100px'
 	},
 	headerWrapper:{
-		height: '20%',
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		'@media(max-width:800px)':{
-			height: '25%'
-		}
 	},
 	header:{
 		fontSize: '64px',
 		position: 'relative',
+		margin: '25px 0',
 		textTransform: 'uppercase',
 		fontWeight: 700,
 		zIndex: 1,
@@ -49,7 +45,7 @@ const useStyle = createUseStyles({
 			zIndex: -1
 		},
 		'@media(max-width:700px)':{
-			fontSize: '48px',
+			fontSize: '46px',
 			'&:after':{
 				top: '-5px',
 				left: '65px',
@@ -61,48 +57,23 @@ const useStyle = createUseStyles({
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		gap: '30px',
 		position: 'relative',
 		'@media(max-width:800px)':{
 			height: '75%'
 		}
 	},
-	inputRow:{
-		display: 'flex',
-		gap: '20px',
-		'@media(max-width:800px)':{
-			flexDirection: 'column'
-		}
-	},
-	inputColumn:{
-		display: 'flex',
-		flexDirection: 'column',
-		gap: '20px'
-	},
 	input:{
 		fontWeight: 700,
-		minWidth: '300px',
+		minWidth: '285px',
 		height: '35px',
-		width: '80vw',
-		border: 0,
-		margin: '15px 0',
+		width: '70vw',
+		border: 'none',
+		margin: 0,
 		padding: '20px',
 		'@media(max-width:800px)':{
 			height: '15px'
 		}
 	},
-	textarea:{
-		height: '225px',
-		width: '35vw',
-		padding: '20px',
-		border: 0,
-		margin: 0,
-		'@media(max-width:800px)':{
-			height: '100px',
-			minWidth: '300px',
-		}
-	},
-
 	requiredWrapper:{
 		position: 'relative'
 	},
@@ -124,6 +95,7 @@ const useStyle = createUseStyles({
 	submit:{
 		height: '50px',
 		padding: '0 20px',
+		margin: '40px 0',
 		fontSize: '16px',
 		backgroundColor: 'var(--secondary-text-color)',
 		color: 'var(--main-text-color-light)',
@@ -141,22 +113,22 @@ const useStyle = createUseStyles({
 	},
 
 	responsive:{
-		minHeight: '700px',
 		overflow: 'hidden',
 		'&::before':{
 			content: "''",
 			position: 'absolute',
-			top: '0',
-			right: '0',
+			top: '-95px',
+			right: '90px',
 			width: '100%',
 			height: '100%',
 			backgroundImage: `url(${backgroundImg})`,
-			backgroundSize: '35%',
 			backgroundRepeat: 'no-repeat',
 			backgroundPosition: 'top right',
 			transform: 'rotate(10deg)',
+			backgroundSize: 'contain',
 			zIndex: 0,
 			'@media(max-width:800px)':{
+				right: '0',
 				backgroundSize: '50%',
 			},
 			'@media(max-width:600px)':{
@@ -238,32 +210,26 @@ function Contact({ ads }) {
 				<h2 className={style.header}>{t('page.contact.heading')}</h2>
 			</div>
 			<form ref={form} onSubmit={handleSubmit} noValidate className={style.form}>
+				<div className={style.requiredWrapper}>
+					<input 
+						type="email" 
+						name="email" 
+						value={email} 
+						onChange={(event) => {
+							if(event.target.value.length < 42){
+								setEmail(event.target.value.trim())
+							}
 
-				<div className={style.inputRow}>
-					<div className={style.inputColumn}>
-						<div className={style.requiredWrapper}>
-							<input 
-								type="email" 
-								name="email" 
-								value={email} 
-								onChange={(event) => {
-									if(event.target.value.length < 42){
-										setEmail(event.target.value.trim())
-									}
-
-									if(event.target.value.length >= 1){
-										setIsTyping(true)
-									}
-									else{
-										setIsTyping(false)
-									}
-								}}
-								className={style.input} placeholder='Email' />
-								<span className={`${style.asterisk} ${isTyping ? style.hideAsterisk : ''}`}>*</span>
-						</div>
-					</div>
+							if(event.target.value.length >= 1){
+								setIsTyping(true)
+							}
+							else{
+								setIsTyping(false)
+							}
+						}}
+						className={style.input} placeholder='Email' />
+						<span className={`${style.asterisk} ${isTyping ? style.hideAsterisk : ''}`}>*</span>
 				</div>
-
 				{error && <p className={style.error}>{error}</p>}   
 				<button type="submit" className={style.submit}>{t('page.contact.button')}</button>
 

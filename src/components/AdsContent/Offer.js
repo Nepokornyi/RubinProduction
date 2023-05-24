@@ -4,6 +4,7 @@ import Content from '../Content/Content'
 import { createUseStyles } from 'react-jss'
 import { useTranslation } from 'react-i18next'
 import icoIndoor from '../../assets/img/icoIndoor.svg'
+import icoPreProd from '../../assets/img/icoPreProd.svg'
 
 const useStyle = createUseStyles({
     headerWrapper:{
@@ -19,7 +20,7 @@ const useStyle = createUseStyles({
 		fontSize: '64px',
 		textAlign: 'center',
 		position: 'relative',
-		margin: '10px 0 25px 0',
+        margin: '25px 0',
 		textTransform: 'uppercase',
         fontWeight: 700,
         wordWrap: 'break-word',
@@ -48,17 +49,14 @@ const useStyle = createUseStyles({
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         gap: '20px',
-        paddingBottom: '15px',
-        minHeight: '320px',
-        height: '80%',
+        padding: '20px 0 50px 0',
         '@media(max-width: 800px)':{
-			height: '90%',
+            padding: '5px 0 35px 0',
 		}
     },
     card: {
-        height: '265px',
         maxWidth: '450px',
         flex: '0 0 calc(50% - 20px)',
         display: 'flex',
@@ -88,11 +86,7 @@ const useStyle = createUseStyles({
     shortContent:{
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '500px',
-        height: '60vh',
-        '@media(max-width:800px)':{
-            height: '100vh'
-        }
+        borderBottom: '1px solid var(--secondary-text-color)',
     }
 
 })
@@ -103,7 +97,7 @@ function Offer() {
     const { t } = useTranslation();
 
     const list = [
-        {id: 1, ico: icoIndoor, title: t('ads.voucher.email_title'), description: t('ads.voucher.email_description')},
+        {id: 1, ico: icoPreProd, title: t('ads.voucher.email_title'), description: t('ads.voucher.email_description')},
         {id: 2, ico: icoIndoor, title: t('ads.voucher.discount'), description: t('ads.voucher.discount_description')}
     ]
 

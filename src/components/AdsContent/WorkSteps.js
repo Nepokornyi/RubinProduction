@@ -8,7 +8,6 @@ import Work from './Work/Work'
 const useStyle = createUseStyles({
     workContainer:{
 		width: '100%',
-		height: '100%',
 		position: 'relative',
 		display: 'flex',
 		flexDirection: 'column',
@@ -17,8 +16,6 @@ const useStyle = createUseStyles({
 	},
 	headerWrapper:{
         width: '100%',
-		height: '30%',
-		minHeight: '80px',
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
@@ -28,7 +25,7 @@ const useStyle = createUseStyles({
 		fontSize: '64px',
 		textAlign: 'center',
 		position: 'relative',
-		margin: '10px 0 25px 0',
+		margin: '25px 0',
 		textTransform: 'uppercase',
 		fontWeight: 700,
 		wordWrap: 'break-word',
@@ -47,9 +44,6 @@ const useStyle = createUseStyles({
 		'@media(max-width:800px)':{
 			fontSize: '52px',
 		}
-	},
-	adaptiveContent:{
-		minHeight: '750px'
 	}
 })
 

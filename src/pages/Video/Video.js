@@ -11,7 +11,9 @@ import { motion } from 'framer-motion'
 import { Link as ScrollLink} from 'react-scroll'
 
 import ShowReel from '../../assets/video/ShowReel.mp4'
+import ShowReelMobile from '../../assets/video/ShowReel_mobile.mp4'
 import AdsReel from '../../assets/video/AdsReel.mp4'
+import AdsReelMobile from '../../assets/video/AdsReel_mobile.mp4'
 import LazyVideo from '../../components/LazyHash/LazyVideo'
 import Equalizer from '../../components/Equalizer/Equalizer'
 
@@ -19,6 +21,7 @@ import {ReactComponent as IcoArrow} from '../../assets/img/icoArrow.svg'
 
 const useStyle = createUseStyles({
     adaptiveDesign:{
+        height: '100vh',
         justifyContent: 'flex-end'
     },
     videoContainer:{
@@ -189,7 +192,7 @@ function Video({ ads }) {
                         </ScrollLink>
                     }
 
-                    <LazyVideo src={ads ? AdsReel : ShowReel} blurHash='L02i62M,O9k6P,m@tNSu.5RCtPSJ' className={style.background} id='ShowReel' />
+                    <LazyVideo src={ads ? (isDesktop ? AdsReel : AdsReelMobile) : (isDesktop ? ShowReel : ShowReelMobile)} blurHash='L02i62M,O9k6P,m@tNSu.5RCtPSJ' className={style.background} id='ShowReel' />
                     {ads ? null : <Frame frameFade={hideFrame && style.frameFadeout} />}
                 </motion.div>
             </Content>

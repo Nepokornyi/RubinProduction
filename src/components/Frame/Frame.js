@@ -64,7 +64,7 @@ const useStyle = createUseStyles({
     },
 
     overlayText: {
-        fontSize: '1.25em',
+        fontSize: '20px',
         color: 'white',
     },
 

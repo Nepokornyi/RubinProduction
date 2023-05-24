@@ -8,14 +8,17 @@ import { motion } from 'framer-motion'
 const useStyle = createUseStyles({
     description:{
         position: 'relative',
-        display: 'flex',
+        height: '100vh',
         width: '80%',
         minWidth: '350px',
+        display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
         textAlign: 'center',
         '@media(max-width:800px)':{
             textAlign: 'center',
+            height: 'auto'
         }
     },
     header: {
@@ -27,7 +30,7 @@ const useStyle = createUseStyles({
         zIndex: 1,
         margin: 0,
         '@media (max-width:1000px)': {
-            fontSize: '48px'
+            fontSize: '46px'
         },
         '&:after':{
             content: "'X'",
