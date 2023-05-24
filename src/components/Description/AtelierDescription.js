@@ -46,7 +46,7 @@ const useStyle = createUseStyles({
         '&:before':{
             content: "'X'",
             position: 'absolute',
-            top: '-25px',
+            top: '-10px',
             left: '10px',
             rotate: '-15deg',
             color: 'var(--secondary-text-color)',

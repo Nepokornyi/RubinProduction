@@ -80,6 +80,7 @@ const useStyle = createUseStyles({
     },
     title: {
         color: 'var(--secondary-text-color)',
+        textTransform: 'uppercase',
         margin: 0,
     }, 
 

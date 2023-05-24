@@ -53,6 +53,7 @@ const useStyle = createUseStyles({
         textAlign: 'center',
         '& h3':{
             fontSize: '22px',
+            textTransform: 'uppercase',
             color: 'var(--secondary-text-color)',
             marginBottom:0,
         },
