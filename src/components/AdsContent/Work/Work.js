@@ -15,6 +15,19 @@ import { useTranslation } from 'react-i18next';
 
 
 const useStyle = createUseStyles({
+    sliderContainer: { 
+        width: '100%',
+        paddingBottom: '60px',
+        borderBottom: '1px solid var(--secondary-text-color)',
+        '& .slick-dots':{
+            bottom: '-37.5px'
+        },
+        '@media(max-width:800px)': {
+            '& .slick-dots':{
+                bottom: '-40px'
+            }
+        }
+    },
     projectVideo: {
         minWidth: '300px',
         minHeight: '250px',
@@ -23,9 +36,6 @@ const useStyle = createUseStyles({
         alignItems: 'center',
         justifyContent: 'center',
         border: '0.5px solid var(--secondary-text-color)',
-        '@media(max-width:600px)':{
-            border: 'none'
-        }
     },
     image: {
         position: 'absolute',
@@ -145,7 +155,7 @@ function Work() {
     
       return (
         <>
-            <div style={{width: '100%', height: '70%'}}>
+            <div className={style.sliderContainer}>
                 <Slider {...sliderSettings}>
                     {carouselItems}
                 </Slider>

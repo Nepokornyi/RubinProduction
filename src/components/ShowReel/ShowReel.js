@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { createUseStyles } from 'react-jss'
+import { useWindowDimension } from '../../utils/useWindowDimension'
 import { motion } from 'framer-motion'
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css"; 
@@ -17,8 +18,12 @@ import Atelier6 from '../../assets/img/06_Atelier.webp'
 
 const useStyle = createUseStyles({
 	container:{
-		width: '90%',
-		'@media(min-width:801px)':{
+		width: '95vw',
+		'& .slick-dots': {
+			bottom: '-32.5px'
+		},
+		'@media(min-width:801px)': {
+			width: '85%',
 			"& .slick-dots":{
 				top:0,
 				width: '15px',
@@ -29,9 +34,6 @@ const useStyle = createUseStyles({
 				justifyContent: 'center'
 			}
 		},
-		'@media((min-width:801px) and (max-width:950px))':{
-			width: '85%'
-		}
 
 	},
 	slider:{
@@ -43,12 +45,11 @@ const useStyle = createUseStyles({
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
-	slide:{
+	slide: ({ dynamicHeight }) => ({
 		position: 'relative',
 		height: '45vh',
 		display: 'flex', 
 		justifyContent: 'center',
-		margin: '25px 0px',
 		'& > p':{
             position: 'absolute',
             top: '20px',
@@ -56,9 +57,9 @@ const useStyle = createUseStyles({
             transform: 'translate(-50%)'
 		},
 		'@media(max-width:800px)':{
-			height: 'auto',
+			height: `${dynamicHeight}px`,
 		}
-	},
+	}),
 	image:{
 		width: '100%',
 		objectFit: 'cover',
@@ -104,7 +105,7 @@ function ShowReel() {
 	const sliderSettings = {
         dots: true,
         infinite: true,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3000,
         speed: 1500,
         pauseOnFocus: true,
@@ -128,7 +129,9 @@ function ShowReel() {
         ]
     }
 
-	const style = useStyle()
+	const dimension = useWindowDimension();
+    const { height } = dimension;
+    const style = useStyle({ dynamicHeight: height });
 
 	const content = items.map(item => {
 		return(

@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { createUseStyles } from 'react-jss'
 import { useMediaQuery } from 'react-responsive'
 import { useTranslation } from 'react-i18next';
+import { useWindowDimension } from '../../utils/useWindowDimension';
 
 import VideoCover from '../../assets/video/cover.mp4'
 import VideoMotion from '../../assets/video/motion.mp4'
@@ -22,27 +23,33 @@ import VideoTVShow from '../../assets/video/samosebou.mp4'
 import VideoCake from '../../assets/video/cake.mp4'
 import VideoApplication from '../../assets/video/application.mp4'
 import VideoBakery from '../../assets/video/bakery.mp4'
+import VideoBarista from '../../assets/video/barista.mp4'
+import VideoTVShow2 from '../../assets/video/samosebou2.mp4'
+
 
 
 
 const useStyle = createUseStyles({
     sliderContainer: {
-        width: '100%', 
-        height: '80%', 
-        '@media(max-width:500px)':{
-            height: '50%'
+        width: '100%',
+        paddingBottom: '60px',
+        '& .slick-dots': {
+            bottom: '-40px'
+        },
+
+        '@media(max-width:800px)': {
+            width: '95vw',
+            '& .slick-dots': {
+                bottom: '-37.5px'
+            },
         }
     },
-    projectVideo: {
-        minWidth: '300px',
+    projectVideo: ({ dynamicHeight }) => ({
         height: '35vh',
         position: 'relative',
         overflow: 'hidden',
         '@media(max-width:800px)':{
-            height: '70vh'
-        },
-        '@media(max-width:500px)':{
-            height: '35vh'
+            height: `${dynamicHeight}px`,
         },
         '&:hover $gridOverlay': {
             opacity: 1,
@@ -55,8 +62,8 @@ const useStyle = createUseStyles({
             left: '50%',
             transform: 'translate(-50%)',
             textAlign: 'center'
-        }
-    },
+        },
+    }),
     video:{
         position: 'absolute',
         opacity: '0.65',
@@ -100,23 +107,17 @@ const useStyle = createUseStyles({
             transitionDuration: '350ms'
           }
     },
-    vimeo: {
-        width: '80vw',
-        height: '80vh',
+
+    overlayVideo: ({ dynamicHeight }) => ({
+        width: '90vw',
+        height: `${dynamicHeight}px`,
+        maxHeight: '80vh',
         border: 'none'
-    },
-    test:{
-        width: '80vw',
-        height: '80vh',
-        display: 'flex',
-        alignItems: 'flex-start',
-        justifyContent: 'center',
-    }
+    })
 })
 
 function CarouselGrid() {
 
-    const style = useStyle();
     const { t } = useTranslation();
 
     const items = [
@@ -189,6 +190,20 @@ function CarouselGrid() {
         content: t('page.portfolio.video_category.corporate'),
         localVideo: VideoBakery,
         blurHash: 'LDFhR}sA00tlysI;9F?GWUs,xabc',
+    },
+    {   id: 11, 
+        type: 'vimeo',
+        link: 'https://player.vimeo.com/video/727756292?h=27fe60b290&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
+        content: t('page.portfolio.video_category.show'),
+        localVideo: VideoTVShow2,
+        blurHash: 'L7F~v*o%00VvNZV?.8jY02Rj_4XM',
+    },
+    {   id: 12, 
+        type: 'vimeo',
+        link: 'https://player.vimeo.com/video/826879500?h=6d46f231b5&autoplay=1&loop=1&title=0&byline=0&portrait=0', 
+        content: t('page.portfolio.video_category.corporate'),
+        localVideo: VideoBarista,
+        blurHash: 'LCCZhPvz4nJW?^MxV?o~M{%Ms=aI',
     }
 ]
 
@@ -196,6 +211,11 @@ function CarouselGrid() {
     const [overlay, setOverlay] = useState(false)
     const [videoLink, setVideoLink] = useState('')
     const [videoType, setVideoType] = useState('')
+
+    const dimension = useWindowDimension();
+    const { height } = dimension;
+    const style = useStyle({ dynamicHeight: height });
+
 
     const isMobile = useMediaQuery({query: '(max-width:600px)'});
 
@@ -229,6 +249,8 @@ function CarouselGrid() {
             window.instgrm.Embeds.process();
         }
     },)
+
+
 
     const handleOpenOverlay = (link, type) => {
         setVideoLink(link)
@@ -267,7 +289,10 @@ function CarouselGrid() {
         {overlay &&
             <Overlay onClose={handleCloseOverlay}>
                 {videoType === 'vimeo' &&
-                    <iframe title="Portfolio Clip" src={videoLink} className={style.vimeo} allow="autoplay; loop; fullscreen; picture-in-picture" allowFullScreen />
+                    <div>
+                        <iframe title="Portfolio Clip" src={videoLink} className={style.overlayVideo} allow="autoplay; loop; fullscreen; picture-in-picture" allowFullScreen />
+                    </div>
+                    
                 }
                 {videoType === 'instagram' &&
                     <EmbeddedInstagram url={videoLink} />
