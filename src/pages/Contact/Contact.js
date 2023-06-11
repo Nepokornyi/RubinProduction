@@ -166,7 +166,7 @@ function Contact({ ads }) {
 		event.preventDefault();
 
 		if(email.length === 0){
-			setError('Please fill your email')
+			setError('Please fill your email');
 		}
 
 		else if(email.trim() !== '' && !emailValidator(email)){
@@ -185,6 +185,13 @@ function Contact({ ads }) {
 			)
 			.then((result) =>{
 				setEmail('');
+
+				if (ads) {
+					window.dataLayer = window.dataLayer || [];
+					window.dataLayer.push({
+						'event': 'form_sent'
+					});
+				}
 			}, (error) => {
 				alert(error);
 			});
@@ -235,7 +242,7 @@ function Contact({ ads }) {
 
 			</form>
         </motion.div>
-		<Footer />
+		<Footer ads={ads} />
 		<DialogSuccess open={successDialog} onClose={handleDialogClose} />
 
     </Content>
