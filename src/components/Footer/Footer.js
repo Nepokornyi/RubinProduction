@@ -34,7 +34,7 @@ const useStyle = createUseStyles({
         padding: 0,
         '& a': {
             textDecoration: 'none',
-            color: 'white'
+            color: 'var(--main-text-color-light)'
         }
     },
     iconsContainer:{
@@ -96,8 +96,18 @@ function Footer({ ads }) {
             <div className={style.mainContent}>
                 <div>
                     <ul className={style.information}>
-                        <li><a href="mailto:info@rubinproduction.eu" dangerouslySetInnerHTML={{ __html: t('footer.contact_email') }}></a></li>
-                        <li><a href="tel:+420 773 042 876" dangerouslySetInnerHTML={{ __html: t('footer.contact_phone') }}></a></li>
+                        {ads &&
+                            <>
+                                <li><a href="mailto:info@rubinproduction.eu" dangerouslySetInnerHTML={{ __html: t('footer.contact_email') }}></a></li>
+                                <li><a href="tel:+420 773 042 876" dangerouslySetInnerHTML={{ __html: t('footer.contact_phone') }}></a></li>
+                            </>
+                        }
+                        {!ads &&
+                            <>
+                                <li dangerouslySetInnerHTML={{ __html: t('footer.contact_email') }}></li>
+                                <li dangerouslySetInnerHTML={{ __html: t('footer.contact_phone') }}></li>
+                            </>
+                        }
                     </ul>
                 </div>
                 <div className={style.iconsContainer}>
